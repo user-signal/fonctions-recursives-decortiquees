@@ -66,6 +66,21 @@
         <section>
             <h2>Curryfication</h2>
             <h3>(ou Schönfinkelification ?)</h3>
+            <pre class="fragment" style="font-size: 1.1ex; margin-top: 3em"><code class="C#" style="max-height: 800px">
+                        public static int Add(int x, int y) => x + y;
+                        
+                        Add(42, 19)      // -> 61
+            </code></pre>
+            <pre class="fragment" style="font-size: 1.1ex; margin-top: 1em"><code data-no-escape class="C#" style="max-height: 800px">
+                        public static Func&lt;int, int&gt; AddCurry(int x) => y => x + y;
+                                
+                        AddCurry(42)(19) // -> 61
+            </code></pre>
+            <pre class="fragment" style="font-size: 1.1ex; margin-top: 1em; margin-bottom: 100%"><code data-no-escape class="C#" style="max-height: 800px">
+                        var addPartial = AddCurry(42);
+                
+                        addPartial(19)   // -> 61
+            </code></pre>
             
         </section>
         
@@ -79,6 +94,11 @@
         </section>
         
         <section>
+            <h2>Compiler Explorer</h2>
+            <img style="margin-top: 3ex; margin-bottom: 100%" src="images/Godbolt.png" alt="Compiler explorer">
+        </section>
+
+        <section>
             <h2>Ressources</h2>
             <img style="margin-top: 3ex; margin-bottom: 100%" src="images/Appel.png" alt="Modern Compiler Implementation in ML">
         </section>
@@ -88,6 +108,9 @@
             <ul style="margin-top: 3ex; margin-bottom: 1ex">
                 <span class="fragment">
                     <li>Standard ML of New Jersey<a href="https://www.cs.princeton.edu/~appel/papers/smlnj.pdf"> [PDF]</a></li>
+                </span>
+                <span class="fragment">
+                    <li>Compiler Explorer<a href="https://godbolt.org/"> [Web]</a></li>
                 </span>
             </ul>
             <div style="margin-bottom: 100%"></div>
