@@ -2,12 +2,13 @@
 *.iml
 *.iws
 *.eml
-/out/
+out
 .DS_Store
 .svn
 log/*.log
-tmp/**
+tmp
 node_modules/
 .sass-cache
-/bin/
-/obj/
+bin
+obj
+target
