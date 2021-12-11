@@ -2,8 +2,7 @@ package net.sigusr;
 
 import org.junit.jupiter.api.Test;
 
-import static net.sigusr.SnowCamp.fact;
-import static net.sigusr.SnowCamp.factTail;
+import static net.sigusr.SnowCamp.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class SnowCampTest {
@@ -15,6 +14,11 @@ class SnowCampTest {
 
     @Test
     void factTailTest() {
-        assertEquals(6, factTail(3, 1));
+        assertEquals(6, factTailRecursive(3, 1));
+    }
+    
+    @Test
+    void factTrampTest() {
+        assertEquals(6, factTrampoline(3, 1).run());
     }
 }

@@ -10,6 +10,6 @@ class SnowCampSpec extends AnyFlatSpec with Matchers {
   }
 
   "The factTail function" should "compute factorial of 3" in {
-    SnowCamp.factTail(3, 1) shouldEqual 6
+    SnowCamp.factTailRecursive(3, 1) shouldEqual 6
   }
 }
