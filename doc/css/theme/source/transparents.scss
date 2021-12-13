@@ -54,7 +54,7 @@
 
 .reveal .slides section blockquote {
   width: 30em;
-  background: rgba(255, 255, 255, 0.00);
+  background: white;
   border: 0 solid;
   box-shadow: 0 0 0;
   text-align: right;
@@ -72,6 +72,16 @@
   list-style-type: none;
 }
 
+.reveal .list {
+  display: flex; 
+  flex-direction: column; 
+  align-items: flex-start
+}
+
+.reveal .list .item {
+  margin-left: 10%
+}
+
 .reveal .slides sub {
   vertical-align: sub;
   font-size: smaller;
@@ -84,8 +94,8 @@
   width: 98%;
   font-size: 0.40em;
   border: none;
-  color: #dcdcdc;
-  background: #002b36;
+  color: $base3;
+  background: $base03;
 }
 
 .reveal .ch {

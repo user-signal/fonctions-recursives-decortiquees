@@ -413,7 +413,7 @@ html * {
 
 .reveal .slides section blockquote {
   width: 30em;
-  background: rgba(255, 255, 255, 0);
+  background: white;
   border: 0 solid;
   box-shadow: 0 0 0;
   text-align: right;
@@ -431,6 +431,16 @@ html * {
   list-style-type: none;
 }
 
+.reveal .list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.reveal .list .item {
+  margin-left: 15%;
+}
+
 .reveal .slides sub {
   vertical-align: sub;
   font-size: smaller;
@@ -444,7 +454,7 @@ html * {
   width: 98%;
   font-size: 0.4em;
   border: none;
-  color: #dcdcdc;
+  color: #fdf6e3;
   background: #002b36;
 }
 
