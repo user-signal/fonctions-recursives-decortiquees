@@ -53,96 +53,29 @@
         </section>
         
         <section>
-            <h2 style="margin-bottom: 1.5em"><span style="text-transform:lowercase">$\lambda$</span>-Calcul</h2>
+            <h2 style="margin-bottom: 1.5em"><span style="text-transform:lowercase">&lambda;</span>-Calcul</h2>
             <div style="margin-bottom: 100%;  display: grid; grid-template-columns: 3fr 2fr">
                 <div class="fragment" data-fragment-index="1" style="justify-self: center">$x$</div><div class="fragment" data-fragment-index="1" style="justify-self: start"> Variable</div>
-                <div class="fragment" data-fragment-index="1" style="justify-self: center">$\lambda x.\:M$</div><div class="fragment" data-fragment-index="1" style="justify-self: start"> Abstraction</div>
-                <div class="fragment" data-fragment-index="1" style="justify-self: center; margin-bottom: 2.5em">$M\:N$</div><div class="fragment" data-fragment-index="1" style="margin-bottom: 2.5em; justify-self: start"> Application</div>
-                <div class="fragment" data-fragment-index="2" style="justify-self: center">$\lambda x.\:M[x] \rightarrow \lambda y.\:M[y]$</div><div class="fragment" data-fragment-index="2" style="justify-self: start">$\alpha$-conversion</div>
-                <div class="fragment" data-fragment-index="2" style="justify-self: center">$(\lambda x.\:M)\:E \rightarrow M[x:=E]$</div><div class="fragment" data-fragment-index="2" style="justify-self: start">$\beta$-reduction</div>
+                <div class="fragment" data-fragment-index="1" style="justify-self: center">$\lambda x.\,M$</div><div class="fragment" data-fragment-index="1" style="justify-self: start"> Abstraction</div>
+                <div class="fragment" data-fragment-index="1" style="justify-self: center; margin-bottom: 2.5em">$M\,N$</div><div class="fragment" data-fragment-index="1" style="margin-bottom: 2.5em; justify-self: start"> Application</div>
+                <div class="fragment" data-fragment-index="2" style="justify-self: center">$\lambda x.\,M[x] \rightarrow \lambda y.\,M[y]$</div><div class="fragment" data-fragment-index="2" style="justify-self: start">$\alpha$-conversion</div>
+                <div class="fragment" data-fragment-index="2" style="justify-self: center">$(\lambda x.\,M)\:E \rightarrow M[x:=E]$</div><div class="fragment" data-fragment-index="2" style="justify-self: start">$\beta$-reduction</div>
+                <div class="fragment" data-fragment-index="2" style="justify-self: center">$\lambda x.\,(f\,x) \rightarrow f$</div><div class="fragment" data-fragment-index="2" style="justify-self: start">$\eta$-reduction</div>
             </div>
         </section>
         
         <section>
-            <h2>Sémantique</h2>
-            <div class="list" style="margin-top: 3ex; margin-bottom: 100%">
-                <div class="red">TODO</div>
-                <div class="fragment item">Donner un sens aux expressions</div>
-                <div class="fragment item">Formelle</div>
-                <div class="fragment item">Dénotationnelle, <span class="fragment">Opérationnelle, </span><span class="fragment">Axiomatique</span></div>
+            <h2 style="margin-bottom: 1.5em"><span style="text-transform:lowercase">&lambda;</span>-Calcul</h2>
+            <div style="margin-bottom: 100%;  display: grid; grid-template-columns: 3fr 2fr">
+                <div style="justify-self: center">$x$</div><div style="justify-self: start"> Variable</div>
+                <div style="justify-self: center">$\lambda x.\,M$</div><div style="justify-self: start"> Abstraction</div>
+                <div style="justify-self: center; margin-bottom: 2.5em">$M\,N$</div><div style="margin-bottom: 2.5em; justify-self: start"> Application</div>
+                <div style="justify-self: center">$\lambda x.\,M[x] \rightarrow \lambda y.\,M[y]$</div><div style="justify-self: start">$\alpha$-conversion</div>
+                <div class="orange" style="justify-self: center">$(\lambda x.\,M)\:E \rightarrow M[x:=E]$</div><div class="orange" style="justify-self: start">$\beta$-reduction</div>
+                <div style="justify-self: center">$\lambda x.\,(f\,x) \rightarrow f$</div><div style="justify-self: start">$\eta$-reduction</div>
             </div>
         </section>
-        
-        <section>
-            <h2>Ordre de réduction</h2>
-            <div class="list" class="list" style="margin-top: 3ex; margin-bottom: 100%">
-                <div class="fragment item">
-                    <div style="">Si on pose :</div>
-                    <div style="margin-left: 2em; margin-top: 1ex">$id = \lambda x.\:x$</div>
-                </div> 
-                <div class="fragment item" style="margin-top: 2ex">
-                    <div>Soit l'expression:</div>
-                    <div style="margin-left: 2em; margin-top: 1ex">$id\:(id\:(\lambda z.\:id\: z))$</div>
-                </div> 
-                <div class="fragment item" style="margin-top: 2ex">
-                    <div>On a les <span class="orange">redex</span></div>
-                    <div class="fragment" style="margin-left: 2em; margin-top: 1ex">$id\:(id\:(\lambda z.\:\underline{id\: z}))$</div>
-                    <div class="fragment" style="margin-left: 2em">$id\:(\underline{id\:(\lambda z.\:id\: z)})$</div>
-                    <div class="fragment" style="margin-left: 2em">$\underline{id\:(id\:(\lambda z.\:id\: z))}$</div>
-                </div> 
-            </div>
-        </section>
-        
-        <section>
-            <h2><span style="text-transform:lowercase">$\beta$</span>-réduction complète</h2>
-            <div class="list" style="margin-bottom: 100%; margin-top: 3ex">
-                <div class="fragment item">On prend n'importe quel <span class="orange">redex</span></div>
-                <div class="item" style="margin-top: 2ex">
-                    <div class="fragment" style="margin-left: 2em">$id\:(\underline{id\:(\lambda z.\:id\: z)})$</div>
-                    <div class="fragment" style="margin-left: 2em">$id\:(\lambda z.\:\underline{id\: z})$</div>
-                    <div class="fragment" style="margin-left: 2em">$\underline{id\:(\lambda z.\: z)}$</div>
-                    <div class="fragment green" style="margin-left: 2em">$\lambda z.\: z$</div>
-                </div>
-            </div>
-        </section>
-        
-        <section>
-            <h2>Ordre normal</h2>
-            <div class="list" style="margin-bottom: 100%; margin-top: 3ex">
-                <div class="fragment item">On prend <span class="orange">redex</span> le plus extérieur et le plus à gauche</div>
-                <div class="item" style="margin-top: 2ex">
-                    <div class="fragment" style="margin-left: 2em">$\underline{id\:(id\:(\lambda z.\:id\: z))}$</div>
-                    <div class="fragment" style="margin-left: 2em">$\underline{id\:(\lambda z.\:id\: z)}$</div>
-                    <div class="fragment" style="margin-left: 2em">$\lambda z.\:\underline{id\: z}$</div>
-                    <div class="fragment green" style="margin-left: 2em">$\lambda z.\: z$</div>
-                </div>
-            </div>
-        </section>
-        
-        <section>
-            <h2>Appel par nom</h2>
-            <div class="list" style="margin-bottom: 100%; margin-top: 3ex">
-                <div class="fragment item">Ordre normal sans descendre dans les abstractions</div>
-                <div class="item" style="margin-top: 2ex">
-                    <div class="fragment" style="margin-left: 2em">$\underline{id\:(id\:(\lambda z.\:id\: z))}$</div>
-                    <div class="fragment" style="margin-left: 2em">$\underline{id\:(\lambda z.\:id\: z)}$</div>
-                    <div class="fragment green" style="margin-left: 2em">$\lambda z.\:id\: z$</div>
-                </div>
-            </div>
-        </section>
-        
-        <section>
-            <h2>Appel par valeur</h2>
-            <div class="list" style="margin-bottom: 100%; margin-top: 3ex">
-                <div class="fragment item">On prends le <span class="orange">redex</span> le plus extérieur quand son argument est une valeur </div>
-                <div class="item" style="margin-top: 2ex">
-                    <div class="fragment" style="margin-left: 2em">$id\:(\underline{id\:(\lambda z.\:id\: z)})$</div>
-                    <div class="fragment" style="margin-left: 2em">$\underline{id\:(\lambda z.\:id\: z)}$</div>
-                    <div class="fragment green" style="margin-left: 2em">$\lambda z.\:id\: z$</div>
-                </div>
-            </div>
-        </section>
-        
+
         <section>
             <h2>Curryfication</h2>
             <h3>(ou Schönfinkelification ?)</h3>
@@ -161,6 +94,92 @@
                 
                         addPartial(19)   // -> 61
             </code></pre>
+        </section>
+
+        <section>
+            <h2>Sémantique</h2>
+            <h3 class="red">TODO</h3>
+            <div class="list" style="margin-top: 3ex; margin-bottom: 100%">
+                <div class="fragment item">Donner un sens aux expressions</div>
+                <div class="fragment item">Formelle</div>
+                <div class="fragment item">Dénotationnelle, <span class="fragment">Opérationnelle, </span><span class="fragment">Axiomatique</span></div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Ordre de réduction</h2>
+            <div class="list" class="list" style="margin-top: 5ex; margin-bottom: 100%">
+                <div class="fragment item">
+                    <div style="">Si on pose :</div>
+                    <div style="margin-left: 10em">$id = \lambda x.\:x$</div>
+                </div> 
+                <div class="fragment item">
+                    <div>Soit l'expression :</div>
+                    <div style="margin-left: 10em">$id\:(id\:(\lambda z.\:id\: z))$</div>
+                </div> 
+                <div class="fragment item">
+                    <div>On a les <span class="orange">redex</span> :</div>
+                    <div class="fragment" style="margin-left: 10em; margin-top: 1ex">$id\:(id\:(\lambda z.\:\underline{id\: z}))$</div>
+                    <div class="fragment" style="margin-left: 10em">$id\:(\underline{id\:(\lambda z.\:id\: z)})$</div>
+                    <div class="fragment" style="margin-left: 10em">$\underline{id\:(id\:(\lambda z.\:id\: z))}$</div>
+                </div> 
+            </div>
+        </section>
+        
+        <section>
+            <h2><span style="text-transform:lowercase">&beta;</span>-réduction complète</h2>
+            <div class="list" style="margin-bottom: 100%; margin-top: 5ex">
+                <div class="fragment item">On prend n'importe quel <span class="orange">redex</span></div>
+                <div class="item" style="margin-top: 5ex">
+                    <div class="fragment" style="margin-left: 10em">$id\:(\underline{id\:(\lambda z.\:id\: z)})$</div>
+                    <div class="fragment" style="margin-left: 10em">$id\:(\lambda z.\:\underline{id\: z})$</div>
+                    <div class="fragment" style="margin-left: 10em">$\underline{id\:(\lambda z.\: z)}$</div>
+                    <div class="fragment green" style="margin-left: 10em">$\lambda z.\: z$</div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Ordre normal</h2>
+            <div class="list" style="margin-bottom: 100%; margin-top: 5ex">
+                <div class="fragment item">On prend <span class="orange">redex</span> le plus extérieur et le plus à gauche</div>
+                <div class="item" style="margin-top: 5ex">
+                    <div class="fragment" style="margin-left: 10em">$\underline{id\:(id\:(\lambda z.\:id\: z))}$</div>
+                    <div class="fragment" style="margin-left: 10em">$\underline{id\:(\lambda z.\:id\: z)}$</div>
+                    <div class="fragment" style="margin-left: 10em">$\lambda z.\:\underline{id\: z}$</div>
+                    <div class="fragment green" style="margin-left: 10em">$\lambda z.\: z$</div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Appel par nom</h2>
+            <div class="list" style="margin-bottom: 100%; margin-top: 5ex">
+                <div class="fragment item">On prend <span class="orange">redex</span> le plus extérieur et le plus à gauche</div>
+                <div class="fragment item">mais sans descendre dans les abstractions</div>
+                <div class="item" style="margin-top: 5ex">
+                    <div class="fragment" style="margin-left: 10em">$\underline{id\:(id\:(\lambda z.\:id\: z))}$</div>
+                    <div class="fragment" style="margin-left: 10em">$\underline{id\:(\lambda z.\:id\: z)}$</div>
+                    <div class="fragment green" style="margin-left: 10em">$\lambda z.\:id\: z$</div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Appel par valeur</h2>
+            <div class="list" style="margin-bottom: 100%; margin-top: 5ex">
+                <div class="fragment item">On prends le <span class="orange">redex</span> le plus extérieur quand son argument est une valeur</div>
+                <div class="item" style="margin-top: 5ex">
+                    <div class="fragment" style="margin-left: 10em">$id\:(\underline{id\:(\lambda z.\:id\: z)})$</div>
+                    <div class="fragment" style="margin-left: 10em">$\underline{id\:(\lambda z.\:id\: z)}$</div>
+                    <div class="fragment green" style="margin-left: 10em">$\lambda z.\:id\: z$</div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Equivalence</h2>
+            <img style="margin-top: 3ex; margin-bottom: 100%" src="images/Plotkin.png" alt="Call by name, call by value and the lambda calculus">
         </section>
         
         <section>
