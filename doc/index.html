@@ -44,7 +44,8 @@
         </section>
         
         <section>
-            <h2 style="margin-top: 4em">Théorie</h2>
+            <span style="font-size: smaller; text-align: left; display: flex; margin: 1ex 0 0 1em">[Première Partie]</span>
+            <h2 style="margin-top: 3em">Théorie</h2>
             <blockquote style="margin-top: 5em; margin-right: 2em; margin-bottom: 100%">
                 « Un jour j'irai vivre en Théorie, 
                 <div>car en Théorie tout se passe bien. »</div>
@@ -73,6 +74,26 @@
                 <div style="justify-self: center">$\lambda x.\,M[x] \rightarrow \lambda y.\,M[y]$</div><div style="justify-self: start">$\alpha$-conversion</div>
                 <div class="orange" style="justify-self: center">$(\lambda x.\,M)\:E \rightarrow M[x:=E]$</div><div class="orange" style="justify-self: start">$\beta$-reduction</div>
                 <div style="justify-self: center">$\lambda x.\,(f\,x) \rightarrow f$</div><div style="justify-self: start">$\eta$-reduction</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Encodages</h2>
+            <div class="list" style="margin-top: 5ex; margin-bottom: 100%">
+                <div class="item fragment">
+                    <div>Entiers :</div>
+                    <div style="margin-left: 7em">$0 = \lambda f.\, \lambda x.\,x$</div>
+                    <div style="margin-left: 7em">$1 = \lambda f.\, \lambda x.\,f\,x$</div>
+                    <div style="margin-left: 7em">$2 = \lambda f.\, \lambda x.\,f\,(f\,x)$</div>
+                </div>
+                <div class="item fragment">
+                    <div style="margin-top: 2ex; margin-left: 7em">$S = \lambda n.\,\lambda f.\,\lambda x.\,f\,(n\,f\,x)$</div>
+                    
+                </div>
+                <div class="item fragment">
+                    <div style="margin-top: 2ex">Point fixe :</div>
+                    <div style="margin-left: 7em">$Y = \lambda g.\,(\lambda x.\,g\,(x\,x))\,(\lambda x.\,g\,(x\,x))$</div>
+                </div>
             </div>
         </section>
 
@@ -110,18 +131,18 @@
             <h2>Ordre de réduction</h2>
             <div class="list" class="list" style="margin-top: 5ex; margin-bottom: 100%">
                 <div class="fragment item">
-                    <div style="">Si on pose :</div>
-                    <div style="margin-left: 10em">$id = \lambda x.\:x$</div>
+                    <div>Si on pose :</div>
+                    <div style="margin-left: 10em">$id = \lambda x.\,x$</div>
                 </div> 
                 <div class="fragment item">
                     <div>Soit l'expression :</div>
-                    <div style="margin-left: 10em">$id\:(id\:(\lambda z.\:id\: z))$</div>
+                    <div style="margin-left: 10em">$id\,(id\,(\lambda z.\,id\, z))$</div>
                 </div> 
                 <div class="fragment item">
                     <div>On a les <span class="orange">redex</span> :</div>
-                    <div class="fragment" style="margin-left: 10em; margin-top: 1ex">$id\:(id\:(\lambda z.\:\underline{id\: z}))$</div>
-                    <div class="fragment" style="margin-left: 10em">$id\:(\underline{id\:(\lambda z.\:id\: z)})$</div>
-                    <div class="fragment" style="margin-left: 10em">$\underline{id\:(id\:(\lambda z.\:id\: z))}$</div>
+                    <div class="fragment" style="margin-left: 10em; margin-top: 1ex">$id\,(id\,(\lambda z.\,\underline{id\, z}))$</div>
+                    <div class="fragment" style="margin-left: 10em">$id\,(\underline{id\,(\lambda z.\,id\, z)})$</div>
+                    <div class="fragment" style="margin-left: 10em">$\underline{id\,(id\,(\lambda z.\,id\, z))}$</div>
                 </div> 
             </div>
         </section>
@@ -198,7 +219,8 @@
         </section>
         
         <section>
-            <h2 style="margin-top: 4em">Pratique</h2>
+            <span style="font-size: smaller; text-align: left; display: flex; margin: 1ex 0 0 1em">[Seconde Partie]</span>
+            <h2 style="margin-top: 3em">Pratique</h2>
             <blockquote style="margin-top: 5em; margin-right: 2em; margin-bottom: 100%">
                 « En théorie, il n'y a pas de différence entre la théorie et la pratique. 
                 <div>Mais en pratique, il y en a une. »</div>
@@ -211,6 +233,10 @@
             <img style="margin-top: 3ex; margin-bottom: 100%" src="images/Godbolt.png" alt="Compiler explorer">
         </section>
 
+        <section>
+            <h2>Coda</h2>
+        </section>
+        
         <section>
             <h2>Ressources</h2>
             <img style="margin-top: 3ex; margin-bottom: 100%" src="images/Appel.png" alt="Modern Compiler Implementation in ML">
