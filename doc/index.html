@@ -149,7 +149,7 @@
         
         <section>
             <h2><span style="text-transform:lowercase">&beta;</span>-réduction complète</h2>
-            <div class="list" style="margin-bottom: 100%; margin-top: 5ex">
+            <div class="list" style="margin-bottom: 100%; margin-top: 4ex">
                 <div class="fragment item">On prend n'importe quel <span class="orange">redex</span></div>
                 <div class="item" style="margin-top: 5ex">
                     <div class="fragment" style="margin-left: 10em">$id\:(\underline{id\:(\lambda z.\:id\: z)})$</div>
@@ -162,7 +162,7 @@
         
         <section>
             <h2>Ordre normal</h2>
-            <div class="list" style="margin-bottom: 100%; margin-top: 5ex">
+            <div class="list" style="margin-bottom: 100%; margin-top: 4ex">
                 <div class="fragment item">On prend <span class="orange">redex</span> le plus extérieur et le plus à gauche</div>
                 <div class="item" style="margin-top: 5ex">
                     <div class="fragment" style="margin-left: 10em">$\underline{id\:(id\:(\lambda z.\:id\: z))}$</div>
@@ -178,10 +178,13 @@
             <div class="list" style="margin-bottom: 100%; margin-top: 5ex">
                 <div class="fragment item">On prend <span class="orange">redex</span> le plus extérieur et le plus à gauche</div>
                 <div class="fragment item">mais sans descendre dans les abstractions</div>
-                <div class="item" style="margin-top: 5ex">
+                <div class="item" style="margin-top: 4ex">
                     <div class="fragment" style="margin-left: 10em">$\underline{id\:(id\:(\lambda z.\:id\: z))}$</div>
                     <div class="fragment" style="margin-left: 10em">$\underline{id\:(\lambda z.\:id\: z)}$</div>
                     <div class="fragment green" style="margin-left: 10em">$\lambda z.\:id\: z$</div>
+                </div>
+                <div class="fragment item " style="margin-top: 3ex">
+                    Exemples : Algol60, Miranda, Lazy ML, Clean... <span class="fragment green">Haskell</span> 
                 </div>
             </div>
         </section>
@@ -190,10 +193,13 @@
             <h2>Appel par valeur</h2>
             <div class="list" style="margin-bottom: 100%; margin-top: 5ex">
                 <div class="fragment item">On prends le <span class="orange">redex</span> le plus extérieur quand son argument est une valeur</div>
-                <div class="item" style="margin-top: 5ex">
+                <div class="item" style="margin-top: 4ex">
                     <div class="fragment" style="margin-left: 10em">$id\:(\underline{id\:(\lambda z.\:id\: z)})$</div>
                     <div class="fragment" style="margin-left: 10em">$\underline{id\:(\lambda z.\:id\: z)}$</div>
                     <div class="fragment green" style="margin-left: 10em">$\lambda z.\:id\: z$</div>
+                </div>
+                <div class="fragment item " style="margin-top: 3ex">
+                    Exemples : <span class="fragment">tous les autres langages !</span>
                 </div>
             </div>
         </section>
