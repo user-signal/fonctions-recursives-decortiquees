@@ -1,8 +1,8 @@
 using NFluent;
 using NUnit.Framework;
-using static Main.Factorial;
+using static CSharp.Factorial;
 
-namespace Main
+namespace CSharp
 {
     public class FactorialTest
     {
@@ -15,7 +15,7 @@ namespace Main
         [Test]
         public void fact_tail_test()
         {
-            Check.That(FactTail(3, 1)).IsEqualTo(6);
+            Check.That(FactTailRecursive(3, 1)).IsEqualTo(6);
         }
     }
 }

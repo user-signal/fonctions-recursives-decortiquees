@@ -1,0 +1,12 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/Hierarchy/Build/BuildTool/CustomBuildToolPath/@EntryValue">/home/fred/.asdf/installs/dotnet-core/6.0.100/sdk/6.0.100/MSBuild.dll</s:String>
+	<s:String x:Key="/Default/Environment/Hierarchy/Build/BuildTool/DotNetCliExePath/@EntryValue">/home/fred/.asdf/installs/dotnet-core/6.0.100/dotnet</s:String>
+	<s:Int64 x:Key="/Default/Environment/Hierarchy/Build/BuildTool/MsbuildVersion/@EntryValue">4294967293</s:Int64>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c866824f_002Ddc00_002D46cb_002D8c34_002D7690da532704/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="FactorialTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::BA748C2D-DDA8-4BAA-A448-1F9AE1C82BC2::net6.0::FSharp.FactorialTest&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::BA748C2D-DDA8-4BAA-A448-1F9AE1C82BC2::net6.0::FSharp.EvenOddTest.TestIsEven&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::BA748C2D-DDA8-4BAA-A448-1F9AE1C82BC2::net6.0::FSharp.EvenOddTest.TestIsEvenPeano&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::BA748C2D-DDA8-4BAA-A448-1F9AE1C82BC2::net6.0::FSharp.EvenOddTest&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

@@ -1,8 +1,8 @@
 using NFluent;
 using NUnit.Framework;
-using static Main.Curry;
+using static CSharp.Curry;
 
-namespace Main
+namespace CSharp
 {
     public class FactorialTests
     {
@@ -15,13 +15,13 @@ namespace Main
         [Test]
         public void curried_test()
         {
-            Check.That(AddCurry(42)(19)).IsEqualTo(61);
+            Check.That(AddCurried(42)(19)).IsEqualTo(61);
         }
 
         [Test]
         public void curried_with_partial_test()
         {
-            var addPartial = AddCurry(42);
+            var addPartial = AddCurried(42);
             Check.That(addPartial(19)).IsEqualTo(61);
         }
     }
