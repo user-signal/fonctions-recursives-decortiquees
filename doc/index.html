@@ -251,7 +251,11 @@
             <h2>OCaml</h2>
             <img style="margin-top: 3ex; margin-bottom: 100%" src="images/KrivinesMachine.png" alt="Krivine's machine example">
         </section>
-        
+
+        <section data-background-image="images/Interlude.png" data-transition="none">
+            <h2 style="margin-bottom: 100%">Interlude</h2>
+        </section>
+       
         <section>
             <span style="font-size: smaller; text-align: left; display: flex; margin: 1ex 0 0 1em">[Seconde Partie]</span>
             <h2 style="margin-top: 3em">Pratique</h2>
@@ -261,10 +265,99 @@
                 <div style="font-size: smaller">&mdash; Yogi Berra</div>
             </blockquote>
         </section>
-        
+
+        <section>
+            <h2>Récursion simple</h2>
+            <div class="list" style="margin-top: 3rem">
+                <div class="item fragment">Un cas de base ou cas d'arrêt</div>
+                <div class="item fragment">Un cas général définit au rang <span class="blue">$n$</span> en fonction du rang <span class="blue">$n - 1$</span></div>
+            </div>
+            <pre class="fragment" style="font-size: 1.1ex; margin-top: 3ex; margin-bottom: 100%"><code class="F#" style="max-height: 800px">
+                        let rec Fact = function
+                            | 0 -> 1
+                            | n -> n * Fact (n - 1)
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>Récursion mutuelle</h2>
+            <div class="list" style="margin-top: 3rem">
+                <div class="item fragment" data-fragment-index="1">Plusieurs fonctions récursives se définissent </div>
+                <div class="item fragment" data-fragment-index="1">les unes part rapport aux autres</div>
+            </div>
+            <pre class="fragment" style="font-size: 1.1ex; margin-top: 3ex"><code class="F#" style="max-height: 800px">
+                        type Peano = Zero | Succ of Peano
+            </code></pre>
+            <pre class="fragment" style="font-size: 1.1ex; margin-top: 1ex; margin-bottom: 100%"><code class="F#" style="max-height: 800px">
+                        let rec IsEvenPeano =
+                            function
+                            | Zero -> true
+                            | Succ n -> IsOddPeano n
+                        
+                        and IsOddPeano =
+                            function
+                            | Zero -> false
+                            | Succ n -> IsEvenPeano n
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>Récursion terminale</h2>
+            <div class="list" style="margin-top: 3rem">
+                <div class="item fragment" data-fragment-index="1">L'appel récursif est la dernière action </div>
+                <div class="item fragment" data-fragment-index="1">effectuée dans la fonction</div>
+            </div>
+            <pre class="fragment" style="font-size: 1.1ex; margin-top: 3ex; margin-bottom: 100%"><code class="F#" style="max-height: 800px">
+                        let rec FactTailRecursive acc = function
+                            | 0 -> acc
+                            | n -> FactTailRecursive (n * acc) (n - 1)
+            </code></pre>
+        </section>
+
         <section>
             <h2>Compiler Explorer</h2>
             <img style="margin-top: 3ex; margin-bottom: 100%" src="images/Godbolt.png" alt="Compiler explorer">
+        </section>
+        
+        <section>
+            <h2>Trampoline</h2>
+            <pre class="fragment" style="font-size: 1.1ex; margin-top: 3em"><code class="Java" style="max-height: 800px">
+                        public sealed interface TailRec&lt;T&gt; permits Suspend, Return {
+                            default T run() {
+                                ...
+                            }
+                        }
+                        public record Return&lt;T&gt;(T value) implements TailRec&lt;T&gt; {}
+                        public record Suspend&lt;T&gt;(Supplier&lt;TailRec&lt;T&gt;&gt; thunk) implements TailRec&lt;T&gt; {}
+            </code></pre>
+            <pre class="fragment" style="font-size: 1.1ex; margin-top: 1ex; margin-bottom: 100%"><code class="Java" style="max-height: 800px">
+                        public static TailRec&lt;Integer&gt; factTrampoline(int n, int acc) {
+                            if (n == 0)
+                                return new Return&lt;&gt;(acc);
+                            else
+                                return new Suspend&lt;&gt;(() -> factTrampoline(n - 1, n * acc));
+                        }
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>Trampoline</h2>
+            <pre class="fragment" style="font-size: 1.1ex; margin-top: 3em"><code class="Java" style="max-height: 800px">
+                        factTrampoline(3, 1).run()
+            </code></pre>
+            <pre class="fragment" style="font-size: 1.1ex; margin-top: 1ex; margin-bottom: 100%"><code class="Java" style="max-height: 800px">
+                        public sealed interface TailRec&lt;T&gt; permits Suspend, Return {
+                            default T run() {
+                                var current = this;
+                                do {
+                                    switch (current) {
+                                        case Return r: return (T) r.value;
+                                        case Suspend s: current = (TailRec&lt;T&gt;) s.thunk.get();
+                                    }
+                                } while (true);
+                            }
+                        }
+            </code></pre>
         </section>
 
         <section>
