@@ -3,21 +3,11 @@ package net.sigusr;
 import java.util.function.Supplier;
 
 public class SnowCamp {
-    
-    public sealed interface TailRec<T> permits Suspend, Return {
-        default T run() {
-            var current = this;
-            do {
-                switch (current) {
-                    case Return r: return (T) r.value;
-                    case Suspend s: current = (TailRec<T>) s.thunk.get();
-                }
-            } while (true);
-        }
+
+    static int square(int num) {
+        return num * num;
     }
-    public record Return<T>(T value) implements TailRec<T> {}
-    public record Suspend<T>(Supplier<TailRec<T>> thunk) implements TailRec<T> {}
-    
+
     public static int fact(int n) {
         if (n == 0)
             return 1;
@@ -31,6 +21,20 @@ public class SnowCamp {
         else
             return factTailRecursive(n - 1, n * acc);
     }
+
+    public sealed interface TailRec<T> permits Suspend, Return {
+        default T run() {
+            var current = this;
+            do {
+                switch (current) {
+                    case Return r: return (T) r.value;
+                    case Suspend s: current = (TailRec<T>) s.thunk.get();
+                }
+            } while (true);
+        }
+    }
+    public record Return<T>(T value) implements TailRec<T> {}
+    public record Suspend<T>(Supplier<TailRec<T>> thunk) implements TailRec<T> {}
 
     public static TailRec<Integer> factTrampoline(int n, int acc) {
         if (n == 0)

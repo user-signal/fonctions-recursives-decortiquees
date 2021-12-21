@@ -10,6 +10,7 @@
     <Compile Include="FactorialTest.fs" />
     <Compile Include="EvenOdd.fs" />
     <Compile Include="EvenOddTest.fs" />
+    <Compile Include="Square.fs" />
   </ItemGroup>
 
   <ItemGroup>

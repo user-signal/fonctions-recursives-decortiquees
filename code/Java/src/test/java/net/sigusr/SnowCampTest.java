@@ -7,6 +7,15 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class SnowCampTest {
 
+    public static void main(String[] args) {
+        square(3);
+    }
+
+    @Test
+    void squareTest() {
+        assertEquals(9, square(3));
+    }
+
     @Test
     void factTest() {
         assertEquals(6, fact(3));
