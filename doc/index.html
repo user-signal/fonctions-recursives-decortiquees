@@ -79,21 +79,14 @@
 
         <section>
             <h2>Encodages</h2>
-            <div class="list" style="margin-top: 5ex; margin-bottom: 100%">
-                <div class="item fragment">
-                    <div>Entiers :</div>
-                    <div style="margin-left: 7em">$0 = \lambda f.\, \lambda x.\,x$</div>
-                    <div style="margin-left: 7em">$1 = \lambda f.\, \lambda x.\,f\,x$</div>
-                    <div style="margin-left: 7em">$2 = \lambda f.\, \lambda x.\,f\,(f\,x)$</div>
-                </div>
-                <div class="item fragment">
-                    <div style="margin-top: 2ex; margin-left: 7em">$S = \lambda n.\,\lambda f.\,\lambda x.\,f\,(n\,f\,x)$</div>
-                    
-                </div>
-                <div class="item fragment">
-                    <div style="margin-top: 2ex">Point fixe :</div>
-                    <div style="margin-left: 7em">$Y = \lambda g.\,(\lambda x.\,g\,(x\,x))\,(\lambda x.\,g\,(x\,x))$</div>
-                </div>
+            <div class="list" style="margin-top: 4ex; margin-bottom: 100%">
+                <div class="item fragment" data-fragment-index="1">Entiers :</div>
+                <div class="item fragment" data-fragment-index="1" style="margin-top: 1ex;margin-left: 7em">$0 = \lambda f.\, \lambda x.\,x$</div>
+                <div class="item fragment" data-fragment-index="1" style="margin-left: 7em">$1 = \lambda f.\, \lambda x.\,f\,x$</div>
+                <div class="item fragment" data-fragment-index="1" style="margin-left: 7em">$2 = \lambda f.\, \lambda x.\,f\,(f\,x)$</div>
+                <div class="item fragment" data-fragment-index="2" style="margin-top: 1.5ex; margin-left: 6.75em">$S = \lambda n.\,\lambda f.\,\lambda x.\,f\,(n\,f\,x)$</div>
+                <div class="item fragment" style="margin-top: 2ex">Point fixe :</div>
+                <div class="green item fragment" style="margin-top: 1ex;margin-left: 6.6em">$Y = \lambda g.\,(\lambda x.\,g\,(x\,x))\,(\lambda x.\,g\,(x\,x))$</div>
             </div>
         </section>
 
@@ -106,12 +99,12 @@
                         Add(42, 19)      // -> 61
             </code></pre>
             <pre class="fragment" style="font-size: 1.1ex; margin-top: 1em"><code data-no-escape class="C#" style="max-height: 800px">
-                        public static Func&lt;int, int&gt; AddCurry(int x) => y => x + y;
+                        public static Func&lt;int, int&gt; AddCurried(int x) => y => x + y;
                                 
-                        AddCurry(42)(19) // -> 61
+                        AddCurried(42)(19) // -> 61
             </code></pre>
             <pre class="fragment" style="font-size: 1.1ex; margin-top: 1em; margin-bottom: 100%"><code data-no-escape class="C#" style="max-height: 800px">
-                        var addPartial = AddCurry(42);
+                        var addPartial = AddCurried(42);
                 
                         addPartial(19)   // -> 61
             </code></pre>
@@ -157,21 +150,15 @@
         
         <section>
             <h2>Ordre de réduction</h2>
-            <div class="list" class="list" style="margin-top: 5ex; margin-bottom: 100%">
-                <div class="fragment item">
-                    <div>Si on pose :</div>
-                    <div style="margin-left: 10em">$id = \lambda x.\,x$</div>
-                </div> 
-                <div class="fragment item">
-                    <div>Soit l'expression :</div>
-                    <div style="margin-left: 10em">$id\,(id\,(\lambda z.\,id\, z))$</div>
-                </div> 
-                <div class="fragment item">
-                    <div>On a les <span class="orange">redex</span> :</div>
-                    <div class="fragment" style="margin-left: 10em; margin-top: 1ex">$id\,(id\,(\lambda z.\,\underline{id\, z}))$</div>
-                    <div class="fragment" style="margin-left: 10em">$id\,(\underline{id\,(\lambda z.\,id\, z)})$</div>
-                    <div class="fragment" style="margin-left: 10em">$\underline{id\,(id\,(\lambda z.\,id\, z))}$</div>
-                </div> 
+            <div class="list" style="margin-top: 4ex; margin-bottom: 100%">
+                <div class="fragment item" data-fragment-index="1">Si on pose :</div>
+                <div class="fragment item" data-fragment-index="1" style="margin-top: 1ex; margin-left: 10em">$id = \lambda x.\,x$</div>
+                <div class="fragment item" data-fragment-index="2" style="margin-top: 1ex">Soit l'expression :</div>
+                <div class="fragment item" data-fragment-index="2" style="margin-top: 1ex; margin-left: 10em">$id\,(id\,(\lambda z.\,id\, z))$</div>
+                <div class="fragment item" data-fragment-index="3" style="margin-top: 1ex">On a les <span class="orange">redex</span> :</div>
+                <div class="fragment item" style="margin-top: 1ex; margin-left: 10em">$id\,(id\,(\lambda z.\,\underline{id\, z}))$</div>
+                <div class="fragment item" style="margin-left: 10em">$id\,(\underline{id\,(\lambda z.\,id\, z)})$</div>
+                <div class="fragment item" style="margin-left: 10em">$\underline{id\,(id\,(\lambda z.\,id\, z))}$</div>
             </div>
         </section>
         
@@ -179,12 +166,10 @@
             <h2><span style="text-transform:lowercase">&beta;</span>-réduction complète</h2>
             <div class="list" style="margin-bottom: 100%; margin-top: 4ex">
                 <div class="fragment item">On prend n'importe quel <span class="orange">redex</span></div>
-                <div class="item" style="margin-top: 5ex">
-                    <div class="fragment" style="margin-left: 10em">$id\:(\underline{id\:(\lambda z.\:id\: z)})$</div>
-                    <div class="fragment" style="margin-left: 10em">$id\:(\lambda z.\:\underline{id\: z})$</div>
-                    <div class="fragment" style="margin-left: 10em">$\underline{id\:(\lambda z.\: z)}$</div>
-                    <div class="fragment green" style="margin-left: 10em">$\lambda z.\: z$</div>
-                </div>
+                <div class="fragment item" style="margin-top: 5ex; margin-left: 10em">$id\:(\underline{id\:(\lambda z.\:id\: z)})$</div>
+                <div class="fragment item" style="margin-left: 10em">$id\:(\lambda z.\:\underline{id\: z})$</div>
+                <div class="fragment item" style="margin-left: 10em">$\underline{id\:(\lambda z.\: z)}$</div>
+                <div class="fragment item green" style="margin-left: 10em">$\lambda z.\: z$</div>
             </div>
         </section>
         
@@ -192,12 +177,10 @@
             <h2>Ordre normal</h2>
             <div class="list" style="margin-bottom: 100%; margin-top: 4ex">
                 <div class="fragment item">On prend <span class="orange">redex</span> le plus extérieur et le plus à gauche</div>
-                <div class="item" style="margin-top: 5ex">
-                    <div class="fragment" style="margin-left: 10em">$\underline{id\:(id\:(\lambda z.\:id\: z))}$</div>
-                    <div class="fragment" style="margin-left: 10em">$\underline{id\:(\lambda z.\:id\: z)}$</div>
-                    <div class="fragment" style="margin-left: 10em">$\lambda z.\:\underline{id\: z}$</div>
-                    <div class="fragment green" style="margin-left: 10em">$\lambda z.\: z$</div>
-                </div>
+                <div class="fragment item" style="margin-top: 5ex; margin-left: 10em">$\underline{id\:(id\:(\lambda z.\:id\: z))}$</div>
+                <div class="fragment item" style="margin-left: 10em">$\underline{id\:(\lambda z.\:id\: z)}$</div>
+                <div class="fragment item" style="margin-left: 10em">$\lambda z.\:\underline{id\: z}$</div>
+                <div class="fragment item green" style="margin-left: 10em">$\lambda z.\: z$</div>
             </div>
         </section>
         
@@ -206,11 +189,9 @@
             <div class="list" style="margin-bottom: 100%; margin-top: 5ex">
                 <div class="fragment item">On prend <span class="orange">redex</span> le plus extérieur et le plus à gauche</div>
                 <div class="fragment item">mais sans descendre dans les abstractions</div>
-                <div class="item" style="margin-top: 4ex">
-                    <div class="fragment" style="margin-left: 10em">$\underline{id\:(id\:(\lambda z.\:id\: z))}$</div>
-                    <div class="fragment" style="margin-left: 10em">$\underline{id\:(\lambda z.\:id\: z)}$</div>
-                    <div class="fragment green" style="margin-left: 10em">$\lambda z.\:id\: z$</div>
-                </div>
+                <div class="fragment item" style="margin-top: 4ex; margin-left: 10em">$\underline{id\:(id\:(\lambda z.\:id\: z))}$</div>
+                <div class="fragment item" style="margin-left: 10em">$\underline{id\:(\lambda z.\:id\: z)}$</div>
+                <div class="fragment item green" style="margin-left: 10em">$\lambda z.\:id\: z$</div>
                 <div class="fragment item " style="margin-top: 3ex">
                     Exemples : Algol60, Miranda, Lazy ML, Clean... <span class="fragment green">Haskell</span> 
                 </div>
@@ -221,11 +202,9 @@
             <h2>Appel par valeur</h2>
             <div class="list" style="margin-bottom: 100%; margin-top: 5ex">
                 <div class="fragment item">On prends le <span class="orange">redex</span> le plus extérieur quand son argument est une valeur</div>
-                <div class="item" style="margin-top: 4ex">
-                    <div class="fragment" style="margin-left: 10em">$id\:(\underline{id\:(\lambda z.\:id\: z)})$</div>
-                    <div class="fragment" style="margin-left: 10em">$\underline{id\:(\lambda z.\:id\: z)}$</div>
-                    <div class="fragment green" style="margin-left: 10em">$\lambda z.\:id\: z$</div>
-                </div>
+                <div class="fragment item" style="margin-top: 4ex; margin-left: 10em">$id\:(\underline{id\:(\lambda z.\:id\: z)})$</div>
+                <div class="fragment item" style="margin-left: 10em">$\underline{id\:(\lambda z.\:id\: z)}$</div>
+                <div class="fragment item green" style="margin-left: 10em">$\lambda z.\:id\: z$</div>
                 <div class="fragment item " style="margin-top: 3ex">
                     Exemples : <span class="fragment">tous les autres langages !</span>
                 </div>
