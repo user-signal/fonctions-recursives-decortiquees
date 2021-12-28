@@ -253,7 +253,7 @@
 
             </code></pre>
             <div class="list" style="margin-bottom: 100%; margin-top: 3ex">
-                <div class="item fragment">Arguments passés à la fonction (valeur associée <span class="magenta">x</span>)</div>
+                <div class="item fragment">Arguments passés à la fonction (valeur associée à <span class="magenta">x</span>)</div>
                 <div class="item fragment">Les variables locales</div>
                 <div class="item fragment">Les résultats de calculs intermédiaires (par exemple <span class="magenta">x * x</span>)</div>
                 <div class="item fragment">Le point (l'adresse) de retour</div>
@@ -265,7 +265,7 @@
             <h2>FORTRAN</h2>
             <div class="list" style="margin-top: 3em; margin-bottom: 100%">
                 <div class="item fragment"><span class="magenta">FOR</span>mula <span class="magenta">TRAN</span>slator publié en (avril 1957 - John Backus)</div>
-                <div class="item fragment"><span class="magenta">F66</span> apparition de <span class="code">SUBROUTINES</span> et <span class="code">FUNCTION</span> (mars 1966)</div>
+                <div class="item fragment"><span class="magenta">F66</span> apparition de <span class="code">SUBROUTINE</span> et <span class="code">FUNCTION</span> (mars 1966)</div>
                 <div class="item fragment" style="margin-left: 6em">Allocation statique à côté du code de la fonction</div>
                 <div class="item fragment" style="margin-top: 1ex; margin-bottom: 1ex"><span class="green">Plusieurs instances de la même fonction ?</span></div>
                 <div class="item fragment"><span class="magenta">F77</span> récursivité officieuse (avril 1978)</div>
@@ -345,6 +345,22 @@
             </div>
         </section>
 
+        <section>
+            <h2>Fonctions d'Ordre supérieur</h2>
+            <div class="list" style="margin-top: 3em">
+                <div class="fragment item">Fonctions comme <span class="green">type de première classe</span></div>
+                <div class="fragment item">Affectées à des variables</div>
+                <div class="fragment item">Passées en argument d'autres fonctions</div>
+                <div class="fragment item">Retournées par des fonctions</div>
+            </div>
+            <pre class="fragment" style="font-size: 1.1ex; margin-top: 3ex; margin-bottom: 100%"><code data-no-escape class="C#" style="max-height: 800px">
+                public static Func&lt;int, int&gt; AddCurried(int x) => y => x + y;
+                        
+                var add42 = AddCurried(42)
+                var add19 = AddCurried(19)
+            </code></pre>
+        </section>
+        
         <section>
             <h2>RISC</h2>
             <div class="list" style="margin-top: 3em; margin-bottom: 100%">

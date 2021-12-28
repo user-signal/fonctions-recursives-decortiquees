@@ -9,5 +9,8 @@
     &lt;TestId&gt;NUnit3x::BA748C2D-DDA8-4BAA-A448-1F9AE1C82BC2::net6.0::FSharp.EvenOddTest.TestIsEvenPeano&lt;/TestId&gt;
     &lt;TestId&gt;NUnit3x::BA748C2D-DDA8-4BAA-A448-1F9AE1C82BC2::net6.0::FSharp.EvenOddTest&lt;/TestId&gt;
     &lt;TestId&gt;NUnit3x::BA748C2D-DDA8-4BAA-A448-1F9AE1C82BC2::net6.0::FSharp.Square.TestSquare&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::EECAD850-4750-426E-A5FE-042404E29708::net6.0::CSharp.FactorialTests.curried_strange_test&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::EECAD850-4750-426E-A5FE-042404E29708::net6.0::CSharp.FactorialTests&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::EECAD850-4750-426E-A5FE-042404E29708::net6.0::CSharp.FactorialTest.fact_trampoline_test&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

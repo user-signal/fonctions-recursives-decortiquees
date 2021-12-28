@@ -9,13 +9,19 @@ namespace CSharp
         [Test]
         public void fact_test()
         {
-            Check.That(Fact(3)).IsEqualTo(6);
+            Check.That(Fact(3u)).IsEqualTo(6);
         }
 
         [Test]
         public void fact_tail_test()
         {
-            Check.That(FactTailRecursive(3, 1)).IsEqualTo(6);
+            Check.That(FactTailRecursive(3u, 1u)).IsEqualTo(6);
+        }
+
+        [Test]
+        public void fact_trampoline_test()
+        {
+            Check.That(FactTrampoline(3u, 1u).Run()).IsEqualTo(6);
         }
     }
 }
