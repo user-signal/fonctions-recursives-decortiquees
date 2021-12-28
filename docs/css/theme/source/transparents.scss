@@ -47,7 +47,7 @@
 }
 
 .reveal .slides section img[src$=".svg"] {
-  margin: 15px 0;
+  margin: 0 0;
   border: none;
   box-shadow: 0 0 0;
 }
@@ -61,15 +61,6 @@
   font-style: italic;
   font-size: larger;
   padding: 0 0;
-}
-
-.reveal .slides section ul {
-  margin-bottom: 100%;
-  margin-left: -1ex
-}
-
-.reveal .slides section ul li {
-  list-style-type: none;
 }
 
 .reveal .list {

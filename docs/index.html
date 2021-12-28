@@ -274,21 +274,8 @@
         </section>
         
         <section>
-            <h2>RISC</h2>
-            <div class="list" style="margin-top: 3em; margin-bottom: 100%">
-                <div class="item fragment"><span class="magenta">R</span>educed <span class="magenta">I</span>nstruction <span class="magenta">S</span>et <span class="magenta">C</span>omputer</div>
-                <div class="item fragment">IBM 801 (1975-1980)</div>
-                <div class="item fragment">David Paterson à Berkeley</div>
-                <div class="item fragment">Dec Alpha, IBM POWER, Motorola 88000... (1980 et après)</div>
-                <div class="item fragment">RISC-V</div>
-                <div class="item fragment" style="margin-top: 1ex">Moins d'instructions plus simples</div>
-                <div class="item fragment">Plus de registres généraux</div>
-            </div>
-        </section>
-        
-        <section>
             <h2>Récursion simple</h2>
-            <div class="list" style="margin-top: 3rem">
+            <div class="list" style="margin-top: 3em">
                 <div class="item fragment">Un cas de base ou cas d'arrêt</div>
                 <div class="item fragment">Un cas général définit au rang <span class="blue">$n$</span> en fonction du rang <span class="blue">$n - 1$</span></div>
             </div>
@@ -301,7 +288,7 @@
 
         <section>
             <h2>Récursion mutuelle</h2>
-            <div class="list" style="margin-top: 3rem">
+            <div class="list" style="margin-top: 3em">
                 <div class="item fragment" data-fragment-index="1">Plusieurs fonctions récursives se définissent </div>
                 <div class="item fragment" data-fragment-index="1">les unes part rapport aux autres</div>
             </div>
@@ -322,7 +309,57 @@
         </section>
 
         <section>
-            <h2>Récursion terminale</h2>
+            <h2>Mise en œuvre</h2>
+            <div class="list" style="margin-bottom: 100%; margin-top: 3em">
+                <div class="item fragment">Plusieurs instances ou <span class="orange">activations</span> d'une même fonction</div>
+                <div class="item fragment">Enregistrement d'activation</div>
+                <div class="item fragment">... Ou <span class="orange">activation frame</span></div>
+                <div class="item fragment">... Ou <span class="orange">activation record</span></div>
+                <div class="item fragment" style="margin-top: 2ex">Crée à l'activation</div>
+                <div class="item fragment">Plus utile à la désactivation</div>
+                <div class="item fragment">$\Rightarrow$ <span class="green">Pile</span></div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Mise en œuvre</h2>
+            <div style="margin-top: 3em; display: grid; grid: 'left right' / 0.75fr 1.25fr">
+                <div style="grid-area: left">
+                    <pre style="max-height: 800px; font-size: 1.1ex; margin-bottom: 100%"><code class="F#" data-noescape>
+        <span>  Fact 2</span>
+        <span class="fragment" data-fragment-index="1">    Fact 1</span>
+        <span class="fragment" data-fragment-index="2">      Fact 0</span>
+        <span class="fragment" data-fragment-index="4">    Fact 1</span>
+        <span class="fragment" data-fragment-index="5">  Fact 2</span>
+                    </code></pre>
+                </div>
+                <div class="r-stack" style="grid-area: right">
+                    <img src="images/pile/main.svg" alt="">
+                    <img class="fragment fade-in-then-out" data-fragment-index="0" src="images/pile/0.svg" alt="">
+                    <img class="fragment fade-in-then-out" data-fragment-index="1" src="images/pile/1.svg" alt="">
+                    <img class="fragment fade-in-then-out" data-fragment-index="2" src="images/pile/2.svg" alt="">
+                    <img class="fragment fade-in-then-out" data-fragment-index="3" src="images/pile/3.svg" alt="">
+                    <img class="fragment fade-in-then-out" data-fragment-index="4" src="images/pile/4.svg" alt="">
+                    <img class="fragment fade-in-then-out" data-fragment-index="5" src="images/pile/5.svg" alt="">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>RISC</h2>
+            <div class="list" style="margin-top: 3em; margin-bottom: 100%">
+                <div class="item fragment"><span class="magenta">R</span>educed <span class="magenta">I</span>nstruction <span class="magenta">S</span>et <span class="magenta">C</span>omputer</div>
+                <div class="item fragment">IBM 801 (1975-1980)</div>
+                <div class="item fragment">David Paterson à Berkeley</div>
+                <div class="item fragment">Dec Alpha, IBM POWER, Motorola 88000... (1980 et après)</div>
+                <div class="item fragment">RISC-V</div>
+                <div class="item fragment" style="margin-top: 1ex">Moins d'instructions plus simples</div>
+                <div class="item fragment">Plus de registres généraux</div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Appel terminal</h2>
             <div class="list" style="margin-top: 3rem">
                 <div class="item fragment" data-fragment-index="1">L'appel récursif est la dernière action </div>
                 <div class="item fragment" data-fragment-index="1">effectuée dans la fonction</div>
