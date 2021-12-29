@@ -264,7 +264,7 @@
         <section>
             <h2>FORTRAN</h2>
             <div class="list" style="margin-top: 3em; margin-bottom: 100%">
-                <div class="item fragment"><span class="magenta">FOR</span>mula <span class="magenta">TRAN</span>slator publié en (avril 1957 - John Backus)</div>
+                <div class="item fragment"><span class="magenta">FOR</span>mula <span class="magenta">TRAN</span>slator publié en (avril 1957 - <span class="blue">John Backus</span>)</div>
                 <div class="item fragment"><span class="magenta">F66</span> apparition de <span class="code">SUBROUTINE</span> et <span class="code">FUNCTION</span> (mars 1966)</div>
                 <div class="item fragment" style="margin-left: 6em">Allocation statique à côté du code de la fonction</div>
                 <div class="item fragment" style="margin-top: 1ex; margin-bottom: 1ex"><span class="green">Plusieurs instances de la même fonction ?</span></div>
@@ -279,10 +279,17 @@
                 <div class="item fragment">Un cas de base ou cas d'arrêt</div>
                 <div class="item fragment">Un cas général définit au rang <span class="blue">$n$</span> en fonction du rang <span class="blue">$n - 1$</span></div>
             </div>
-            <pre class="fragment" style="font-size: 1.1ex; margin-top: 3ex; margin-bottom: 100%"><code class="F#" style="max-height: 800px">
+            <pre class="fragment" style="font-size: 1.1ex; margin-top: 2ex"><code class="F#" style="max-height: 800px">
                         let rec Fact = function
-                            | 0 -> 1
-                            | n -> n * Fact (n - 1)
+                            | 0u -> 1u
+                            | (n: uint) -> n * Fact(n - 1u)
+            </code></pre>
+            <pre class="fragment" style="font-size: 1.1ex; margin-top: 2ex; margin-bottom: 100%"><code class="C#" style="max-height: 800px">
+                        public static uint Fact(uint n) => n switch
+                        {
+                            0u => 1u,
+                            _ => n * Fact(n - 1)
+                        };
             </code></pre>
         </section>
 
@@ -292,19 +299,16 @@
                 <div class="item fragment" data-fragment-index="1">Plusieurs fonctions récursives se définissent </div>
                 <div class="item fragment" data-fragment-index="1">les unes part rapport aux autres</div>
             </div>
-            <pre class="fragment" style="font-size: 1.1ex; margin-top: 3ex"><code class="F#" style="max-height: 800px">
-                        type Peano = Zero | Succ of Peano
-            </code></pre>
-            <pre class="fragment" style="font-size: 1.1ex; margin-top: 1ex; margin-bottom: 100%"><code class="F#" style="max-height: 800px">
-                        let rec IsEvenPeano =
+            <pre class="fragment" style="font-size: 1.1ex; margin-top: 3ex; margin-bottom: 100%"><code class="F#" style="max-height: 800px">
+                        let rec IsEven =
                             function
-                            | Zero -> true
-                            | Succ n -> IsOddPeano n
+                            | 0u -> true
+                            | (n: uint) -> IsOdd(n - 1u)
                         
-                        and IsOddPeano =
+                        and IsOdd =
                             function
-                            | Zero -> false
-                            | Succ n -> IsEvenPeano n
+                            | 1u -> true
+                            | (n: uint) -> IsEven(n - 1u)
             </code></pre>
         </section>
 
@@ -325,22 +329,25 @@
             <h2>Mise en œuvre</h2>
             <div style="margin-top: 3em; display: grid; grid: 'left right' / 0.75fr 1.25fr">
                 <div style="grid-area: left">
-                    <pre style="max-height: 800px; font-size: 1.1ex; margin-bottom: 100%"><code class="F#" data-noescape>
-        <span>  Fact 2</span>
-        <span class="fragment" data-fragment-index="1">    Fact 1</span>
-        <span class="fragment" data-fragment-index="2">      Fact 0</span>
-        <span class="fragment" data-fragment-index="4">    Fact 1</span>
-        <span class="fragment" data-fragment-index="5">  Fact 2</span>
+                    <pre style="max-height: 800px; font-size: 1.1ex; margin-bottom: 100%; margin-top: 0"><code class="F#" data-noescape>
+        <span>Main</span>
+        <span class="fragment" data-fragment-index="1">  Fact(2)</span>
+        <span class="fragment" data-fragment-index="2">    Fact(1)</span>
+        <span class="fragment" data-fragment-index="3">      Fact(0)</span>
+        <span class="fragment" data-fragment-index="5">    Fact(1)</span>
+        <span class="fragment" data-fragment-index="6">  Fact(2)</span>
+        <span class="fragment" data-fragment-index="7">Main</span>
                     </code></pre>
                 </div>
                 <div class="r-stack" style="grid-area: right">
-                    <img src="images/pile/main.svg" alt="">
-                    <img class="fragment fade-in-then-out" data-fragment-index="0" src="images/pile/0.svg" alt="">
+                    <img class="fragment fade-out" data-fragment-index="1" src="images/pile/0.svg" alt="">
                     <img class="fragment fade-in-then-out" data-fragment-index="1" src="images/pile/1.svg" alt="">
                     <img class="fragment fade-in-then-out" data-fragment-index="2" src="images/pile/2.svg" alt="">
                     <img class="fragment fade-in-then-out" data-fragment-index="3" src="images/pile/3.svg" alt="">
                     <img class="fragment fade-in-then-out" data-fragment-index="4" src="images/pile/4.svg" alt="">
                     <img class="fragment fade-in-then-out" data-fragment-index="5" src="images/pile/5.svg" alt="">
+                    <img class="fragment fade-in-then-out" data-fragment-index="6" src="images/pile/6.svg" alt="">
+                    <img class="fragment fade-in-then-out" data-fragment-index="7" src="images/pile/7.svg" alt="">
                 </div>
             </div>
         </section>
@@ -366,7 +373,7 @@
             <div class="list" style="margin-top: 3em; margin-bottom: 100%">
                 <div class="item fragment"><span class="magenta">R</span>educed <span class="magenta">I</span>nstruction <span class="magenta">S</span>et <span class="magenta">C</span>omputer</div>
                 <div class="item fragment">IBM 801 (1975-1980)</div>
-                <div class="item fragment">David Paterson à Berkeley</div>
+                <div class="item fragment"><span class="blue">David Paterson</span> à Berkeley</div>
                 <div class="item fragment">Dec Alpha, IBM POWER, Motorola 88000... (1980 et après)</div>
                 <div class="item fragment">RISC-V</div>
                 <div class="item fragment" style="margin-top: 1ex">Moins d'instructions plus simples</div>
@@ -376,17 +383,113 @@
         
         <section>
             <h2>Appel terminal</h2>
-            <div class="list" style="margin-top: 3rem">
-                <div class="item fragment" data-fragment-index="1">L'appel récursif est la dernière action </div>
-                <div class="item fragment" data-fragment-index="1">effectuée dans la fonction</div>
+            <div class="list" style="margin-top: 3em">
+                <div class="item fragment" data-fragment-index="1">La dernière action d'une fonction est un appel de fonction</div>
             </div>
-            <pre class="fragment" style="font-size: 1.1ex; margin-top: 3ex; margin-bottom: 100%"><code class="F#" style="max-height: 800px">
-                        let rec FactTailRecursive acc = function
-                            | 0 -> acc
-                            | n -> FactTailRecursive (n * acc) (n - 1)
+            <pre class="fragment" style="font-size: 1.1ex; margin-top: 2ex"><code class="F#" style="max-height: 800px">
+                        let rec FactTailRecursive acc =
+                            function
+                            | 0u -> acc
+                            | (n: uint) -> FactTailRecursive(n * acc) (n - 1u)
+            </code></pre>
+            <pre class="fragment" style="font-size: 1.1ex; margin-top: 2ex; margin-bottom: 100%"><code class="C#" style="max-height: 800px">
+                        public static uint FactTailRecursive(uint acc, uint n) => n switch
+                        {
+                            0u => acc,
+                            _ => FactTailRecursive(n * acc, n - 1)
+                        };
             </code></pre>
         </section>
+        
+        <section>
+            <h2>Appel terminal</h2>
+            <div class="list" style="margin-top: 3em; margin-bottom: 100%">
+                <div class="item fragment">Puisqu'il ne restera plus rien à faire au retour de la fonction...</div>
+                <div class="item fragment">Autant remonter d'un étage directement !</div>
+                <div class="item fragment" style="margin-top: 1ex">Économie d'allocation (espace constant)</div>
+                <div class="item fragment">Appel plus rapide</div>
+                <div class="item fragment" style="margin-top: 1ex">Style par continuation</div>
+                <div class="item fragment">Recursion terminale</div>
+            </div>
+        </section>
 
+        <section>
+            <h2>Mise en œuvre</h2>
+            <div style="margin-top: 3em; display: grid; grid: 'left right' / 0.75fr 1.25fr">
+                <div style="grid-area: left">
+                    <pre style="max-height: 800px; font-size: 1.1ex; margin-bottom: 100%; margin-top: 0"><code class="F#" data-noescape>
+        <span>Main</span>
+        <span class="fragment" data-fragment-index="1">  Fact(1, 2)</span>
+        <span class="fragment" data-fragment-index="3">    Fact(2, 1)</span>
+        <span class="fragment" data-fragment-index="5">      Fact(2, 0)</span>
+        <span class="fragment" data-fragment-index="7">Main</span>
+                    </code></pre>
+                </div>
+                <div class="r-stack" style="grid-area: right">
+                    <img class="fragment fade-out" data-fragment-index="1" src="images/terminal/0.svg" alt="">
+                    <img class="fragment fade-in-then-out" data-fragment-index="1" src="images/terminal/1.svg" alt="">
+                    <img class="fragment fade-in-then-out" data-fragment-index="2" src="images/terminal/2.svg" alt="">
+                    <img class="fragment fade-in-then-out" data-fragment-index="3" src="images/terminal/3.svg" alt="">
+                    <img class="fragment fade-in-then-out" data-fragment-index="4" src="images/terminal/4.svg" alt="">
+                    <img class="fragment fade-in-then-out" data-fragment-index="5" src="images/terminal/5.svg" alt="">
+                    <img class="fragment fade-in-then-out" data-fragment-index="6" src="images/terminal/6.svg" alt="">
+                    <img class="fragment fade-in-then-out" data-fragment-index="7" src="images/terminal/7.svg" alt="">
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Mise en œuvre</h2>
+            <div style="margin-top: 3em; display: grid; grid: 'left right' / 1fr 1fr">
+                <div style="grid-area: left">
+                    <pre style="font-size: 0.8ex; margin-bottom: 100%; margin-top: 0"><code data-noescape>
+    // [8 67 - 8 118]
+    IL_0000: ldarg.0      // n
+    IL_0001: brfalse.s    IL_0010
+    IL_0003: ldarg.0      // n
+    IL_0004: ldc.i4.1
+    IL_0005: sub
+    IL_0006: ldarg.0      // n
+    IL_0007: ldarg.1      // acc
+    IL_0008: mul
+    IL_0009: call         unsigned int32 
+    IL_000e: br.s         IL_0011
+    IL_0010: ldarg.1      // acc
+    IL_0011: ret
+                    </code></pre>
+                </div>
+                <div style="grid-area: right">
+                    <pre style="font-size: 0.8ex; margin-bottom: 100%; margin-top: 0"><code style="max-height: 800px" data-noescape>
+    // start of loop, entry point: IL_0000
+    IL_0000: ldarg.1      // _arg1
+    IL_0001: stloc.0      // V_0
+    
+    IL_0002: ldloc.0      // V_0
+    IL_0003: switch       (IL_000e)
+    IL_000c: br.s         IL_0010
+    
+    // [8 13 - 8 16]
+    IL_000e: ldarg.0      // acc
+    IL_000f: ret
+    
+    IL_0010: ldloc.0      // V_0
+    IL_0011: stloc.1      // n
+    
+    // [9 19 - 9 55]
+    IL_0012: ldloc.1      // n
+    IL_0013: ldarg.0      // acc
+    IL_0014: mul
+    IL_0015: ldloc.1      // n
+    IL_0016: ldc.i4.1
+    IL_0017: sub
+    IL_0018: starg.s      _arg1
+    IL_001a: starg.s      acc
+    IL_001c: br.s         IL_0000
+                    </code></pre>
+                </div>
+            </div>
+        </section>
+        
         <section>
             <h2>Compiler Explorer</h2>
             <img style="margin-top: 3ex; margin-bottom: 100%" src="images/Godbolt.png" alt="Compiler explorer">
@@ -394,42 +497,47 @@
         
         <section>
             <h2>Trampoline</h2>
-            <pre class="fragment" style="font-size: 1.1ex; margin-top: 3em"><code class="Java" style="max-height: 800px">
-                        public sealed interface TailRec&lt;T&gt; permits Suspend, Return {
-                            default T run() {
-                                ...
-                            }
-                        }
-                        public record Return&lt;T&gt;(T value) implements TailRec&lt;T&gt; {}
-                        public record Suspend&lt;T&gt;(Supplier&lt;TailRec&lt;T&gt;&gt; thunk) implements TailRec&lt;T&gt; {}
+            <pre class="fragment" style="font-size: 1.1ex; margin-top: 3em"><code class="C#" style="max-height: 800px">
+                public interface ITailRec&lt;out T&gt; {
+                    public T Run() { ... }
+                }
+        
+                public struct Return&lt;T&gt; : ITailRec&lt;T&gt; {
+                    public T Value { get; init; }
+                }
+        
+                public struct Suspend&lt;T&gt; : ITailRec&lt;T&gt; {
+                    public Func&lt;ITailRec&lt;T&gt;&gt; Thunk { get; init; }
+                }
             </code></pre>
-            <pre class="fragment" style="font-size: 1.1ex; margin-top: 1ex; margin-bottom: 100%"><code class="Java" style="max-height: 800px">
-                        public static TailRec&lt;Integer&gt; factTrampoline(int n, int acc) {
-                            if (n == 0)
-                                return new Return&lt;&gt;(acc);
-                            else
-                                return new Suspend&lt;&gt;(() -> factTrampoline(n - 1, n * acc));
-                        }
+            <pre class="fragment" style="font-size: 1.1ex; margin-top: 1ex; margin-bottom: 100%"><code class="C#" style="max-height: 800px">
+                public static ITailRec&lt;uint&gt; FactTrampoline(uint acc, uint n) {
+                    if (n == 0)
+                        return new Return&lt;uint&gt; { Value = acc };
+                    else
+                        return new Suspend&lt;uint&gt; { Thunk = () => FactTrampoline(n * acc, n - 1) };
+                }
             </code></pre>
         </section>
 
         <section>
             <h2>Trampoline</h2>
-            <pre class="fragment" style="font-size: 1.1ex; margin-top: 3em"><code class="Java" style="max-height: 800px">
-                        factTrampoline(3, 1).run()
+            <pre class="fragment" style="font-size: 1.1ex; margin-top: 3em"><code class="C#" style="max-height: 800px">
+                FactTrampoline(1, 3).run()
             </code></pre>
-            <pre class="fragment" style="font-size: 1.1ex; margin-top: 1ex; margin-bottom: 100%"><code class="Java" style="max-height: 800px">
-                        public sealed interface TailRec&lt;T&gt; permits Suspend, Return {
-                            default T run() {
-                                var current = this;
-                                do {
-                                    switch (current) {
-                                        case Return r: return (T) r.value;
-                                        case Suspend s: current = (TailRec&lt;T&gt;) s.thunk.get();
-                                    }
-                                } while (true);
+            <pre class="fragment" style="font-size: 1.1ex; margin-top: 1ex; margin-bottom: 100%"><code class="C#" style="max-height: 800px">
+                public interface ITailRec&lt;out T&gt; {
+                    public T Run() {
+                        var current = this;
+                        for (;;)
+                            switch (current) {
+                                case Return&lt;T&gt; @return: return @return.Value;
+                                case Suspend&lt;T&gt; suspend:
+                                    current = suspend.Thunk();
+                                    break;
                             }
-                        }
+                    }
+                }
             </code></pre>
         </section>
 

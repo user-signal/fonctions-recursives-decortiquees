@@ -2,20 +2,18 @@ module FSharp.EvenOdd
 
 let rec IsEven =
     function
-    | 0 -> true
-    | n when n > 0 -> IsOdd(n - 1)
-    | _ -> false
+    | 0u -> true
+    | (n: uint) -> IsOdd(n - 1u)
 
 and IsOdd =
     function
-    | 1 -> true
-    | n when n > 1 -> IsEven(n - 1)
-    | _ -> false
+    | 1u -> true
+    | (n: uint) -> IsEven(n - 1u)
 
 type Peano =
     | Zero
     | Succ of Peano
-    
+
 let rec IsEvenPeano =
     function
     | Zero -> true
@@ -25,4 +23,3 @@ and IsOddPeano =
     function
     | Zero -> false
     | Succ n -> IsEvenPeano n
-

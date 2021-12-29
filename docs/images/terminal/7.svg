@@ -15,7 +15,7 @@
    version="1.1"
    id="svg865"
    inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
-   sodipodi:docname="1.svg"
+   sodipodi:docname="4.svg"
    inkscape:export-filename="/home/fred/Projets/Présentations/fonctions-snowcamp/docs/images/pile1.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96">
@@ -28,9 +28,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.72875"
-     inkscape:cx="411.42852"
-     inkscape:cy="567.96093"
+     inkscape:zoom="0.86437495"
+     inkscape:cx="272.33569"
+     inkscape:cy="426.02304"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -67,18 +67,6 @@
      id="layer1"
      transform="translate(0,-425.87294)"
      style="display:inline">
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:26.66666603px;line-height:1.25;font-family:Lato;-inkscape-font-specification:'Lato, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none"
-       x="149.80713"
-       y="461.06329"
-       id="text847-0-4"><tspan
-         sodipodi:role="line"
-         x="149.80713"
-         y="461.06329"
-         id="tspan951">Activation <tspan
-   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.66666603px;font-family:Lato;-inkscape-font-specification:'Lato, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start"
-   id="tspan899">Main</tspan></tspan></text>
     <flowRoot
        xml:space="preserve"
        id="flowRoot901"
@@ -90,44 +78,7 @@
            height="290"
            x="-70"
            y="-20" /></flowRegion><flowPara
-         id="flowPara907" /></flowRoot>    <rect
-       style="display:inline;fill:none;fill-opacity:1;stroke:#131313;stroke-width:0.69292063;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="rect1415-7"
-       width="243.03241"
-       height="130.00262"
-       x="411.1337"
-       y="426.89154" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:26.66666603px;line-height:1.25;font-family:Lato;-inkscape-font-specification:'Lato, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none"
-       x="444.21399"
-       y="461.06329"
-       id="text847-7"><tspan
-         sodipodi:role="line"
-         id="tspan845-54"
-         x="444.21399"
-         y="461.06329">Arg: _</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:26.66666603px;line-height:1.25;font-family:Lato;-inkscape-font-specification:'Lato, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none"
-       x="444.21399"
-       y="497.86185"
-       id="text847-5-8"><tspan
-         sodipodi:role="line"
-         x="444.21399"
-         y="497.86185"
-         id="tspan867-1">Ret: _ </tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:26.66666603px;line-height:1.25;font-family:Lato;-inkscape-font-specification:'Lato, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none"
-       x="444.21399"
-       y="534.6604"
-       id="text847-0-2"><tspan
-         sodipodi:role="line"
-         id="tspan845-5-8"
-         x="444.21399"
-         y="534.6604">Temp: _</tspan></text>
-    <text
+         id="flowPara907" /></flowRoot>    <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:26.66666603px;line-height:1.25;font-family:Lato;-inkscape-font-specification:'Lato, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
        x="285"
@@ -140,51 +91,53 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:26.66666603px;line-height:1.25;font-family:Lato;-inkscape-font-specification:'Lato, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none"
-       x="149.80713"
-       y="591.06238"
+       x="149.77708"
+       y="461.06329"
        id="text847-0-4-0"><tspan
          sodipodi:role="line"
-         x="149.80713"
-         y="591.06238"
+         x="149.77708"
+         y="461.06329"
          id="tspan951-4">Activation <tspan
    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.66666603px;font-family:Lato;-inkscape-font-specification:'Lato, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start"
-   id="tspan899-8">Fact(2)</tspan></tspan></text>
+   id="tspan899-8">Main</tspan></tspan></text>
     <rect
        style="display:inline;fill:none;fill-opacity:1;stroke:#131313;stroke-width:0.69292063;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="rect1415-7-8"
+       id="rect1415-7-88"
        width="243.03241"
        height="130.00262"
-       x="411.13367"
-       y="556.89062" />
+       x="411.10361"
+       y="426.89154" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:26.66666603px;line-height:1.25;font-family:Lato;-inkscape-font-specification:'Lato, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none"
-       x="444.21396"
-       y="591.06238"
-       id="text847-7-8"><tspan
+       x="444.1839"
+       y="461.06329"
+       id="text847-7-9"><tspan
          sodipodi:role="line"
-         id="tspan845-54-9"
-         x="444.21396"
-         y="591.06238">Arg: 2</tspan></text>
+         id="tspan845-54-7"
+         x="444.1839"
+         y="461.06329">Arg: _</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:26.66666603px;line-height:1.25;font-family:Lato;-inkscape-font-specification:'Lato, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none"
-       x="444.21396"
-       y="627.8609"
+       x="444.1839"
+       y="497.86185"
        id="text847-5-8-7"><tspan
          sodipodi:role="line"
-         x="444.21396"
-         y="627.8609"
-         id="tspan867-1-7">Ret: @Main </tspan></text>
+         x="444.1839"
+         y="497.86185"
+         id="tspan867-1-6">Ret: _ </tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:26.66666603px;line-height:1.25;font-family:Lato;-inkscape-font-specification:'Lato, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none"
-       x="444.21396"
-       y="664.65948"
-       id="text847-0-2-6"><tspan
+       x="444.1839"
+       y="534.6604"
+       id="text847-0-2-4"><tspan
          sodipodi:role="line"
-         id="tspan845-5-8-4"
-         x="444.21396"
-         y="664.65948">Temp: _</tspan></text>
+         id="tspan845-5-8-3"
+         x="444.1839"
+         y="534.6604">Temp:  <tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.66666603px;font-family:Lato;-inkscape-font-specification:'Lato, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start"
+   id="tspan860">2</tspan></tspan></text>
   </g>
 </svg>

@@ -15,13 +15,13 @@ namespace CSharp
         [Test]
         public void fact_tail_test()
         {
-            Check.That(FactTailRecursive(3u, 1u)).IsEqualTo(6);
+            Check.That(FactTailRecursive(1u, 3u)).IsEqualTo(6);
         }
 
         [Test]
         public void fact_trampoline_test()
         {
-            Check.That(FactTrampoline(3u, 1u).Run()).IsEqualTo(6);
+            Check.That(FactTrampoline(1u, 3u).Run()).IsEqualTo(6);
         }
     }
 }
