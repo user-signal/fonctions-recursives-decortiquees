@@ -90,15 +90,11 @@
   background: $base03;
 }
 
-.reveal .ch {
-  background-color: $base01;
+.reveal pre code {
+  background-color: $base03;
+  max-height: 800px;
 }
 
-.reveal .code {
-  background-color: #F8F8F8;
-  border-radius: 2px;
-  font-family: monospace;
-  font-size: smaller;
-  padding: 1px 4px;
-  border: 1px solid grey;
+.reveal .ch {
+  background-color: $base01;
 }

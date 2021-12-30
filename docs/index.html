@@ -439,57 +439,169 @@
         </section>
         
         <section>
-            <h2>Mise en œuvre</h2>
-            <div style="margin-top: 3em; display: grid; grid: 'left right' / 1fr 1fr">
+            <h2>Code produit</h2>
+            <div style="margin-top: 1em; display: grid; grid: 'left-header right-header' 'left right' / 1fr 1fr">
+                <div style="grid-area: left-header; text-align: left; margin-left: 0.2em">C#</div>
+                <div style="grid-area: right-header; text-align: left; margin-left: 0.2em">F#</div>
                 <div style="grid-area: left">
-                    <pre style="font-size: 0.8ex; margin-bottom: 100%; margin-top: 0"><code data-noescape>
-    // [8 67 - 8 118]
-    IL_0000: ldarg.0      // n
-    IL_0001: brfalse.s    IL_0010
-    IL_0003: ldarg.0      // n
-    IL_0004: ldc.i4.1
-    IL_0005: sub
-    IL_0006: ldarg.0      // n
-    IL_0007: ldarg.1      // acc
-    IL_0008: mul
-    IL_0009: call         unsigned int32 
-    IL_000e: br.s         IL_0011
-    IL_0010: ldarg.1      // acc
-    IL_0011: ret
+                    <pre style="font-size: large; margin-bottom: 100%; margin-top: 0"><code data-noescape>
+  .method public hidebysig static unsigned int32
+    FactTailRecursive(unsigned int32 acc, unsigned int32 n
+    ) cil managed
+  {
+    [...]
+    IL_0000: ldc.i4.1
+    IL_0001: brtrue.s     IL_0004
+
+    IL_0003: nop
+
+    IL_0004: ldarg.1      // n
+    IL_0005: brfalse.s    IL_0009
+    IL_0007: br.s         IL_000d
+
+    IL_0009: ldarg.0      // acc
+    IL_000a: stloc.0      // V_0
+    IL_000b: br.s         IL_001b
+
+    IL_000d: ldarg.1      // n
+    IL_000e: ldarg.0      // acc
+    IL_000f: mul
+    IL_0010: ldarg.1      // n
+    IL_0011: ldc.i4.1
+    IL_0012: sub
+    IL_0013: call         unsigned int32 CSharp.Factorial::FactTailRecursive(
+                              unsigned int32, unsigned int32
+                          )
+    IL_0018: stloc.0      // V_0
+    IL_0019: br.s         IL_001b
+
+    IL_001b: ldc.i4.1
+    IL_001c: brtrue.s     IL_001f
+
+    IL_001e: nop
+
+    IL_001f: ldloc.0      // V_0
+    IL_0020: ret
+  } 
                     </code></pre>
                 </div>
                 <div style="grid-area: right">
-                    <pre style="font-size: 0.8ex; margin-bottom: 100%; margin-top: 0"><code style="max-height: 800px" data-noescape>
-    // start of loop, entry point: IL_0000
-    IL_0000: ldarg.1      // _arg1
-    IL_0001: stloc.0      // V_0
-    
-    IL_0002: ldloc.0      // V_0
-    IL_0003: switch       (IL_000e)
-    IL_000c: br.s         IL_0010
-    
-    // [8 13 - 8 16]
-    IL_000e: ldarg.0      // acc
-    IL_000f: ret
-    
-    IL_0010: ldloc.0      // V_0
-    IL_0011: stloc.1      // n
-    
-    // [9 19 - 9 55]
-    IL_0012: ldloc.1      // n
-    IL_0013: ldarg.0      // acc
-    IL_0014: mul
-    IL_0015: ldloc.1      // n
-    IL_0016: ldc.i4.1
-    IL_0017: sub
-    IL_0018: starg.s      _arg1
-    IL_001a: starg.s      acc
-    IL_001c: br.s         IL_0000
+                    <pre style="font-size: large; margin-bottom: 100%; margin-top: 0"><code style="max-height: 800px" data-noescape>
+  .method public static unsigned int32
+    FactTailRecursive(unsigned int32 acc, unsigned int32 _arg1
+    ) cil managed
+  {
+    [...]
+      IL_0000: ldarg.1      // _arg1
+      IL_0001: stloc.0      // V_0
+
+      IL_0002: ldloc.0      // V_0
+      IL_0003: switch       (IL_000e)
+      IL_000c: br.s         IL_0010
+
+      IL_000e: ldarg.0      // acc
+      IL_000f: ret
+
+      IL_0010: ldloc.0      // V_0
+      IL_0011: stloc.1      // n
+
+      IL_0012: ldloc.1      // n
+      IL_0013: ldarg.0      // acc
+      IL_0014: mul
+      IL_0015: ldloc.1      // n
+      IL_0016: ldc.i4.1
+      IL_0017: sub
+      IL_0018: starg.s      _arg1
+      IL_001a: starg.s      acc
+      IL_001c: br.s         IL_0000
+  } 
                     </code></pre>
                 </div>
             </div>
         </section>
-        
+
+        <section>
+            <h2>Code produit</h2>
+            <div style="margin-top: 1em; display: grid; grid: 'left-header right-header' 'left right' / 1fr 1fr">
+                <div style="grid-area: left-header; text-align: left; margin-left: 0.2em">C#</div>
+                <div style="grid-area: right-header; text-align: left; margin-left: 0.2em">F#</div>
+                <div style="grid-area: left">
+                    <pre style="font-size: large; margin-bottom: 100%; margin-top: 0"><code data-noescape>
+  .method public hidebysig static unsigned int32
+    <span class="ch">FactTailRecursive(unsigned int32 acc, unsigned int32 n</span>
+    ) cil managed
+  {
+    [...]
+    IL_0000: ldc.i4.1
+    IL_0001: brtrue.s     IL_0004
+
+    IL_0003: nop
+
+    IL_0004: ldarg.1      // n
+    IL_0005: brfalse.s    IL_0009
+    IL_0007: br.s         IL_000d
+
+    IL_0009: ldarg.0      // acc
+    IL_000a: stloc.0      // V_0
+    IL_000b: br.s         IL_001b
+
+    IL_000d: ldarg.1      // n
+    IL_000e: ldarg.0      // acc
+    IL_000f: mul
+    IL_0010: ldarg.1      // n
+    IL_0011: ldc.i4.1
+    IL_0012: sub
+    IL_0013: <span class="ch">call         unsigned int32 CSharp.Factorial::FactTailRecursive(</span>
+             <span class="ch">                 unsigned int32, unsigned int32</span>
+             <span class="ch">             )</span>
+    IL_0018: stloc.0      // V_0
+    IL_0019: br.s         IL_001b
+
+    IL_001b: ldc.i4.1
+    IL_001c: brtrue.s     IL_001f
+
+    IL_001e: nop
+
+    IL_001f: ldloc.0      // V_0
+    IL_0020: ret
+  } 
+                    </code></pre>
+                </div>
+                <div style="grid-area: right">
+                    <pre style="font-size: large; margin-bottom: 100%; margin-top: 0"><code style="max-height: 800px" data-noescape>
+  .method public static unsigned int32
+    FactTailRecursive(unsigned int32 acc, unsigned int32 _arg1
+    ) cil managed
+  {
+      [...]
+      <span class="ch">IL_0000</span>: ldarg.1      // _arg1
+      IL_0001: stloc.0      // V_0
+
+      IL_0002: ldloc.0      // V_0
+      IL_0003: switch       (IL_000e)
+      IL_000c: br.s         IL_0010
+
+      IL_000e: ldarg.0      // acc
+      IL_000f: ret
+
+      IL_0010: ldloc.0      // V_0
+      IL_0011: stloc.1      // n
+
+      IL_0012: ldloc.1      // n
+      IL_0013: ldarg.0      // acc
+      IL_0014: mul
+      IL_0015: ldloc.1      // n
+      IL_0016: ldc.i4.1
+      IL_0017: sub
+      IL_0018: starg.s      _arg1
+      IL_001a: starg.s      acc
+      IL_001c: <span class="ch">br.s         IL_0000</span>
+  } 
+                    </code></pre>
+                </div>
+            </div>
+        </section>
+
         <section>
             <h2>Compiler Explorer</h2>
             <img style="margin-top: 3ex; margin-bottom: 100%" src="images/Godbolt.png" alt="Compiler explorer">

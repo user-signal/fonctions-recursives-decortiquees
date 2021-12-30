@@ -9,8 +9,3 @@ let rec FactTailRecursive acc =
     function
     | 0u -> acc
     | (n: uint) -> FactTailRecursive(n * acc) (n - 1u)
-
-let rec FactTailRecursive2 acc n =
-    match n with
-    | 0u -> acc
-    | (n: uint) -> FactTailRecursive2(n * acc) (n - 1u)
