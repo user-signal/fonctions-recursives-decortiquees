@@ -248,15 +248,16 @@
         <section>
             <h2>Commençons simple...</h2>
             <pre class="fragment" style="font-size: 1.1ex; margin-top: 3em"><code class="F#" style="max-height: 800px">
-
-                        let square x = x * x
-
+                        let add x y = x + y
+            </code></pre>
+            <pre class="fragment" style="font-size: 1.1ex; margin-top: 1ex"><code class="C#" style="max-height: 800px">
+                        public static int Add(int x, int y) => x + y;
             </code></pre>
             <div class="list" style="margin-bottom: 100%; margin-top: 3ex">
-                <div class="item fragment">Arguments passés à la fonction (valeur associée à <span class="magenta">x</span>)</div>
+                <div class="item fragment">Arguments passés à la fonction (valeurs associée à <span class="magenta">x</span> et <span class="magenta">y</span>)</div>
                 <div class="item fragment">Les variables locales</div>
-                <div class="item fragment">Les résultats de calculs intermédiaires (par exemple <span class="magenta">x * x</span>)</div>
-                <div class="item fragment">Le point (l'adresse) de retour</div>
+                <div class="item fragment">Les résultats de calculs intermédiaires (par exemple <span class="magenta">x + y</span>)</div>
+                <div class="item fragment">Le point (adresse) de retour</div>
                 <div class="item fragment" style="margin-top: 2ex">Qui a pensé au mot <span class="blue">pile</span><span class="fragment">... ou <span class="blue">stack</span> pour les anglophiles ?</span></div>
             </div>
         </section>
@@ -608,6 +609,21 @@
         </section>
         
         <section>
+            <h2>Comment rebondir ?</h2>
+            <div class="list" style="margin-top: 3em; margin-bottom: 100%">
+                <div class="item fragment" data-fragment-index="1" >On voudrait exprimer un algo récursif...</div>
+                <div class="item fragment" data-fragment-index="2" >Mais le compilateur ne nous aide pas...</div>
+                <div class="item fragment" data-fragment-index="3" >Comment forcer le dépilement l'activation courante ?</div>
+                <div class="item fragment" data-fragment-index="4"  style="margin-top: 2ex">En utilisant un <span class="orange">trampoline</span></div>
+                <div class="item fragment" data-fragment-index="5" style="margin-top: 2ex">Principe : </div>
+                <div class="item fragment" data-fragment-index="6" style="margin-left: 8em;margin-top: 1ex">Retourner une valeur qui exprime </div>
+                <div class="item fragment" data-fragment-index="6"  style="margin-left: 8em">un « <span class="green">reste à faire</span> » ou un résultat</div>
+                <div class="item fragment" data-fragment-index="7"  style="margin-left: 8em; margin-top: 1ex">Invoquer le « <span class="green">reste à faire</span> » dans une boucle</div>
+                <div class="item fragment" data-fragment-index="7"  style="margin-left: 8em">ou retourner le résultat</div>
+            </div>
+        </section>
+        
+        <section>
             <h2>Trampoline</h2>
             <pre class="fragment" style="font-size: 1.1ex; margin-top: 3em"><code class="C#" style="max-height: 800px">
                 public interface ITailRec&lt;out T&gt; {
@@ -623,11 +639,11 @@
                 }
             </code></pre>
             <pre class="fragment" style="font-size: 1.1ex; margin-top: 1ex; margin-bottom: 100%"><code class="C#" style="max-height: 800px">
-                public static ITailRec&lt;uint&gt; FactTrampoline(uint acc, uint n) {
-                    if (n == 0)
-                        return new Return&lt;uint&gt; { Value = acc };
-                    else
-                        return new Suspend&lt;uint&gt; { Thunk = () => FactTrampoline(n * acc, n - 1) };
+                public static ITailRec&lt;uint&gt; FactTrampoline(uint acc, uint n) => n switch {
+                            0 => new Return&lt;uint&gt; { Value = acc },
+                            _ => new Suspend&lt;uint&gt; { Thunk = () => FactTrampoline(n * acc, n - 1) 
+                        }
+                    };
                 }
             </code></pre>
         </section>
