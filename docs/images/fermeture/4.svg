@@ -28,9 +28,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.4448216"
-     inkscape:cx="675.05114"
-     inkscape:cy="722.16251"
+     inkscape:zoom="1.7287499"
+     inkscape:cx="244.76963"
+     inkscape:cy="427.15165"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -57,7 +57,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -69,12 +69,12 @@
      style="display:inline">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:26.66666603px;line-height:1.25;font-family:Lato;-inkscape-font-specification:'Lato, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none"
-       x="129.85023"
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:26.66666603px;line-height:1.25;font-family:Lato;-inkscape-font-specification:'Lato, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+       x="109.8"
        y="461.06329"
        id="text847-0-4"><tspan
          sodipodi:role="line"
-         x="129.85023"
+         x="109.8"
          y="461.06329"
          id="tspan951"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.66666603px;font-family:Lato;-inkscape-font-specification:'Lato, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start"><tspan
@@ -129,20 +129,16 @@
          x="444.21399"
          y="464.6604">add42 : <tspan
    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.66666603px;font-family:Lato;-inkscape-font-specification:'Lato, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start"
-   id="tspan827">@Lambda</tspan></tspan></text>
-    <flowRoot
+   id="tspan827">@LamXY</tspan></tspan></text>
+    <text
        xml:space="preserve"
-       id="flowRoot829"
-       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:26.66666603px;line-height:1.25;font-family:Lato;-inkscape-font-specification:'Lato, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#cb4b16;fill-opacity:1;stroke:none"
-       transform="translate(9.2552425,559.8604)"><flowRegion
-         id="flowRegion831"
-         style="fill:#cb4b16;fill-opacity:1"><rect
-           id="rect833"
-           width="130"
-           height="60"
-           x="680"
-           y="-120"
-           style="fill:#cb4b16;fill-opacity:1" /></flowRegion><flowPara
-         id="flowPara835"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.66666603px;font-family:Lato;-inkscape-font-specification:'Lato, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:-0.38563511px;writing-mode:lr-tb;text-anchor:start;fill:#cb4b16;fill-opacity:1">¿ x ?</flowPara></flowRoot>  </g>
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.66666603px;line-height:1.25;font-family:Lato;-inkscape-font-specification:'Lato, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#cb4b16;fill-opacity:1;stroke:none"
+       x="676.80042"
+       y="464.6604"
+       id="text842"><tspan
+         sodipodi:role="line"
+         id="tspan840"
+         x="676.80042"
+         y="464.6604">¿ x ?</tspan></text>
+  </g>
 </svg>

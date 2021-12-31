@@ -28,9 +28,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="4.8896432"
-     inkscape:cx="188.50265"
-     inkscape:cy="525.82917"
+     inkscape:zoom="2.4448216"
+     inkscape:cx="458.35874"
+     inkscape:cy="376.25367"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -70,11 +70,11 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:26.66666603px;line-height:1.25;font-family:Lato;-inkscape-font-specification:'Lato, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none"
-       x="109.92696"
+       x="109.8"
        y="461.06329"
        id="text847-0-4"><tspan
          sodipodi:role="line"
-         x="109.92696"
+         x="109.8"
          y="461.06329"
          id="tspan951"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.66666603px;font-family:Lato;-inkscape-font-specification:'Lato, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start"><tspan
@@ -131,11 +131,11 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:26.66666603px;line-height:1.25;font-family:Lato;-inkscape-font-specification:'Lato, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none"
-       x="109.92696"
+       x="109.8"
        y="591.06329"
        id="text847-0-4-8"><tspan
          sodipodi:role="line"
-         x="109.92696"
+         x="109.8"
          y="591.06329"
          id="tspan951-6"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.66666603px;font-family:Lato;-inkscape-font-specification:'Lato, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start"><tspan
@@ -179,16 +179,28 @@
          x="444.21399"
          y="664.6604">Temp: <tspan
    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.66666603px;font-family:Lato;-inkscape-font-specification:'Lato, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start"
-   id="tspan835">@Lambda</tspan></tspan></text>
+   id="tspan835">@LamXY</tspan></tspan></text>
     <flowRoot
        xml:space="preserve"
        id="flowRoot840"
-       style="fill:black;fill-opacity:1;stroke:none;font-family:Lato;font-style:normal;font-weight:300;font-size:26.66666667px;line-height:1.25;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:'Lato, Light';font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal"><flowRegion
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:26.66666603px;line-height:1.25;font-family:Lato;-inkscape-font-specification:'Lato, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"><flowRegion
          id="flowRegion842"><rect
            id="rect844"
            width="340"
            height="290"
            x="90"
            y="-70" /></flowRegion><flowPara
-         id="flowPara846"></flowPara></flowRoot>  </g>
+         id="flowPara846" /></flowRoot>    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:26.66666603px;line-height:1.25;font-family:Lato;-inkscape-font-specification:'Lato, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+       x="270.58017"
+       y="826.39496"
+       id="text39"><tspan
+         sodipodi:role="line"
+         id="tspan37"
+         x="270.58017"
+         y="826.39496">@LamXY = <tspan
+   style="font-style:italic;font-variant:normal;font-weight:300;font-stretch:normal;font-size:26.66666603px;font-family:Lato;-inkscape-font-specification:'Lato, Light Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start"
+   id="tspan41">Adresse code '</tspan>y =&gt; x + y'</tspan></text>
+  </g>
 </svg>

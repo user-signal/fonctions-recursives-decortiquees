@@ -370,6 +370,64 @@
         </section>
         
         <section>
+            <h2>Fonction d'Ordre supérieur</h2>
+            <div style="margin-top: 3em; display: grid; grid: 'left right' / 0.75fr 1.25fr">
+                <div style="grid-area: left">
+                    <pre style="max-height: 800px; font-size: 1.1ex; margin-bottom: 100%; margin-top: 0"><code class="F#" data-noescape>
+        <span>Main</span>
+        <span class="fragment" data-fragment-index="1">  AddCurried(42)</span>
+        <span class="fragment" data-fragment-index="3">Main</span>
+                    </code></pre>
+                </div>
+                <div class="r-stack" style="grid-area: right">
+                    <img class="fragment fade-out" data-fragment-index="1" src="images/fermeture/0.svg" alt="">
+                    <img class="fragment fade-in-then-out" data-fragment-index="1" src="images/fermeture/1.svg" alt="">
+                    <img class="fragment fade-in-then-out" data-fragment-index="2" src="images/fermeture/2.svg" alt="">
+                    <img class="fragment fade-in-then-out" data-fragment-index="3" src="images/fermeture/3.svg" alt="">
+                    <img class="fragment fade-in-then-out" data-fragment-index="4" src="images/fermeture/4.svg" alt="">
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Fonction d'Ordre supérieur</h2>
+            <div class="list" style="margin-top: 3em; margin-bottom: 100%">
+                <div class="fragment item">Entité qui mémorise <span class="green">code</span> et <span class="green">environnement</span></div>
+                <div class="fragment item"><span class="orange">Closure</span>... <span class="fragment">ou <span class="orange">Fermeture</span> pour les francophiles</span></div>
+                <div class="fragment item" style="margin-top: 2ex">Survive à un dépilement</div>
+                <div class="fragment item">$\Rightarrow$ <span class="green">Tas</span> ou <span class="green">Heap</span> pour...</div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Fonction d'Ordre supérieur</h2>
+            <div style="margin-top: 3em; display: grid; grid: 'left right' / 0.75fr 1.25fr">
+                <div style="grid-area: left">
+                    <pre style="max-height: 800px; font-size: 1.1ex; margin-bottom: 100%; margin-top: 0"><code class="F#" data-noescape>
+        <span>Main</span>
+        <span>  AddCurried(42)</span>
+        <span class="fragment" data-fragment-index="6">Main</span>
+        <span class="fragment" data-fragment-index="7">  AddCurried(19)</span>
+        <span class="fragment" data-fragment-index="9">Main</span>
+                    </code></pre>
+                </div>
+                <div class="r-stack" style="grid-area: right">
+                    <img class="fragment fade-out" data-fragment-index="5" src="images/fermeture/1.svg" alt="">
+                    <img class="fragment fade-in-then-out" data-fragment-index="5" src="images/fermeture/5.svg" alt="">
+                    <img class="fragment fade-in-then-out" data-fragment-index="6" src="images/fermeture/6.svg" alt="">
+                    <img class="fragment fade-in-then-out" data-fragment-index="7" src="images/fermeture/7.svg" alt="">
+                    <img class="fragment fade-in-then-out" data-fragment-index="8" src="images/fermeture/8.svg" alt="">
+                    <img class="fragment fade-in-then-out" data-fragment-index="9" src="images/fermeture/9.svg" alt="">
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Pile non inclues</h2>
+            <img style="margin-bottom: 100%; margin-top: 3ex" src="images/SMLNJ.png" alt="">
+        </section>
+        
+        <section>
             <h2>RISC</h2>
             <div class="list" style="margin-top: 3em; margin-bottom: 100%">
                 <div class="item fragment"><span class="magenta">R</span>educed <span class="magenta">I</span>nstruction <span class="magenta">S</span>et <span class="magenta">C</span>omputer</div>
@@ -671,21 +729,23 @@
 
         <section>
             <h2>Coda</h2>
+            <div class="list" style="margin-top: 3em; margin-bottom: 100%">
+                <div class="fragment item">Continuations</div>
+                <div class="fragment item">Coroutines</div>
+                <div class="fragment item">Lambda Lifting</div>
+                <div class="fragment item">...</div>
+            </div>
         </section>
         
         <section>
             <h2>Ressources</h2>
-            <img style="margin-top: 3ex; margin-bottom: 100%" src="images/Appel.png" alt="Modern Compiler Implementation in ML">
-        </section>
-
-        <section>
-            <h2>Ressources</h2>
-            <div class="list" style="margin-top: 3ex; margin-bottom: 1ex">
-                <div class="item fragment">Standard ML of New Jersey<a href="https://www.cs.princeton.edu/~appel/papers/smlnj.pdf"> [PDF]</a></div>
-                <div  class="item fragment">Compiler Explorer<a href="https://godbolt.org/"> [Web]</a></div>
-                <div  class="item fragment">The ZINC Experiment<a href="https://xavierleroy.org/publi/ZINC.pdf"> [PDF]</a></div>
+            <div style="display: grid;  grid: 'left right' / 1fr 1fr">
+                <img style="grid-area: left; justify-self: center; margin-top: 3ex" src="images/Appel.png" alt="Modern Compiler Implementation in ML">
+                <div class="list" style="grid-area: right; margin-top: 3ex; margin-bottom: 100%">
+                    <div  class="item fragment">The ZINC Experiment<a href="https://xavierleroy.org/publi/ZINC.pdf"> [PDF]</a></div>
+                    <div class="item fragment">Standard ML of New Jersey<a href="https://www.cs.princeton.edu/~appel/papers/smlnj.pdf"> [PDF]</a></div>
+                </div>
             </div>
-            <div style="margin-bottom: 100%"></div>
         </section>
 
         <section>
