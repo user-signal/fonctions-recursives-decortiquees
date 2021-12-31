@@ -96,5 +96,14 @@
 }
 
 .reveal .ch {
-  background-color: $base01;
+  background-color: $base00;
+}
+
+.reveal .code {
+  background-color: $base3;
+  border-radius: 2px;
+  font-family: monospace;
+  font-size: smaller;
+  padding: 1px 4px;
+  border: 1px solid $base01;
 }

@@ -188,7 +188,7 @@
             <h2>Appel par nom</h2>
             <div class="list" style="margin-bottom: 100%; margin-top: 5ex">
                 <div class="fragment item">On prend <span class="orange">redex</span> le plus extérieur et le plus à gauche</div>
-                <div class="fragment item">mais sans descendre dans les abstractions</div>
+                <div class="fragment item">et sans descendre dans les abstractions (le $E$ dans $\lambda x.\,E$)</div>
                 <div class="fragment item" style="margin-top: 4ex; margin-left: 10em">$\underline{id\:(id\:(\lambda z.\:id\: z))}$</div>
                 <div class="fragment item" style="margin-left: 10em">$\underline{id\:(\lambda z.\:id\: z)}$</div>
                 <div class="fragment item green" style="margin-left: 10em">$\lambda z.\:id\: z$</div>
@@ -201,7 +201,8 @@
         <section>
             <h2>Appel par valeur</h2>
             <div class="list" style="margin-bottom: 100%; margin-top: 5ex">
-                <div class="fragment item">On prends le <span class="orange">redex</span> le plus extérieur quand son argument est une valeur</div>
+                <div class="fragment item">On prends le <span class="orange">redex</span> le plus extérieur dont l'argument est déjà réduit</div>
+                <div class="fragment item">et sans descendre dans les abstractions (le $E$ dans $\lambda x.\,E$)</div>
                 <div class="fragment item" style="margin-top: 4ex; margin-left: 10em">$id\:(\underline{id\:(\lambda z.\:id\: z)})$</div>
                 <div class="fragment item" style="margin-left: 10em">$\underline{id\:(\lambda z.\:id\: z)}$</div>
                 <div class="fragment item green" style="margin-left: 10em">$\lambda z.\:id\: z$</div>
@@ -662,11 +663,6 @@
         </section>
 
         <section>
-            <h2>Compiler Explorer</h2>
-            <img style="margin-top: 3ex; margin-bottom: 100%" src="images/Godbolt.png" alt="Compiler explorer">
-        </section>
-        
-        <section>
             <h2>Comment rebondir ?</h2>
             <div class="list" style="margin-top: 3em; margin-bottom: 100%">
                 <div class="item fragment" data-fragment-index="1" >On voudrait exprimer un algo récursif...</div>
@@ -740,10 +736,11 @@
         <section>
             <h2>Ressources</h2>
             <div style="display: grid;  grid: 'left right' / 1fr 1fr">
-                <img style="grid-area: left; justify-self: center; margin-top: 3ex" src="images/Appel.png" alt="Modern Compiler Implementation in ML">
+                <img class="fragment" style="grid-area: left; justify-self: center; margin-top: 3ex" src="images/Appel.png" alt="Modern Compiler Implementation in ML">
                 <div class="list" style="grid-area: right; margin-top: 3ex; margin-bottom: 100%">
                     <div  class="item fragment">The ZINC Experiment<a href="https://xavierleroy.org/publi/ZINC.pdf"> [PDF]</a></div>
                     <div class="item fragment">Standard ML of New Jersey<a href="https://www.cs.princeton.edu/~appel/papers/smlnj.pdf"> [PDF]</a></div>
+                    <div class="item fragment">Wikipedia<a href="https://www.wikipedia.org/"> [Web]</a></div>
                 </div>
             </div>
         </section>
