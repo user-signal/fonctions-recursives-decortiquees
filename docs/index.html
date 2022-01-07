@@ -66,48 +66,50 @@
         </section>
         
         <section>
-            <h2 style="margin-bottom: 1.5em"><span style="text-transform:lowercase">&lambda;</span>-Calcul</h2>
-            <div style="margin-bottom: 100%;  display: grid; grid-template-columns: 3fr 2fr">
-                <div style="justify-self: center">$x$</div><div style="justify-self: start"> Variable</div>
-                <div style="justify-self: center">$\lambda x.\,M$</div><div style="justify-self: start"> Abstraction</div>
-                <div style="justify-self: center; margin-bottom: 2.5em">$M\,N$</div><div style="margin-bottom: 2.5em; justify-self: start"> Application</div>
-                <div style="justify-self: center">$\lambda x.\,M[x] \rightarrow \lambda y.\,M[y]$</div><div style="justify-self: start">$\alpha$-conversion</div>
-                <div class="orange" style="justify-self: center">$(\lambda x.\,M)\:E \rightarrow M[x:=E]$</div><div class="orange" style="justify-self: start">$\beta$-reduction</div>
-                <div style="justify-self: center">$\lambda x.\,(f\,x) \rightarrow f$</div><div style="justify-self: start">$\eta$-reduction</div>
-            </div>
-        </section>
+            <section>
+                <h2 style="margin-bottom: 1.5em"><span style="text-transform:lowercase">&lambda;</span>-Calcul</h2>
+                <div style="margin-bottom: 100%;  display: grid; grid-template-columns: 3fr 2fr">
+                    <div style="justify-self: center">$x$</div><div style="justify-self: start"> Variable</div>
+                    <div style="justify-self: center">$\lambda x.\,M$</div><div style="justify-self: start"> Abstraction</div>
+                    <div style="justify-self: center; margin-bottom: 2.5em">$M\,N$</div><div style="margin-bottom: 2.5em; justify-self: start"> Application</div>
+                    <div style="justify-self: center">$\lambda x.\,M[x] \rightarrow \lambda y.\,M[y]$</div><div style="justify-self: start">$\alpha$-conversion</div>
+                    <div class="orange" style="justify-self: center">$(\lambda x.\,M)\:E \rightarrow M[x:=E]$</div><div class="orange" style="justify-self: start">$\beta$-reduction</div>
+                    <div style="justify-self: center">$\lambda x.\,(f\,x) \rightarrow f$</div><div style="justify-self: start">$\eta$-reduction</div>
+                </div>
+            </section>
 
-        <section>
-            <h2>Encodages</h2>
-            <div class="list" style="margin-top: 4ex; margin-bottom: 100%">
-                <div class="item fragment" data-fragment-index="1">Entiers :</div>
-                <div class="item fragment" data-fragment-index="1" style="margin-top: 1ex;margin-left: 7em">$0 = \lambda f.\, \lambda x.\,x$</div>
-                <div class="item fragment" data-fragment-index="1" style="margin-left: 7em">$1 = \lambda f.\, \lambda x.\,f\,x$</div>
-                <div class="item fragment" data-fragment-index="1" style="margin-left: 7em">$2 = \lambda f.\, \lambda x.\,f\,(f\,x)$</div>
-                <div class="item fragment" data-fragment-index="2" style="margin-top: 1.5ex; margin-left: 6.75em">$S = \lambda n.\,\lambda f.\,\lambda x.\,f\,(n\,f\,x)$</div>
-                <div class="item fragment" style="margin-top: 2ex">Point fixe :</div>
-                <div class="green item fragment" style="margin-top: 1ex;margin-left: 6.6em">$Y = \lambda g.\,(\lambda x.\,g\,(x\,x))\,(\lambda x.\,g\,(x\,x))$</div>
-            </div>
+            <section>
+                <h2>Encodages</h2>
+                <div class="list" style="margin-top: 4ex; margin-bottom: 100%">
+                    <div class="item fragment" data-fragment-index="1">Entiers :</div>
+                    <div class="item fragment" data-fragment-index="1" style="margin-top: 1ex;margin-left: 7em">$0 = \lambda f.\, \lambda x.\,x$</div>
+                    <div class="item fragment" data-fragment-index="1" style="margin-left: 7em">$1 = \lambda f.\, \lambda x.\,f\,x$</div>
+                    <div class="item fragment" data-fragment-index="1" style="margin-left: 7em">$2 = \lambda f.\, \lambda x.\,f\,(f\,x)$</div>
+                    <div class="item fragment" data-fragment-index="2" style="margin-top: 1.5ex; margin-left: 6.75em">$S = \lambda n.\,\lambda f.\,\lambda x.\,f\,(n\,f\,x)$</div>
+                    <div class="item fragment" style="margin-top: 2ex">Point fixe :</div>
+                    <div class="green item fragment" style="margin-top: 1ex;margin-left: 6.6em">$Y = \lambda g.\,(\lambda x.\,g\,(x\,x))\,(\lambda x.\,g\,(x\,x))$</div>
+                </div>
+            </section>
         </section>
 
         <section>
             <h2>Curryfication</h2>
             <h3>(ou Schönfinkelification ?)</h3>
-            <pre class="fragment" style="font-size: 1.1ex; margin-top: 3em"><code class="C#" style="max-height: 800px">
+            <pre class="fragment" style="font-size: 1.1ex; margin-top: 3em"><code class="C#" style="max-height: 800px" data-no-escape>
                         public static int Add(int x, int y) => x + y;
                         
                         Add(42, 19)      // -> 61
-            </code></pre>
+            </code><div class="lang">C#</div></pre>
             <pre class="fragment" style="font-size: 1.1ex; margin-top: 1em"><code data-no-escape class="C#" style="max-height: 800px">
                         public static Func&lt;int, int&gt; AddCurried(int x) => y => x + y;
                                 
                         AddCurried(42)(19) // -> 61
-            </code></pre>
+            </code><div class="lang">C#</div></pre>
             <pre class="fragment" style="font-size: 1.1ex; margin-top: 1em; margin-bottom: 100%"><code data-no-escape class="C#" style="max-height: 800px">
                         var addPartial = AddCurried(42);
                 
                         addPartial(19)   // -> 61
-            </code></pre>
+            </code><div class="lang">C#</div></pre>
         </section>
 
         <section>
@@ -119,6 +121,35 @@
                 <div class="fragment item">Plus ou moins <span class="orange">abstraite</span></div>
                 <div class="item" style="margin-top: 2ex"><span class="fragment"><span class="green">Axiomatique</span>, </span><span class="fragment"><span class="green">Dénotationnelle</span>, </span><span class="fragment green">Opérationnelle</span></div>
             </div>
+        </section>
+        
+        <section>
+            <h2>Sémantique</h2>
+            <div style="margin-top: 3ex; margin-bottom: 100%; display: grid; grid: 'left right' / 1fr 1fr">
+                <div style="grid-area: left">
+                    <div class="list">
+                        <div class="item fragment">$\langle 2 + 1 \rangle \neq \langle 1 + 2 \rangle$</div>
+                        <div class="item fragment" style="margin-top: 2ex">$\lceil\langle 2 + 1 \rangle\rceil$</div>
+                        <div class="item fragment">$\lceil\langle 2 \rangle\rceil$ <span class="magenta">$+$</span> $\lceil\langle 1 \rangle\rceil$</div>
+                        <div class="item fragment"><span class="magenta">$2 + 1$</span></div>
+                        <div class="item fragment"><span class="magenta">$3$</span></div>
+                        <div class="item fragment" style="margin-top: 2ex">$\lceil\langle 1 + 2 \rangle\rceil$</div>
+                        <div class="item fragment">$\lceil\langle 1 \rangle\rceil$ <span class="magenta">$+$</span> $\lceil\langle 2 \rangle\rceil$</div>
+                        <div class="item fragment"><span class="magenta">$1 + 2$</span></div>
+                        <div class="item fragment"><span class="magenta">$3$</span></div>
+                    </div>
+                </div>
+                <div style="grid-area: right">
+                    <div class="list">
+                        <div class="item fragment">$\{\varnothing\} \;\Uparrow\; \lceil\langle 2 + 1 \rangle\rceil$</div>
+                        <div class="item fragment">$\{$ <span class="magenta">2</span>$\,\centerdot\,$<span class="magenta">1</span> $\,\centerdot\,\varnothing\} \;\Uparrow\; \lceil\langle + \rangle\rceil$</div>
+                        <div class="item fragment">$\{$ <span class="magenta">3</span> $\,\centerdot\,\varnothing\} \;\Uparrow\; \lceil\langle \rangle\rceil$</div>
+                        <div class="item fragment" style="margin-top: 3ex">$\{\varnothing\} \;\Uparrow\; \lceil\langle 1 + 2 \rangle\rceil$</div>
+                        <div class="item fragment">$\{$ <span class="magenta">1</span>$\,\centerdot\,$<span class="magenta">2</span> $\,\centerdot\,\varnothing\} \;\Uparrow\; \lceil\langle + \rangle\rceil$</div>
+                        <div class="item fragment">$\{$ <span class="magenta">3</span> $\,\centerdot\,\varnothing\} \;\Uparrow\; \lceil\langle \rangle\rceil$</div>
+                    </div>
+                </div>
+            </div>            
         </section>
         
         <section>
@@ -250,10 +281,10 @@
             <h2>Commençons simple...</h2>
             <pre class="fragment" style="font-size: 1.1ex; margin-top: 3em"><code class="F#" style="max-height: 800px">
                         let add x y = x + y
-            </code></pre>
+            </code><div class="lang">F#</div></pre>
             <pre class="fragment" style="font-size: 1.1ex; margin-top: 1ex"><code class="C#" style="max-height: 800px">
                         public static int Add(int x, int y) => x + y;
-            </code></pre>
+            </code><div class="lang">C#</div></pre>
             <div class="list" style="margin-bottom: 100%; margin-top: 3ex">
                 <div class="item fragment">Arguments passés à la fonction (valeurs associée à <span class="magenta">x</span> et <span class="magenta">y</span>)</div>
                 <div class="item fragment">Les variables locales</div>
@@ -274,7 +305,20 @@
                 <div class="item fragment"><span class="magenta">F90</span> récursivité officielle, <span class="code">RECURSIVE</span> (standard ANSI 1992)</div>
             </div>
         </section>
-        
+
+        <section>
+            <h2>RISC</h2>
+            <div class="list" style="margin-top: 3em; margin-bottom: 100%">
+                <div class="item fragment"><span class="magenta">R</span>educed <span class="magenta">I</span>nstruction <span class="magenta">S</span>et <span class="magenta">C</span>omputer</div>
+                <div class="item fragment">IBM 801 (1975-1980)</div>
+                <div class="item fragment"><span class="blue">David Paterson</span> à Berkeley</div>
+                <div class="item fragment">Dec Alpha, IBM POWER, Motorola 88000... (1980 et après)</div>
+                <div class="item fragment">RISC-V</div>
+                <div class="item fragment" style="margin-top: 1ex">Moins d'instructions plus simples</div>
+                <div class="item fragment">Plus de registres généraux</div>
+            </div>
+        </section>
+
         <section>
             <h2>Récursion simple</h2>
             <div class="list" style="margin-top: 3em">
@@ -285,14 +329,14 @@
                         let rec Fact = function
                             | 0u -> 1u
                             | (n: uint) -> n * Fact(n - 1u)
-            </code></pre>
+            </code><div class="lang">F#</div></pre>
             <pre class="fragment" style="font-size: 1.1ex; margin-top: 2ex; margin-bottom: 100%"><code class="C#" style="max-height: 800px">
                         public static uint Fact(uint n) => n switch
                         {
                             0u => 1u,
                             _ => n * Fact(n - 1)
                         };
-            </code></pre>
+            </code><div class="lang">C#</div></pre>
         </section>
 
         <section>
@@ -311,7 +355,7 @@
                             function
                             | 1u -> true
                             | (n: uint) -> IsEven(n - 1u)
-            </code></pre>
+            </code><div class="lang">F#</div></pre>
         </section>
 
         <section>
@@ -331,7 +375,7 @@
             <h2>Mise en œuvre</h2>
             <div style="margin-top: 3em; display: grid; grid: 'left right' / 0.75fr 1.25fr">
                 <div style="grid-area: left">
-                    <pre style="max-height: 800px; font-size: 1.1ex; margin-bottom: 100%; margin-top: 0"><code class="F#" data-noescape>
+                    <pre style="max-height: 800px; font-size: 1.1ex; margin-bottom: 100%; margin-top: 0"><code class="C#" data-noescape>
         <span>Main</span>
         <span class="fragment" data-fragment-index="1">  Fact(2)</span>
         <span class="fragment" data-fragment-index="2">    Fact(1)</span>
@@ -339,7 +383,7 @@
         <span class="fragment" data-fragment-index="5">    Fact(1)</span>
         <span class="fragment" data-fragment-index="6">  Fact(2)</span>
         <span class="fragment" data-fragment-index="7">Main</span>
-                    </code></pre>
+                    </code><div class="lang">C#</div></pre>
                 </div>
                 <div class="r-stack" style="grid-area: right">
                     <img class="fragment fade-out" data-fragment-index="1" src="images/pile/0.svg" alt="">
@@ -367,18 +411,18 @@
                         
                 var add42 = AddCurried(42)
                 var add19 = AddCurried(19)
-            </code></pre>
+            </code><div class="lang">C#</div></pre>
         </section>
         
         <section>
             <h2>Fonction d'Ordre supérieur</h2>
             <div style="margin-top: 3em; display: grid; grid: 'left right' / 0.75fr 1.25fr">
                 <div style="grid-area: left">
-                    <pre style="max-height: 800px; font-size: 1.1ex; margin-bottom: 100%; margin-top: 0"><code class="F#" data-noescape>
+                    <pre style="max-height: 800px; font-size: 1.1ex; margin-bottom: 100%; margin-top: 0"><code class="C#" data-noescape>
         <span>Main</span>
         <span class="fragment" data-fragment-index="1">  AddCurried(42)</span>
         <span class="fragment" data-fragment-index="3">Main</span>
-                    </code></pre>
+                    </code><div class="lang">C#</div></pre>
                 </div>
                 <div class="r-stack" style="grid-area: right">
                     <img class="fragment fade-out" data-fragment-index="1" src="images/fermeture/0.svg" alt="">
@@ -404,13 +448,13 @@
             <h2>Fonction d'Ordre supérieur</h2>
             <div style="margin-top: 3em; display: grid; grid: 'left right' / 0.75fr 1.25fr">
                 <div style="grid-area: left">
-                    <pre style="max-height: 800px; font-size: 1.1ex; margin-bottom: 100%; margin-top: 0"><code class="F#" data-noescape>
+                    <pre style="max-height: 800px; font-size: 1.1ex; margin-bottom: 100%; margin-top: 0"><code class="C#" data-noescape>
         <span>Main</span>
         <span>  AddCurried(42)</span>
         <span class="fragment" data-fragment-index="6">Main</span>
         <span class="fragment" data-fragment-index="7">  AddCurried(19)</span>
         <span class="fragment" data-fragment-index="9">Main</span>
-                    </code></pre>
+                    </code><div class="lang">C#</div></pre>
                 </div>
                 <div class="r-stack" style="grid-area: right">
                     <img class="fragment fade-out" data-fragment-index="5" src="images/fermeture/1.svg" alt="">
@@ -429,19 +473,6 @@
         </section>
         
         <section>
-            <h2>RISC</h2>
-            <div class="list" style="margin-top: 3em; margin-bottom: 100%">
-                <div class="item fragment"><span class="magenta">R</span>educed <span class="magenta">I</span>nstruction <span class="magenta">S</span>et <span class="magenta">C</span>omputer</div>
-                <div class="item fragment">IBM 801 (1975-1980)</div>
-                <div class="item fragment"><span class="blue">David Paterson</span> à Berkeley</div>
-                <div class="item fragment">Dec Alpha, IBM POWER, Motorola 88000... (1980 et après)</div>
-                <div class="item fragment">RISC-V</div>
-                <div class="item fragment" style="margin-top: 1ex">Moins d'instructions plus simples</div>
-                <div class="item fragment">Plus de registres généraux</div>
-            </div>
-        </section>
-        
-        <section>
             <h2>Appel terminal</h2>
             <div class="list" style="margin-top: 3em">
                 <div class="item fragment" data-fragment-index="1">La dernière action d'une fonction est un appel de fonction</div>
@@ -451,14 +482,14 @@
                             function
                             | 0u -> acc
                             | (n: uint) -> FactTailRecursive(n * acc) (n - 1u)
-            </code></pre>
+            </code><div class="lang">F#</div></pre>
             <pre class="fragment" style="font-size: 1.1ex; margin-top: 2ex; margin-bottom: 100%"><code class="C#" style="max-height: 800px">
                         public static uint FactTailRecursive(uint acc, uint n) => n switch
                         {
                             0u => acc,
                             _ => FactTailRecursive(n * acc, n - 1)
                         };
-            </code></pre>
+            </code><div class="lang">C#</div></pre>
         </section>
         
         <section>
@@ -477,13 +508,13 @@
             <h2>Mise en œuvre</h2>
             <div style="margin-top: 3em; display: grid; grid: 'left right' / 0.75fr 1.25fr">
                 <div style="grid-area: left">
-                    <pre style="max-height: 800px; font-size: 1.1ex; margin-bottom: 100%; margin-top: 0"><code class="F#" data-noescape>
+                    <pre style="max-height: 800px; font-size: 1.1ex; margin-bottom: 100%; margin-top: 0"><code class="C#" data-noescape>
         <span>Main</span>
         <span class="fragment" data-fragment-index="1">  Fact(1, 2)</span>
         <span class="fragment" data-fragment-index="3">    Fact(2, 1)</span>
         <span class="fragment" data-fragment-index="5">      Fact(2, 0)</span>
         <span class="fragment" data-fragment-index="7">Main</span>
-                    </code></pre>
+                    </code><div class="lang">C#</div></pre>
                 </div>
                 <div class="r-stack" style="grid-area: right">
                     <img class="fragment fade-out" data-fragment-index="1" src="images/terminal/0.svg" alt="">
@@ -500,164 +531,164 @@
         
         <section>
             <h2>Code produit</h2>
-            <div style="margin-top: 1em; display: grid; grid: 'left-header right-header' 'left right' / 1fr 1fr">
-                <div style="grid-area: left-header; text-align: left; margin-left: 0.2em">C#</div>
-                <div style="grid-area: right-header; text-align: left; margin-left: 0.2em">F#</div>
+            <div style="margin-top: 1em; display: grid; grid: 'left right' / 1fr 1fr">
                 <div style="grid-area: left">
                     <pre style="font-size: large; margin-bottom: 100%; margin-top: 0"><code data-noescape>
-  .method public hidebysig static unsigned int32
-    FactTailRecursive(unsigned int32 acc, unsigned int32 n
-    ) cil managed
-  {
-    [...]
-    IL_0000: ldc.i4.1
-    IL_0001: brtrue.s     IL_0004
 
-    IL_0003: nop
-
-    IL_0004: ldarg.1      // n
-    IL_0005: brfalse.s    IL_0009
-    IL_0007: br.s         IL_000d
-
-    IL_0009: ldarg.0      // acc
-    IL_000a: stloc.0      // V_0
-    IL_000b: br.s         IL_001b
-
-    IL_000d: ldarg.1      // n
-    IL_000e: ldarg.0      // acc
-    IL_000f: mul
-    IL_0010: ldarg.1      // n
-    IL_0011: ldc.i4.1
-    IL_0012: sub
-    IL_0013: call         unsigned int32 CSharp.Factorial::FactTailRecursive(
-                              unsigned int32, unsigned int32
-                          )
-    IL_0018: stloc.0      // V_0
-    IL_0019: br.s         IL_001b
-
-    IL_001b: ldc.i4.1
-    IL_001c: brtrue.s     IL_001f
-
-    IL_001e: nop
-
-    IL_001f: ldloc.0      // V_0
-    IL_0020: ret
-  } 
-                    </code></pre>
+          .method public hidebysig static unsigned int32
+            FactTailRecursive(unsigned int32 acc, unsigned int32 n
+            ) cil managed
+          {
+            [...]
+            IL_0000: ldc.i4.1
+            IL_0001: brtrue.s     IL_0004
+        
+            IL_0003: nop
+        
+            IL_0004: ldarg.1      // n
+            IL_0005: brfalse.s    IL_0009
+            IL_0007: br.s         IL_000d
+        
+            IL_0009: ldarg.0      // acc
+            IL_000a: stloc.0      // V_0
+            IL_000b: br.s         IL_001b
+        
+            IL_000d: ldarg.1      // n
+            IL_000e: ldarg.0      // acc
+            IL_000f: mul
+            IL_0010: ldarg.1      // n
+            IL_0011: ldc.i4.1
+            IL_0012: sub
+            IL_0013: call         unsigned int32 CSharp.Factorial::FactTailRecursive(
+                                      unsigned int32, unsigned int32
+                                  )
+            IL_0018: stloc.0      // V_0
+            IL_0019: br.s         IL_001b
+        
+            IL_001b: ldc.i4.1
+            IL_001c: brtrue.s     IL_001f
+        
+            IL_001e: nop
+        
+            IL_001f: ldloc.0      // V_0
+            IL_0020: ret
+          } 
+                    </code><div class="lang">IL (C#)</div></pre>
                 </div>
                 <div style="grid-area: right">
                     <pre style="font-size: large; margin-bottom: 100%; margin-top: 0"><code style="max-height: 800px" data-noescape>
-  .method public static unsigned int32
-    FactTailRecursive(unsigned int32 acc, unsigned int32 _arg1
-    ) cil managed
-  {
-    [...]
-      IL_0000: ldarg.1      // _arg1
-      IL_0001: stloc.0      // V_0
 
-      IL_0002: ldloc.0      // V_0
-      IL_0003: switch       (IL_000e)
-      IL_000c: br.s         IL_0010
-
-      IL_000e: ldarg.0      // acc
-      IL_000f: ret
-
-      IL_0010: ldloc.0      // V_0
-      IL_0011: stloc.1      // n
-
-      IL_0012: ldloc.1      // n
-      IL_0013: ldarg.0      // acc
-      IL_0014: mul
-      IL_0015: ldloc.1      // n
-      IL_0016: ldc.i4.1
-      IL_0017: sub
-      IL_0018: starg.s      _arg1
-      IL_001a: starg.s      acc
-      IL_001c: br.s         IL_0000
-  } 
-                    </code></pre>
+          .method public static unsigned int32
+            FactTailRecursive(unsigned int32 acc, unsigned int32 _arg1
+            ) cil managed
+          {
+            [...]
+              IL_0000: ldarg.1      // _arg1
+              IL_0001: stloc.0      // V_0
+        
+              IL_0002: ldloc.0      // V_0
+              IL_0003: switch       (IL_000e)
+              IL_000c: br.s         IL_0010
+        
+              IL_000e: ldarg.0      // acc
+              IL_000f: ret
+        
+              IL_0010: ldloc.0      // V_0
+              IL_0011: stloc.1      // n
+        
+              IL_0012: ldloc.1      // n
+              IL_0013: ldarg.0      // acc
+              IL_0014: mul
+              IL_0015: ldloc.1      // n
+              IL_0016: ldc.i4.1
+              IL_0017: sub
+              IL_0018: starg.s      _arg1
+              IL_001a: starg.s      acc
+              IL_001c: br.s         IL_0000
+          } 
+                    </code><div class="lang">IL (F#)</div></pre>
                 </div>
             </div>
         </section>
 
         <section>
             <h2>Code produit</h2>
-            <div style="margin-top: 1em; display: grid; grid: 'left-header right-header' 'left right' / 1fr 1fr">
-                <div style="grid-area: left-header; text-align: left; margin-left: 0.2em">C#</div>
-                <div style="grid-area: right-header; text-align: left; margin-left: 0.2em">F#</div>
+            <div style="margin-top: 1em; display: grid; grid: 'left right' / 1fr 1fr">
                 <div style="grid-area: left">
                     <pre style="font-size: large; margin-bottom: 100%; margin-top: 0"><code data-noescape>
-  .method public hidebysig static unsigned int32
-    <span class="ch">FactTailRecursive(unsigned int32 acc, unsigned int32 n</span>
-    ) cil managed
-  {
-    [...]
-    IL_0000: ldc.i4.1
-    IL_0001: brtrue.s     IL_0004
 
-    IL_0003: nop
-
-    IL_0004: ldarg.1      // n
-    IL_0005: brfalse.s    IL_0009
-    IL_0007: br.s         IL_000d
-
-    IL_0009: ldarg.0      // acc
-    IL_000a: stloc.0      // V_0
-    IL_000b: br.s         IL_001b
-
-    IL_000d: ldarg.1      // n
-    IL_000e: ldarg.0      // acc
-    IL_000f: mul
-    IL_0010: ldarg.1      // n
-    IL_0011: ldc.i4.1
-    IL_0012: sub
-    IL_0013: <span class="ch">call         unsigned int32 CSharp.Factorial::FactTailRecursive(</span>
-             <span class="ch">                 unsigned int32, unsigned int32</span>
-             <span class="ch">             )</span>
-    IL_0018: stloc.0      // V_0
-    IL_0019: br.s         IL_001b
-
-    IL_001b: ldc.i4.1
-    IL_001c: brtrue.s     IL_001f
-
-    IL_001e: nop
-
-    IL_001f: ldloc.0      // V_0
-    IL_0020: ret
-  } 
-                    </code></pre>
+          .method public hidebysig static unsigned int32
+            <span class="ch">FactTailRecursive(unsigned int32 acc, unsigned int32 n</span>
+            ) cil managed
+          {
+            [...]
+            IL_0000: ldc.i4.1
+            IL_0001: brtrue.s     IL_0004
+        
+            IL_0003: nop
+        
+            IL_0004: ldarg.1      // n
+            IL_0005: brfalse.s    IL_0009
+            IL_0007: br.s         IL_000d
+        
+            IL_0009: ldarg.0      // acc
+            IL_000a: stloc.0      // V_0
+            IL_000b: br.s         IL_001b
+        
+            IL_000d: ldarg.1      // n
+            IL_000e: ldarg.0      // acc
+            IL_000f: mul
+            IL_0010: ldarg.1      // n
+            IL_0011: ldc.i4.1
+            IL_0012: sub
+            IL_0013: <span class="ch">call         unsigned int32 CSharp.Factorial::FactTailRecursive(</span>
+                     <span class="ch">                 unsigned int32, unsigned int32</span>
+                     <span class="ch">             )</span>
+            IL_0018: stloc.0      // V_0
+            IL_0019: br.s         IL_001b
+        
+            IL_001b: ldc.i4.1
+            IL_001c: brtrue.s     IL_001f
+        
+            IL_001e: nop
+        
+            IL_001f: ldloc.0      // V_0
+            IL_0020: ret
+          } 
+                    </code><div class="lang">IL (C#)</div></pre>
                 </div>
                 <div style="grid-area: right">
                     <pre style="font-size: large; margin-bottom: 100%; margin-top: 0"><code style="max-height: 800px" data-noescape>
-  .method public static unsigned int32
-    FactTailRecursive(unsigned int32 acc, unsigned int32 _arg1
-    ) cil managed
-  {
-      [...]
-      <span class="ch">IL_0000</span>: ldarg.1      // _arg1
-      IL_0001: stloc.0      // V_0
 
-      IL_0002: ldloc.0      // V_0
-      IL_0003: switch       (IL_000e)
-      IL_000c: br.s         IL_0010
-
-      IL_000e: ldarg.0      // acc
-      IL_000f: ret
-
-      IL_0010: ldloc.0      // V_0
-      IL_0011: stloc.1      // n
-
-      IL_0012: ldloc.1      // n
-      IL_0013: ldarg.0      // acc
-      IL_0014: mul
-      IL_0015: ldloc.1      // n
-      IL_0016: ldc.i4.1
-      IL_0017: sub
-      IL_0018: starg.s      _arg1
-      IL_001a: starg.s      acc
-      IL_001c: <span class="ch">br.s         IL_0000</span>
-  } 
-                    </code></pre>
+          .method public static unsigned int32
+            FactTailRecursive(unsigned int32 acc, unsigned int32 _arg1
+            ) cil managed
+          {
+              [...]
+              <span class="ch">IL_0000</span>: ldarg.1      // _arg1
+              IL_0001: stloc.0      // V_0
+        
+              IL_0002: ldloc.0      // V_0
+              IL_0003: switch       (IL_000e)
+              IL_000c: br.s         IL_0010
+        
+              IL_000e: ldarg.0      // acc
+              IL_000f: ret
+        
+              IL_0010: ldloc.0      // V_0
+              IL_0011: stloc.1      // n
+        
+              IL_0012: ldloc.1      // n
+              IL_0013: ldarg.0      // acc
+              IL_0014: mul
+              IL_0015: ldloc.1      // n
+              IL_0016: ldc.i4.1
+              IL_0017: sub
+              IL_0018: starg.s      _arg1
+              IL_001a: starg.s      acc
+              IL_001c: <span class="ch">br.s         IL_0000</span>
+          } 
+                    </code><div class="lang">IL (F#)</div></pre>
                 </div>
             </div>
         </section>
@@ -691,7 +722,7 @@
                 public struct Suspend&lt;T&gt; : ITailRec&lt;T&gt; {
                     public Func&lt;ITailRec&lt;T&gt;&gt; Thunk { get; init; }
                 }
-            </code></pre>
+            </code><div class="lang">C#</div></pre>
             <pre class="fragment" style="font-size: 1.1ex; margin-top: 1ex; margin-bottom: 100%"><code class="C#" style="max-height: 800px">
                 public static ITailRec&lt;uint&gt; FactTrampoline(uint acc, uint n) => n switch {
                             0 => new Return&lt;uint&gt; { Value = acc },
@@ -699,14 +730,14 @@
                         }
                     };
                 }
-            </code></pre>
+            </code><div class="lang">C#</div></pre>
         </section>
 
         <section>
             <h2>Trampoline</h2>
             <pre class="fragment" style="font-size: 1.1ex; margin-top: 3em"><code class="C#" style="max-height: 800px">
-                FactTrampoline(1, 3).run()
-            </code></pre>
+                FactTrampoline(1, 3).Run()
+            </code><div class="lang">C#</div></pre>
             <pre class="fragment" style="font-size: 1.1ex; margin-top: 1ex; margin-bottom: 100%"><code class="C#" style="max-height: 800px">
                 public interface ITailRec&lt;out T&gt; {
                     public T Run() {
@@ -720,7 +751,7 @@
                             }
                     }
                 }
-            </code></pre>
+            </code><div class="lang">C#</div></pre>
         </section>
 
         <section>
@@ -735,13 +766,18 @@
         
         <section>
             <h2>Ressources</h2>
-            <div style="display: grid;  grid: 'left right' / 1fr 1fr">
-                <img class="fragment" style="grid-area: left; justify-self: center; margin-top: 3ex" src="images/Appel.png" alt="Modern Compiler Implementation in ML">
-                <div class="list" style="grid-area: right; margin-top: 3ex; margin-bottom: 100%">
-                    <div  class="item fragment">The ZINC Experiment<a href="https://xavierleroy.org/publi/ZINC.pdf"> [PDF]</a></div>
-                    <div class="item fragment">Standard ML of New Jersey<a href="https://www.cs.princeton.edu/~appel/papers/smlnj.pdf"> [PDF]</a></div>
-                    <div class="item fragment">Wikipedia<a href="https://www.wikipedia.org/"> [Web]</a></div>
-                </div>
+            <div style="display: grid;  grid: 'left right' / 1fr 1fr; margin-top: 3ex; margin-bottom: 100%">
+                <img class="fragment" style="padding-left: 2em; grid-area: left; justify-self: center" src="images/Appel.png" alt="Modern Compiler Implementation in ML">
+                <img class="fragment" style="padding-right: 2em; grid-area: right; justify-self: center" src="images/HennessyPaterson.jpg" alt="Modern Compiler Implementation in ML">
+            </div>
+        </section>
+
+        <section>
+            <h2>Ressources</h2>
+            <div class="list" style="margin-top: 3em; margin-bottom: 100%">
+                <div  class="item fragment">The ZINC Experiment<a href="https://xavierleroy.org/publi/ZINC.pdf"> [PDF]</a></div>
+                <div class="item fragment">Standard ML of New Jersey<a href="https://www.cs.princeton.edu/~appel/papers/smlnj.pdf"> [PDF]</a></div>
+                <div class="item fragment" style="margin-top: 2ex">Wikipedia<a href="https://www.wikipedia.org/"> [Web]</a></div>
             </div>
         </section>
 

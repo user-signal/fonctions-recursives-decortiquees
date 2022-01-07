@@ -95,6 +95,14 @@
   max-height: 800px;
 }
 
+.reveal .lang {
+  background-color: $base01;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 5px
+}
+
 .reveal .ch {
   background-color: $base00;
 }
