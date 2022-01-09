@@ -21,7 +21,10 @@
     <div class="slides">
 
         <section>
-            <h2>Les fonctions <span class="green">(récursives)</span> décortiquées</h2>
+            <section>
+                <h2>Les fonctions <span class="green">(récursives)</span> décortiquées</h2>
+            </section>
+            <section data-background-image="images/Sponsors.jpeg" data-transition="none"></section>
         </section>
 
         <section>
@@ -284,7 +287,7 @@
             <div class="list" style="margin-bottom: 100%; margin-top: 3em">
                 <div class="fragment item">Une forme de <span class="green">sémantique</span></div>
                 <div class="fragment item">Langage machine :</div>
-                <div class="fragment item" style="margin-top: 1ex; margin-left: 10em"><span class="green">virtuelle</span> (JVM, CIL...)</div>
+                <div class="fragment item" style="margin-top: 1ex; margin-left: 10em"><span class="green">Virtuelle</span> (JVM, CIL...)</div>
                 <div class="fragment item" style="margin-left: 10em"><span class="green">Concrète</span> (x86, ARM...)</div>
                 <div class="fragment item" style="margin-top: 1ex"><span class="magenta">I</span>nstruction <span class="magenta">S</span>et <span class="magenta">A</span>rchitecture</div>
                 <div class="fragment item" style="margin-top: 1ex; margin-left: 10em"><span class="code">JUMP</span></div>
@@ -427,6 +430,9 @@
                         
                 var add42 = AddCurried(42)
                 var add19 = AddCurried(19)
+                
+                var resA = add42(13);  // -> 55
+                var resB = add19(13);  // -> 32
             </code><div class="lang">C#</div></pre>
         </section>
         
@@ -470,6 +476,8 @@
         <span class="fragment" data-fragment-index="6">Main</span>
         <span class="fragment" data-fragment-index="7">  AddCurried(19)</span>
         <span class="fragment" data-fragment-index="9">Main</span>
+        <span class="fragment" data-fragment-index="10">  LamXY</span>
+        <span class="fragment" data-fragment-index="12">Main</span>
                     </code><div class="lang">C#</div></pre>
                 </div>
                 <div class="r-stack" style="grid-area: right">
@@ -479,6 +487,9 @@
                     <img class="fragment fade-in-then-out" data-fragment-index="7" src="images/fermeture/7.svg" alt="">
                     <img class="fragment fade-in-then-out" data-fragment-index="8" src="images/fermeture/8.svg" alt="">
                     <img class="fragment fade-in-then-out" data-fragment-index="9" src="images/fermeture/9.svg" alt="">
+                    <img class="fragment fade-in-then-out" data-fragment-index="10" src="images/fermeture/10.svg" alt="">
+                    <img class="fragment fade-in-then-out" data-fragment-index="11" src="images/fermeture/11.svg" alt="">
+                    <img class="fragment fade-in-then-out" data-fragment-index="12" src="images/fermeture/12.svg" alt="">
                 </div>
             </div>
         </section>
@@ -790,13 +801,16 @@
 
         <section>
             <h2>Ressources</h2>
-            <div class="list" style="margin-top: 3em; margin-bottom: 100%">
-                <div  class="item fragment">The ZINC Experiment<a href="https://xavierleroy.org/publi/ZINC.pdf"> [PDF]</a></div>
-                <div class="item fragment">Standard ML of New Jersey<a href="https://www.cs.princeton.edu/~appel/papers/smlnj.pdf"> [PDF]</a></div>
-                <div class="item fragment" style="margin-top: 2ex">Wikipedia<a href="https://www.wikipedia.org/"> [Web]</a></div>
+            <div style="display: grid;  grid: 'left right' / 1fr 1fr; margin-top: 3ex; margin-bottom: 100%">
+                <img class="fragment" style="padding-left: 2em; grid-area: left; justify-self: center" src="images/TPL.jpg" alt="Types and Programming Languages">
+                <div class="list" style="grid-area: right">
+                    <div  class="item fragment">The ZINC Experiment<a href="https://xavierleroy.org/publi/ZINC.pdf"> [PDF]</a></div>
+                    <div class="item fragment">Standard ML of New Jersey<a href="https://www.cs.princeton.edu/~appel/papers/smlnj.pdf"> [PDF]</a></div>
+                    <div class="item fragment" style="margin-top: 2ex">Wikipedia<a href="https://www.wikipedia.org/"> [Web]</a></div>
+                </div>
             </div>
         </section>
-
+        
         <section>
             <div style="display: flex; justify-content: space-between">
                 <div style="margin-left: 2em; display: flex; flex-direction: column">
