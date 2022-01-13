@@ -127,59 +127,68 @@
         </section>
         
         <section>
-            <h2>Sémantique</h2>
-            <div style="margin-top: 3ex; margin-bottom: 100%; display: grid; grid: 'left right' / 1fr 1fr">
+            <h2>Sémantique Opérationnelle</h2>
+            <div style="margin-top: 3em; margin-bottom: 100%; display: grid; grid: 'left right' / 1fr 1fr">
                 <div style="grid-area: left">
                     <div class="list">
-                        <div class="item fragment">$\langle 2 + 1 \rangle \neq \langle 1 + 2 \rangle$</div>
-                        <div class="item fragment" style="margin-top: 2ex">$\lceil\langle 2 + 1 \rangle\rceil$</div>
-                        <div class="item fragment">$\lceil\langle 2 \rangle\rceil$ <span class="magenta">$+$</span> $\lceil\langle 1 \rangle\rceil$</div>
-                        <div class="item fragment"><span class="magenta">$2 + 1$</span></div>
-                        <div class="item fragment"><span class="magenta">$3$</span></div>
-                        <div class="item fragment" style="margin-top: 2ex">$\lceil\langle 1 + 2 \rangle\rceil$</div>
-                        <div class="item fragment">$\lceil\langle 1 \rangle\rceil$ <span class="magenta">$+$</span> $\lceil\langle 2 \rangle\rceil$</div>
-                        <div class="item fragment"><span class="magenta">$1 + 2$</span></div>
-                        <div class="item fragment"><span class="magenta">$3$</span></div>
+                        <div class="item fragment">Syntaxe :</div>
+                        <div class="item fragment" style="margin-top: 1ex; margin-left: 5em">$E ::= (E_1 + E_2) \; | \; n \in \mathbb{N}$</div>
+                        <div class="item fragment" style="margin-top: 3em">Exemple :</div>
+                        <div class="item fragment" style="margin-top: 1ex; margin-left: 5em">$(42 + 19) + (13 + 51)$</div>
                     </div>
                 </div>
                 <div style="grid-area: right">
                     <div class="list">
-                        <div class="item fragment">$\{\varnothing\} \;\Uparrow\; \lceil\langle 2 + 1 \rangle\rceil$</div>
-                        <div class="item fragment">$\{$ <span class="magenta">2</span>$\,\centerdot\,$<span class="magenta">1</span> $\,\centerdot\,\varnothing\} \;\Uparrow\; \lceil\langle + \rangle\rceil$</div>
-                        <div class="item fragment">$\{$ <span class="magenta">3</span> $\,\centerdot\,\varnothing\} \;\Uparrow\; \lceil\langle \rangle\rceil$</div>
-                        <div class="item fragment" style="margin-top: 3ex">$\{\varnothing\} \;\Uparrow\; \lceil\langle 1 + 2 \rangle\rceil$</div>
-                        <div class="item fragment">$\{$ <span class="magenta">1</span>$\,\centerdot\,$<span class="magenta">2</span> $\,\centerdot\,\varnothing\} \;\Uparrow\; \lceil\langle + \rangle\rceil$</div>
-                        <div class="item fragment">$\{$ <span class="magenta">3</span> $\,\centerdot\,\varnothing\} \;\Uparrow\; \lceil\langle \rangle\rceil$</div>
+                        <div class="item">Règles :</div>
+                        <div class="item fragment" style="align-self: center; font-size: smaller">$\cfrac{}{n \; + \; m \; \longrightarrow \; p}$</div>
+                        <div class="item fragment" style="margin-top: 3ex; align-self: center; font-size: smaller">$\cfrac{E_1 \; \longrightarrow \; E_1'}{E_1 \; + \; E_2 \; \longrightarrow \; E_1' \; + \; E_2}$</div>
+                        <div class="item fragment"  style="margin-top: 3ex; align-self: center; font-size: smaller">$\cfrac{E_2 \; \longrightarrow \; E_2'}{n \; + \; E_2 \; \longrightarrow \; n \; + \; E_2'}$</div>
                     </div>
                 </div>
             </div>            
         </section>
         
         <section>
-            <h2>Dénotationelle</h2>
-            <div class="list" style="margin-top: 3ex; margin-bottom: 100%">
-                <div class="item fragment">$\langle 2 + 1 \rangle \neq \langle 1 + 2 \rangle$</div>
-                <div class="item fragment" style="margin-top: 2ex">$\lceil\langle 2 + 1 \rangle\rceil$</div>
-                <div class="item fragment">$\lceil\langle 2 \rangle\rceil$ <span class="magenta">$+$</span> $\lceil\langle 1 \rangle\rceil$</div>
-                <div class="item fragment"><span class="magenta">$2 + 1$</span></div>
-                <div class="item fragment"><span class="magenta">$3$</span></div>
-                <div class="item fragment" style="margin-top: 2ex">$\lceil\langle 1 + 2 \rangle\rceil$</div>
-                <div class="item fragment">$\lceil\langle 1 \rangle\rceil$ <span class="magenta">$+$</span> $\lceil\langle 2 \rangle\rceil$</div>
-                <div class="item fragment"><span class="magenta">$1 + 2$</span></div>
-                <div class="item fragment"><span class="magenta">$3$</span></div>
-            </div>
+            <h2>Sémantique Opérationnelle</h2>
+            <div style="margin-top: 3em; margin-bottom: 100%; display: grid; grid: 'left right' / 1fr 1fr">
+                <div style="grid-area: left">
+                    <div class="list">
+                        <div class="item">Règles :</div>
+                        <div class="item" style="align-self: center; font-size: smaller">$\cfrac{}{n \; + \; m \; \longrightarrow \; p}$</div>
+                        <div class="item" style="margin-top: 3ex; align-self: center; font-size: smaller">$\cfrac{E_1 \; \longrightarrow \; E_1'}{E_1 \; + \; E_2 \; \longrightarrow \; E_1' \; + \; E_2}$</div>
+                        <div class="item"  style="margin-top: 3ex; align-self: center; font-size: smaller">$\cfrac{E_2 \; \longrightarrow \; E_2'}{n \; + \; E_2 \; \longrightarrow \; n \; + \; E_2'}$</div>
+                    </div>
+                </div>
+                <div style="grid-area: right">
+                    <div class="item fragment" style="margin-top: 1em; align-self: center; font-size: smaller">$\cfrac{\cfrac{}{(42 + 19) \; \longrightarrow \; 61}}{(42 + 19) + (13 + 51) \; \longrightarrow \; 61 + (13 + 51)}$</div>
+                    <div class="item fragment" style="margin-top: 3ex; align-self: center; font-size: smaller">$\cfrac{\cfrac{}{13 + 51 \; \longrightarrow \; 64}}{61 + (13 + 51) \; \longrightarrow \; 61 + 64}$</div>
+                    <div class="item fragment"  style="margin-top: 3ex; align-self: center; font-size: smaller">$\cfrac{}{61 + 64 \; \longrightarrow \; 125}$</div>
+                </div>
+            </div>            
         </section>
         
         <section>
-            <h2>Opérationelle</h2>
-            <div class="list" style="margin-top: 4ex; margin-bottom: 100%">
-                <div class="item fragment">$\{\varnothing\} \;\Uparrow\; \lceil\langle 2 + 1 \rangle\rceil$</div>
-                <div class="item fragment">$\{$ <span class="magenta">2</span>$\,\centerdot\,$<span class="magenta">1</span> $\,\centerdot\,\varnothing\} \;\Uparrow\; \lceil\langle + \rangle\rceil$</div>
-                <div class="item fragment">$\{$ <span class="magenta">3</span> $\,\centerdot\,\varnothing\} \;\Uparrow\; \lceil\langle \rangle\rceil$</div>
-                <div class="item fragment" style="margin-top: 3ex">$\{\varnothing\} \;\Uparrow\; \lceil\langle 1 + 2 \rangle\rceil$</div>
-                <div class="item fragment">$\{$ <span class="magenta">1</span>$\,\centerdot\,$<span class="magenta">2</span> $\,\centerdot\,\varnothing\} \;\Uparrow\; \lceil\langle + \rangle\rceil$</div>
-                <div class="item fragment">$\{$ <span class="magenta">3</span> $\,\centerdot\,\varnothing\} \;\Uparrow\; \lceil\langle \rangle\rceil$</div>
-            </div>
+            <h2>Sémantique Opérationnelle</h2>
+            <div style="margin-top: 3em; margin-bottom: 100%; display: grid; grid: 'left right' / 1fr 1fr">
+                <div style="grid-area: left">
+                    <div class="list">
+                        <div class="item">Règles :</div>
+                        <div class="item" style="align-self: center; font-size: smaller">$\cfrac{}{n \; + \; m \; \longrightarrow \; p}$</div>
+                        <div class="item" style="margin-top: 3ex; align-self: center; font-size: smaller">$\cfrac{E_1 \; \longrightarrow \; E_1'}{E_1 \; + \; E_2 \; \longrightarrow \; E_1' \; + \; E_2}$</div>
+                        <div class="item"  style="margin-top: 3ex; align-self: center; font-size: smaller">$\cfrac{E_2 \; \longrightarrow \; E_2'}{n \; + \; E_2 \; \longrightarrow \; n \; + \; E_2'}$</div>
+                    </div>
+                </div>
+                <div style="grid-area: right">
+                    <div class="item" style="margin-top: 5em; align-self: center; font-size: smaller">\[
+                        \begin{align*}
+                         &amp; (42 + 19) + (13 + 51) \\
+                         \longrightarrow &amp; \; 61 + (13 + 51) \\
+                         \longrightarrow &amp; \; 61 + 64 \\
+                         \longrightarrow &amp; \; 125 \\
+                        \end{align*}
+                    \]</div>
+                </div>
+            </div>            
         </section>
         
         <section>
