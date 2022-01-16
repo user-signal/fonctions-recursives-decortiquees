@@ -76,7 +76,7 @@
                     <div style="justify-self: center">$\lambda x.\,M$</div><div style="justify-self: start"> Abstraction</div>
                     <div style="justify-self: center; margin-bottom: 2.5em">$M\,N$</div><div style="margin-bottom: 2.5em; justify-self: start"> Application</div>
                     <div style="justify-self: center">$\lambda x.\,M[x] \rightarrow \lambda y.\,M[y]$</div><div style="justify-self: start">$\alpha$-conversion</div>
-                    <div class="orange" style="justify-self: center">$(\lambda x.\,M)\:E \rightarrow M[x:=E]$</div><div class="orange" style="justify-self: start">$\beta$-reduction</div>
+                    <div class="yellow" style="justify-self: center">$(\lambda x.\,M)\:E \rightarrow M[x:=E]$</div><div class="yellow" style="justify-self: start">$\beta$-reduction</div>
                     <div style="justify-self: center">$\lambda x.\,(f\,x) \rightarrow f$</div><div style="justify-self: start">$\eta$-reduction</div>
                 </div>
             </section>
@@ -118,10 +118,10 @@
         <section>
             <h2>Sémantique</h2>
             <div class="list" style="margin-top: 5ex; margin-bottom: 100%">
-                <div class="fragment item" data-fragment-index="1">Donner un <span class="orange">sens</span> aux expressions syntaxiques</div>
-                <div class="fragment item" data-fragment-index="1">d'un langage dans un <span class="orange">autre</span> langage</div>
-                <div class="fragment item" style="margin-top: 2ex">Plus ou moins <span class="orange">formelle</span></div>
-                <div class="fragment item">Plus ou moins <span class="orange">abstraite</span></div>
+                <div class="fragment item" data-fragment-index="1">Donner un <span class="yellow">sens</span> aux expressions syntaxiques</div>
+                <div class="fragment item" data-fragment-index="1">d'un langage dans un <span class="yellow">autre</span> langage</div>
+                <div class="fragment item" style="margin-top: 2ex">Plus ou moins <span class="yellow">formelle</span></div>
+                <div class="fragment item">Plus ou moins <span class="yellow">abstraite</span></div>
                 <div class="item" style="margin-top: 2ex"><span class="fragment"><span class="green">Axiomatique</span>, </span><span class="fragment"><span class="green">Dénotationnelle</span>, </span><span class="fragment green">Opérationnelle</span></div>
             </div>
         </section>
@@ -257,7 +257,7 @@
         <section>
             <h2><span style="text-transform:lowercase">&beta;</span>-réduction complète</h2>
             <div class="list" style="margin-bottom: 100%; margin-top: 4ex">
-                <div class="fragment item">On prend n'importe quel <span class="orange">redex</span></div>
+                <div class="fragment item">On prend n'importe quel <span class="yellow">redex</span></div>
                 <div class="fragment item" style="margin-top: 5ex; margin-left: 10em">$id\:(\underline{id\:(\lambda z.\:id\: z)})$</div>
                 <div class="fragment item" style="margin-left: 10em">$id\:(\lambda z.\:\underline{id\: z})$</div>
                 <div class="fragment item" style="margin-left: 10em">$\underline{id\:(\lambda z.\: z)}$</div>
@@ -268,7 +268,7 @@
         <section>
             <h2>Ordre normal</h2>
             <div class="list" style="margin-bottom: 100%; margin-top: 4ex">
-                <div class="fragment item">On prend <span class="orange">redex</span> le plus extérieur et le plus à gauche</div>
+                <div class="fragment item">On prend <span class="yellow">redex</span> le plus extérieur et le plus à gauche</div>
                 <div class="fragment item" style="margin-top: 5ex; margin-left: 10em">$\underline{id\:(id\:(\lambda z.\:id\: z))}$</div>
                 <div class="fragment item" style="margin-left: 10em">$\underline{id\:(\lambda z.\:id\: z)}$</div>
                 <div class="fragment item" style="margin-left: 10em">$\lambda z.\:\underline{id\: z}$</div>
@@ -279,7 +279,7 @@
         <section>
             <h2>Appel par nom</h2>
             <div class="list" style="margin-bottom: 100%; margin-top: 5ex">
-                <div class="fragment item">On prend <span class="orange">redex</span> le plus extérieur et le plus à gauche</div>
+                <div class="fragment item">On prend <span class="yellow">redex</span> le plus extérieur et le plus à gauche</div>
                 <div class="fragment item">et sans descendre dans les abstractions (les $\lambda x.\,E$)</div>
                 <div class="fragment item" style="margin-top: 4ex; margin-left: 10em">$\underline{id\:(id\:(\lambda z.\:id\: z))}$</div>
                 <div class="fragment item" style="margin-left: 10em">$\underline{id\:(\lambda z.\:id\: z)}$</div>
@@ -293,7 +293,7 @@
         <section>
             <h2>Appel par valeur</h2>
             <div class="list" style="margin-bottom: 100%; margin-top: 5ex">
-                <div class="fragment item">On prends le <span class="orange">redex</span> le plus extérieur dont l'argument est déjà réduit</div>
+                <div class="fragment item">On prends le <span class="yellow">redex</span> le plus extérieur dont l'argument est déjà réduit</div>
                 <div class="fragment item">et sans descendre dans les abstractions (les $\lambda x.\,E$)</div>
                 <div class="fragment item" style="margin-top: 4ex; margin-left: 10em">$id\:(\underline{id\:(\lambda z.\:id\: z)})$</div>
                 <div class="fragment item" style="margin-left: 10em">$\underline{id\:(\lambda z.\:id\: z)}$</div>
@@ -425,10 +425,10 @@
         <section>
             <h2>Mise en œuvre</h2>
             <div class="list" style="margin-bottom: 100%; margin-top: 3em">
-                <div class="item fragment">Plusieurs instances ou <span class="orange">activations</span> d'une même fonction</div>
+                <div class="item fragment">Plusieurs instances ou <span class="yellow">activations</span> d'une même fonction</div>
                 <div class="item fragment">Enregistrement d'activation</div>
-                <div class="item fragment">... Ou <span class="orange">activation frame</span></div>
-                <div class="item fragment">... Ou <span class="orange">activation record</span></div>
+                <div class="item fragment">... Ou <span class="yellow">activation frame</span></div>
+                <div class="item fragment">... Ou <span class="yellow">activation record</span></div>
                 <div class="item fragment" style="margin-top: 2ex">Crée à l'activation</div>
                 <div class="item fragment">Plus utile à la désactivation</div>
                 <div class="item fragment">$\Rightarrow$ <span class="green">Pile</span></div>
@@ -518,7 +518,7 @@
             <h2>Fonction d'Ordre supérieur</h2>
             <div class="list" style="margin-top: 3em; margin-bottom: 100%">
                 <div class="fragment item">Entité qui mémorise <span class="green">code</span> et <span class="green">environnement</span></div>
-                <div class="fragment item"><span class="orange">Closure</span>... <span class="fragment">ou <span class="orange">Fermeture</span> pour les francophiles</span></div>
+                <div class="fragment item"><span class="yellow">Closure</span>... <span class="fragment">ou <span class="yellow">Fermeture</span> pour les francophiles</span></div>
                 <div class="fragment item" style="margin-top: 2ex">Survive à un dépilement</div>
                 <div class="fragment item">$\Rightarrow$ <span class="green">Tas</span> ou <span class="green">Heap</span> pour...</div>
             </div>
@@ -784,7 +784,7 @@
                 <div class="item fragment" data-fragment-index="1" >On voudrait exprimer un algo récursif...</div>
                 <div class="item fragment" data-fragment-index="2" >Mais le compilateur ne nous aide pas...</div>
                 <div class="item fragment" data-fragment-index="3" >Comment forcer le dépilement l'activation courante ?</div>
-                <div class="item fragment" data-fragment-index="4"  style="margin-top: 2ex">En utilisant un <span class="orange">trampoline</span></div>
+                <div class="item fragment" data-fragment-index="4"  style="margin-top: 2ex">En utilisant un <span class="yellow">trampoline</span></div>
                 <div class="item fragment" data-fragment-index="5" style="margin-top: 2ex">Principe : </div>
                 <div class="item fragment" data-fragment-index="6" style="margin-left: 8em;margin-top: 1ex">Retourner une valeur qui exprime </div>
                 <div class="item fragment" data-fragment-index="6"  style="margin-left: 8em">un « <span class="green">reste à faire</span> » ou un résultat</div>
