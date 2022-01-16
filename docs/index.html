@@ -131,18 +131,18 @@
             <div style="margin-top: 3em; margin-bottom: 100%; display: grid; grid: 'left right' / 1fr 1fr">
                 <div style="grid-area: left">
                     <div class="list">
-                        <div class="item fragment">Syntaxe :</div>
-                        <div class="item fragment" style="margin-top: 1ex; margin-left: 5em">$E ::= (E_1 + E_2) \; | \; n \in \mathbb{N}$</div>
-                        <div class="item fragment" style="margin-top: 3em">Exemple :</div>
-                        <div class="item fragment" style="margin-top: 1ex; margin-left: 5em">$(42 + 19) + (13 + 51)$</div>
+                        <div class="item fragment" data-fragment-index="0">Syntaxe :</div>
+                        <div class="item fragment" data-fragment-index="0" style="margin-top: 1ex; margin-left: 5em">$E ::= (E_1 + E_2) \; | \; n \in \mathbb{N}$</div>
+                        <div class="item fragment" data-fragment-index="1" style="margin-top: 3em">Exemple :</div>
+                        <div class="item fragment" data-fragment-index="1" style="margin-top: 1ex; margin-left: 5em">$(42 + 19) + (13 + 51)$</div>
                     </div>
                 </div>
                 <div style="grid-area: right">
                     <div class="list">
-                        <div class="item">Règles :</div>
-                        <div class="item fragment" style="align-self: center; font-size: smaller">$\cfrac{}{n \; + \; m \; \longrightarrow \; p}$</div>
-                        <div class="item fragment" style="margin-top: 3ex; align-self: center; font-size: smaller">$\cfrac{E_1 \; \longrightarrow \; E_1'}{E_1 \; + \; E_2 \; \longrightarrow \; E_1' \; + \; E_2}$</div>
-                        <div class="item fragment"  style="margin-top: 3ex; align-self: center; font-size: smaller">$\cfrac{E_2 \; \longrightarrow \; E_2'}{n \; + \; E_2 \; \longrightarrow \; n \; + \; E_2'}$</div>
+                        <div class="item fragment">Règles :</div>
+                        <div class="item fragment" style="margin-left: 0; align-self: center; font-size: smaller">$\cfrac{}{n \; + \; m \; \longrightarrow \; p}$</div>
+                        <div class="item fragment" style="margin-left: 0; margin-top: 3ex; align-self: center; font-size: smaller">$\cfrac{E_1 \; \longrightarrow \; E_1'}{E_1 \; + \; E_2 \; \longrightarrow \; E_1' \; + \; E_2}$</div>
+                        <div class="item fragment"  style="margin-left: 0; margin-top: 3ex; align-self: center; font-size: smaller">$\cfrac{E_2 \; \longrightarrow \; E_2'}{n \; + \; E_2 \; \longrightarrow \; n \; + \; E_2'}$</div>
                     </div>
                 </div>
             </div>            
@@ -153,16 +153,48 @@
             <div style="margin-top: 3em; margin-bottom: 100%; display: grid; grid: 'left right' / 1fr 1fr">
                 <div style="grid-area: left">
                     <div class="list">
-                        <div class="item">Règles :</div>
-                        <div class="item" style="align-self: center; font-size: smaller">$\cfrac{}{n \; + \; m \; \longrightarrow \; p}$</div>
-                        <div class="item" style="margin-top: 3ex; align-self: center; font-size: smaller">$\cfrac{E_1 \; \longrightarrow \; E_1'}{E_1 \; + \; E_2 \; \longrightarrow \; E_1' \; + \; E_2}$</div>
-                        <div class="item"  style="margin-top: 3ex; align-self: center; font-size: smaller">$\cfrac{E_2 \; \longrightarrow \; E_2'}{n \; + \; E_2 \; \longrightarrow \; n \; + \; E_2'}$</div>
+                        <div class="item" style="margin-left: 0; align-self: center; font-size: smaller">$\cfrac{}{n \; + \; m \; \longrightarrow \; p}$</div>
+                        <div class="item" style="margin-left: 0; margin-top: 3ex; align-self: center; font-size: smaller">$\cfrac{E_1 \; \longrightarrow \; E_1'}{E_1 \; + \; E_2 \; \longrightarrow \; E_1' \; + \; E_2}$</div>
+                        <div class="item"  style="margin-left: 0; margin-top: 3ex; align-self: center; font-size: smaller">$\cfrac{E_2 \; \longrightarrow \; E_2'}{n \; + \; E_2 \; \longrightarrow \; n \; + \; E_2'}$</div>
                     </div>
                 </div>
                 <div style="grid-area: right">
-                    <div class="item fragment" style="margin-top: 1em; align-self: center; font-size: smaller">$\cfrac{\cfrac{}{(42 + 19) \; \longrightarrow \; 61}}{(42 + 19) + (13 + 51) \; \longrightarrow \; 61 + (13 + 51)}$</div>
-                    <div class="item fragment" style="margin-top: 3ex; align-self: center; font-size: smaller">$\cfrac{\cfrac{}{13 + 51 \; \longrightarrow \; 64}}{61 + (13 + 51) \; \longrightarrow \; 61 + 64}$</div>
-                    <div class="item fragment"  style="margin-top: 3ex; align-self: center; font-size: smaller">$\cfrac{}{61 + 64 \; \longrightarrow \; 125}$</div>
+                    <div class="item fragment" style="margin-top: -2ex; align-self: center; font-size: smaller">$\cfrac{\cfrac{}{(42 + 19) \; \longrightarrow \; 61}}{(42 + 19) + (13 + 51) \; \longrightarrow \; 61 + (13 + 51)}$</div>
+                </div>
+            </div>            
+        </section>
+
+        <section>
+            <h2>Sémantique Opérationnelle</h2>
+            <div style="margin-top: 3em; margin-bottom: 100%; display: grid; grid: 'left right' / 1fr 1fr">
+                <div style="grid-area: left">
+                    <div class="list">
+                        <div class="item magenta" style="margin-left: 0; align-self: center; font-size: smaller">$\cfrac{}{n \; + \; m \; \longrightarrow \; p}$</div>
+                        <div class="item blue" style="margin-left: 0; margin-top: 3ex; align-self: center; font-size: smaller">$\cfrac{E_1 \; \longrightarrow \; E_1'}{E_1 \; + \; E_2 \; \longrightarrow \; E_1' \; + \; E_2}$</div>
+                        <div class="item"  style="margin-left: 0; margin-top: 3ex; align-self: center; font-size: smaller">$\cfrac{E_2 \; \longrightarrow \; E_2'}{n \; + \; E_2 \; \longrightarrow \; n \; + \; E_2'}$</div>
+                    </div>
+                </div>
+                <div style="grid-area: right">
+                    <div class="item" style="margin-top: -2ex; align-self: center; font-size: smaller">$\cfrac{\cfrac{}{\htmlClass{magenta}{(42 + 19)} \; \longrightarrow \; 61}}{\htmlClass{blue}{(42 + 19) + (13 + 51)} \; \longrightarrow \; 61 + (13 + 51)}$</div>
+                    <div class="item fragment" style="margin-top: 2ex; align-self: center; font-size: smaller">$\cfrac{\cfrac{}{13 + 51 \; \longrightarrow \; 64}}{61 + (13 + 51) \; \longrightarrow \; 61 + 64}$</div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Sémantique Opérationnelle</h2>
+            <div style="margin-top: 3em; margin-bottom: 100%; display: grid; grid: 'left right' / 1fr 1fr">
+                <div style="grid-area: left">
+                    <div class="list">
+                        <div class="item magenta" style="margin-left: 0; align-self: center; font-size: smaller">$\cfrac{}{n \; + \; m \; \longrightarrow \; p}$</div>
+                        <div class="item" style="margin-left: 0; margin-top: 3ex; align-self: center; font-size: smaller">$\cfrac{E_1 \; \longrightarrow \; E_1'}{E_1 \; + \; E_2 \; \longrightarrow \; E_1' \; + \; E_2}$</div>
+                        <div class="item blue"  style="margin-left: 0; margin-top: 3ex; align-self: center; font-size: smaller">$\cfrac{E_2 \; \longrightarrow \; E_2'}{n \; + \; E_2 \; \longrightarrow \; n \; + \; E_2'}$</div>
+                    </div>
+                </div>
+                <div style="grid-area: right">
+                    <div class="item" style="margin-top: -2ex; align-self: center; font-size: smaller">$\cfrac{\cfrac{}{(42 + 19) \; \longrightarrow \; 61}}{(42 + 19) + (13 + 51) \; \longrightarrow \; 61 + (13 + 51)}$</div>
+                    <div class="item" style="margin-top: 2ex; align-self: center; font-size: smaller">$\cfrac{\cfrac{}{\htmlClass{magenta}{13 + 51} \; \longrightarrow \; 64}}{\htmlClass{blue}{61 + (13 + 51)} \; \longrightarrow \; 61 + 64}$</div>
+                    <div class="item fragment"  style="margin-top: 2ex; align-self: center; font-size: smaller">$\cfrac{}{61 + 64 \; \longrightarrow \; 125}$</div>
                 </div>
             </div>            
         </section>
@@ -172,14 +204,31 @@
             <div style="margin-top: 3em; margin-bottom: 100%; display: grid; grid: 'left right' / 1fr 1fr">
                 <div style="grid-area: left">
                     <div class="list">
-                        <div class="item">Règles :</div>
-                        <div class="item" style="align-self: center; font-size: smaller">$\cfrac{}{n \; + \; m \; \longrightarrow \; p}$</div>
-                        <div class="item" style="margin-top: 3ex; align-self: center; font-size: smaller">$\cfrac{E_1 \; \longrightarrow \; E_1'}{E_1 \; + \; E_2 \; \longrightarrow \; E_1' \; + \; E_2}$</div>
-                        <div class="item"  style="margin-top: 3ex; align-self: center; font-size: smaller">$\cfrac{E_2 \; \longrightarrow \; E_2'}{n \; + \; E_2 \; \longrightarrow \; n \; + \; E_2'}$</div>
+                        <div class="item" style="margin-left: 0; align-self: center; font-size: smaller">$\cfrac{}{n \; + \; m \; \longrightarrow \; p}$</div>
+                        <div class="item" style="margin-left: 0; margin-top: 3ex; align-self: center; font-size: smaller">$\cfrac{E_1 \; \longrightarrow \; E_1'}{E_1 \; + \; E_2 \; \longrightarrow \; E_1' \; + \; E_2}$</div>
+                        <div class="item blue"  style="margin-left: 0; margin-top: 3ex; align-self: center; font-size: smaller">$\cfrac{E_2 \; \longrightarrow \; E_2'}{n \; + \; E_2 \; \longrightarrow \; n \; + \; E_2'}$</div>
                     </div>
                 </div>
                 <div style="grid-area: right">
-                    <div class="item" style="margin-top: 5em; align-self: center; font-size: smaller">\[
+                    <div class="item" style="margin-top: -2ex; align-self: center; font-size: smaller">$\cfrac{\cfrac{}{(42 + 19) \; \longrightarrow \; 61}}{(42 + 19) + (13 + 51) \; \longrightarrow \; 61 + (13 + 51)}$</div>
+                    <div class="item" style="margin-top: 2ex; align-self: center; font-size: smaller">$\cfrac{\cfrac{}{13 + 51 \; \longrightarrow \; 64}}{61 + (13 + 51) \; \longrightarrow \; 61 + 64}$</div>
+                    <div class="item"  style="margin-top: 2ex; align-self: center; font-size: smaller">$\cfrac{}{\htmlClass{blue}{61 + 64} \; \longrightarrow \; 125}$</div>
+                </div>
+            </div>            
+        </section>
+        
+        <section>
+            <h2>Sémantique Opérationnelle</h2>
+            <div style="margin-top: 3em; margin-bottom: 100%; display: grid; grid: 'left right' / 1fr 1fr">
+                <div style="grid-area: left">
+                    <div class="list">
+                        <div class="item" style="margin-left: 0; align-self: center; font-size: smaller">$\cfrac{}{n \; + \; m \; \longrightarrow \; p}$</div>
+                        <div class="item" style="margin-left: 0; margin-top: 3ex; align-self: center; font-size: smaller">$\cfrac{E_1 \; \longrightarrow \; E_1'}{E_1 \; + \; E_2 \; \longrightarrow \; E_1' \; + \; E_2}$</div>
+                        <div class="item"  style="margin-left: 0; margin-top: 3ex; align-self: center; font-size: smaller">$\cfrac{E_2 \; \longrightarrow \; E_2'}{n \; + \; E_2 \; \longrightarrow \; n \; + \; E_2'}$</div>
+                    </div>
+                </div>
+                <div style="grid-area: right">
+                    <div class="item" style="margin-left: -9ex; margin-top: 3em; font-size: smaller">\[
                         \begin{align*}
                          &amp; (42 + 19) + (13 + 51) \\
                          \longrightarrow &amp; \; 61 + (13 + 51) \\
@@ -198,7 +247,7 @@
                 <div class="fragment item" data-fragment-index="1" style="margin-top: 1ex; margin-left: 10em">$id = \lambda x.\,x$</div>
                 <div class="fragment item" data-fragment-index="2" style="margin-top: 1ex">Soit l'expression :</div>
                 <div class="fragment item" data-fragment-index="2" style="margin-top: 1ex; margin-left: 10em">$id\,(id\,(\lambda z.\,id\, z))$</div>
-                <div class="fragment item" data-fragment-index="3" style="margin-top: 1ex">On a les <span class="orange">redex</span> :</div>
+                <div class="fragment item" data-fragment-index="3" style="margin-top: 1ex">On a les <span class="magenta">red</span>ucible <span class="magenta">ex</span>pressions :</div>
                 <div class="fragment item" style="margin-top: 1ex; margin-left: 10em">$id\,(id\,(\lambda z.\,\underline{id\, z}))$</div>
                 <div class="fragment item" style="margin-left: 10em">$id\,(\underline{id\,(\lambda z.\,id\, z)})$</div>
                 <div class="fragment item" style="margin-left: 10em">$\underline{id\,(id\,(\lambda z.\,id\, z))}$</div>
@@ -231,7 +280,7 @@
             <h2>Appel par nom</h2>
             <div class="list" style="margin-bottom: 100%; margin-top: 5ex">
                 <div class="fragment item">On prend <span class="orange">redex</span> le plus extérieur et le plus à gauche</div>
-                <div class="fragment item">et sans descendre dans les abstractions (le $E$ dans $\lambda x.\,E$)</div>
+                <div class="fragment item">et sans descendre dans les abstractions (les $\lambda x.\,E$)</div>
                 <div class="fragment item" style="margin-top: 4ex; margin-left: 10em">$\underline{id\:(id\:(\lambda z.\:id\: z))}$</div>
                 <div class="fragment item" style="margin-left: 10em">$\underline{id\:(\lambda z.\:id\: z)}$</div>
                 <div class="fragment item green" style="margin-left: 10em">$\lambda z.\:id\: z$</div>
@@ -245,7 +294,7 @@
             <h2>Appel par valeur</h2>
             <div class="list" style="margin-bottom: 100%; margin-top: 5ex">
                 <div class="fragment item">On prends le <span class="orange">redex</span> le plus extérieur dont l'argument est déjà réduit</div>
-                <div class="fragment item">et sans descendre dans les abstractions (le $E$ dans $\lambda x.\,E$)</div>
+                <div class="fragment item">et sans descendre dans les abstractions (les $\lambda x.\,E$)</div>
                 <div class="fragment item" style="margin-top: 4ex; margin-left: 10em">$id\:(\underline{id\:(\lambda z.\:id\: z)})$</div>
                 <div class="fragment item" style="margin-left: 10em">$\underline{id\:(\lambda z.\:id\: z)}$</div>
                 <div class="fragment item green" style="margin-left: 10em">$\lambda z.\:id\: z$</div>
@@ -335,19 +384,6 @@
         </section>
 
         <section>
-            <h2>RISC</h2>
-            <div class="list" style="margin-top: 3em; margin-bottom: 100%">
-                <div class="item fragment"><span class="magenta">R</span>educed <span class="magenta">I</span>nstruction <span class="magenta">S</span>et <span class="magenta">C</span>omputer</div>
-                <div class="item fragment">IBM 801 (1975-1980)</div>
-                <div class="item fragment"><span class="blue">David Paterson</span> à Berkeley</div>
-                <div class="item fragment">Dec Alpha, IBM POWER, Motorola 88000... (1980 et après)</div>
-                <div class="item fragment">RISC-V</div>
-                <div class="item fragment" style="margin-top: 1ex">Moins d'instructions plus simples</div>
-                <div class="item fragment">Plus de registres généraux</div>
-            </div>
-        </section>
-
-        <section>
             <h2>Récursion simple</h2>
             <div class="list" style="margin-top: 3em">
                 <div class="item fragment">Un cas de base ou cas d'arrêt</div>
@@ -426,6 +462,19 @@
             </div>
         </section>
 
+        <section>
+            <h2>RISC</h2>
+            <div class="list" style="margin-top: 3em; margin-bottom: 100%">
+                <div class="item fragment"><span class="magenta">R</span>educed <span class="magenta">I</span>nstruction <span class="magenta">S</span>et <span class="magenta">C</span>omputer</div>
+                <div class="item fragment">IBM 801 (1975-1980)</div>
+                <div class="item fragment"><span class="blue">David Paterson</span> à Berkeley</div>
+                <div class="item fragment">Dec Alpha, IBM POWER, Motorola 88000... (1980 et après)</div>
+                <div class="item fragment">RISC-V</div>
+                <div class="item fragment" style="margin-top: 1ex">Moins d'instructions plus élémentaires</div>
+                <div class="item fragment">Plus de registres généraux</div>
+            </div>
+        </section>
+        
         <section>
             <h2>Fonctions d'Ordre supérieur</h2>
             <div class="list" style="margin-top: 3em">
@@ -859,6 +908,7 @@
         
         katex: {
             local: "dist/katex",
+            trust: true
         },
         
         dependencies: [
