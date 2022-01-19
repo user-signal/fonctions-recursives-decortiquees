@@ -21,10 +21,7 @@
     <div class="slides">
 
         <section>
-            <section>
-                <h2>Les fonctions <span class="green">(récursives)</span> décortiquées</h2>
-            </section>
-            <section data-background-image="images/Sponsors.jpeg" data-transition="none"></section>
+            <h2>Les fonctions <span class="green">(récursives)</span> décortiquées</h2>
         </section>
 
         <section>
@@ -67,32 +64,17 @@
                 <div class="fragment" data-fragment-index="2" style="justify-self: center">$\lambda x.\,(f\,x) \rightarrow f$</div><div class="fragment" data-fragment-index="2" style="justify-self: start">$\eta$-reduction</div>
             </div>
         </section>
-        
-        <section>
-            <section>
-                <h2 style="margin-bottom: 1.5em"><span style="text-transform:lowercase">&lambda;</span>-Calcul</h2>
-                <div style="margin-bottom: 100%;  display: grid; grid-template-columns: 3fr 2fr">
-                    <div style="justify-self: center">$x$</div><div style="justify-self: start"> Variable</div>
-                    <div style="justify-self: center">$\lambda x.\,M$</div><div style="justify-self: start"> Abstraction</div>
-                    <div style="justify-self: center; margin-bottom: 2.5em">$M\,N$</div><div style="margin-bottom: 2.5em; justify-self: start"> Application</div>
-                    <div style="justify-self: center">$\lambda x.\,M[x] \rightarrow \lambda y.\,M[y]$</div><div style="justify-self: start">$\alpha$-conversion</div>
-                    <div class="yellow" style="justify-self: center">$(\lambda x.\,M)\:E \rightarrow M[x:=E]$</div><div class="yellow" style="justify-self: start">$\beta$-reduction</div>
-                    <div style="justify-self: center">$\lambda x.\,(f\,x) \rightarrow f$</div><div style="justify-self: start">$\eta$-reduction</div>
-                </div>
-            </section>
 
-            <section>
-                <h2>Encodages</h2>
-                <div class="list" style="margin-top: 4ex; margin-bottom: 100%">
-                    <div class="item fragment" data-fragment-index="1">Entiers :</div>
-                    <div class="item fragment" data-fragment-index="1" style="margin-top: 1ex;margin-left: 7em">$0 = \lambda f.\, \lambda x.\,x$</div>
-                    <div class="item fragment" data-fragment-index="1" style="margin-left: 7em">$1 = \lambda f.\, \lambda x.\,f\,x$</div>
-                    <div class="item fragment" data-fragment-index="1" style="margin-left: 7em">$2 = \lambda f.\, \lambda x.\,f\,(f\,x)$</div>
-                    <div class="item fragment" data-fragment-index="2" style="margin-top: 1.5ex; margin-left: 6.75em">$S = \lambda n.\,\lambda f.\,\lambda x.\,f\,(n\,f\,x)$</div>
-                    <div class="item fragment" style="margin-top: 2ex">Point fixe :</div>
-                    <div class="green item fragment" style="margin-top: 1ex;margin-left: 6.6em">$Y = \lambda g.\,(\lambda x.\,g\,(x\,x))\,(\lambda x.\,g\,(x\,x))$</div>
-                </div>
-            </section>
+        <section>
+            <h2 style="margin-bottom: 1.5em"><span style="text-transform:lowercase">&lambda;</span>-Calcul</h2>
+            <div style="margin-bottom: 100%;  display: grid; grid-template-columns: 3fr 2fr">
+                <div style="justify-self: center">$x$</div><div style="justify-self: start"> Variable</div>
+                <div style="justify-self: center">$\lambda x.\,M$</div><div style="justify-self: start"> Abstraction</div>
+                <div style="justify-self: center; margin-bottom: 2.5em">$M\,N$</div><div style="margin-bottom: 2.5em; justify-self: start"> Application</div>
+                <div style="justify-self: center">$\lambda x.\,M[x] \rightarrow \lambda y.\,M[y]$</div><div style="justify-self: start">$\alpha$-conversion</div>
+                <div class="yellow" style="justify-self: center">$(\lambda x.\,M)\:E \rightarrow M[x:=E]$</div><div class="yellow" style="justify-self: start">$\beta$-reduction</div>
+                <div style="justify-self: center">$\lambda x.\,(f\,x) \rightarrow f$</div><div style="justify-self: start">$\eta$-reduction</div>
+            </div>
         </section>
 
         <section>
@@ -124,120 +106,6 @@
                 <div class="fragment item">Plus ou moins <span class="yellow">abstraite</span></div>
                 <div class="item" style="margin-top: 2ex"><span class="fragment"><span class="green">Axiomatique</span>, </span><span class="fragment"><span class="green">Dénotationnelle</span>, </span><span class="fragment green">Opérationnelle</span></div>
             </div>
-        </section>
-        
-        <section>
-            <h2>Sémantique Opérationnelle</h2>
-            <div style="margin-top: 3em; margin-bottom: 100%; display: grid; grid: 'left right' / 1fr 1fr">
-                <div style="grid-area: left">
-                    <div class="list">
-                        <div class="item fragment" data-fragment-index="0">Syntaxe :</div>
-                        <div class="item fragment" data-fragment-index="0" style="margin-top: 1ex; margin-left: 5em">$E ::= (E_1 + E_2) \; | \; n \in \mathbb{N}$</div>
-                        <div class="item fragment" data-fragment-index="1" style="margin-top: 3em">Exemple :</div>
-                        <div class="item fragment" data-fragment-index="1" style="margin-top: 1ex; margin-left: 5em">$(42 + 19) + (13 + 51)$</div>
-                    </div>
-                </div>
-                <div style="grid-area: right">
-                    <div class="list">
-                        <div class="item fragment">Règles :</div>
-                        <div class="item fragment" style="margin-left: 0; align-self: center; font-size: smaller">$\cfrac{}{n \; + \; m \; \longrightarrow \; p}$</div>
-                        <div class="item fragment" style="margin-left: 0; margin-top: 3ex; align-self: center; font-size: smaller">$\cfrac{E_1 \; \longrightarrow \; E_1'}{E_1 \; + \; E_2 \; \longrightarrow \; E_1' \; + \; E_2}$</div>
-                        <div class="item fragment"  style="margin-left: 0; margin-top: 3ex; align-self: center; font-size: smaller">$\cfrac{E_2 \; \longrightarrow \; E_2'}{n \; + \; E_2 \; \longrightarrow \; n \; + \; E_2'}$</div>
-                    </div>
-                </div>
-            </div>            
-        </section>
-        
-        <section>
-            <h2>Sémantique Opérationnelle</h2>
-            <div style="margin-top: 3em; margin-bottom: 100%; display: grid; grid: 'left right' / 1fr 1fr">
-                <div style="grid-area: left">
-                    <div class="list">
-                        <div class="item" style="margin-left: 0; align-self: center; font-size: smaller">$\cfrac{}{n \; + \; m \; \longrightarrow \; p}$</div>
-                        <div class="item" style="margin-left: 0; margin-top: 3ex; align-self: center; font-size: smaller">$\cfrac{E_1 \; \longrightarrow \; E_1'}{E_1 \; + \; E_2 \; \longrightarrow \; E_1' \; + \; E_2}$</div>
-                        <div class="item"  style="margin-left: 0; margin-top: 3ex; align-self: center; font-size: smaller">$\cfrac{E_2 \; \longrightarrow \; E_2'}{n \; + \; E_2 \; \longrightarrow \; n \; + \; E_2'}$</div>
-                    </div>
-                </div>
-                <div style="grid-area: right">
-                    <div class="item fragment" style="margin-top: -2ex; align-self: center; font-size: smaller">$\cfrac{\cfrac{}{(42 + 19) \; \longrightarrow \; 61}}{\htmlClass{label}{(42 + 19) + (13 + 51)} \; \longrightarrow \; 61 + (13 + 51)}$</div>
-                </div>
-            </div>            
-        </section>
-
-        <section>
-            <h2>Sémantique Opérationnelle</h2>
-            <div style="margin-top: 3em; margin-bottom: 100%; display: grid; grid: 'left right' / 1fr 1fr">
-                <div style="grid-area: left">
-                    <div class="list">
-                        <div class="item magenta" style="margin-left: 0; align-self: center; font-size: smaller">$\cfrac{}{n \; + \; m \; \longrightarrow \; p}$</div>
-                        <div class="item blue" style="margin-left: 0; margin-top: 3ex; align-self: center; font-size: smaller">$\cfrac{E_1 \; \longrightarrow \; E_1'}{E_1 \; + \; E_2 \; \longrightarrow \; E_1' \; + \; E_2}$</div>
-                        <div class="item"  style="margin-left: 0; margin-top: 3ex; align-self: center; font-size: smaller">$\cfrac{E_2 \; \longrightarrow \; E_2'}{n \; + \; E_2 \; \longrightarrow \; n \; + \; E_2'}$</div>
-                    </div>
-                </div>
-                <div style="grid-area: right">
-                    <div class="item" style="margin-top: -2ex; align-self: center; font-size: smaller">$\cfrac{\cfrac{}{\htmlClass{magenta}{(42 + 19)} \; \longrightarrow \; 61}}{\htmlClass{blue}{(42 + 19) + (13 + 51)} \; \longrightarrow \; 61 + (13 + 51)}$</div>
-                    <div class="item fragment" style="margin-top: 2ex; align-self: center; font-size: smaller">$\cfrac{\cfrac{}{13 + 51 \; \longrightarrow \; 64}}{\htmlClass{label}{61 + (13 + 51)} \; \longrightarrow \; 61 + 64}$</div>
-                </div>
-            </div>
-        </section>
-        
-        <section>
-            <h2>Sémantique Opérationnelle</h2>
-            <div style="margin-top: 3em; margin-bottom: 100%; display: grid; grid: 'left right' / 1fr 1fr">
-                <div style="grid-area: left">
-                    <div class="list">
-                        <div class="item magenta" style="margin-left: 0; align-self: center; font-size: smaller">$\cfrac{}{n \; + \; m \; \longrightarrow \; p}$</div>
-                        <div class="item" style="margin-left: 0; margin-top: 3ex; align-self: center; font-size: smaller">$\cfrac{E_1 \; \longrightarrow \; E_1'}{E_1 \; + \; E_2 \; \longrightarrow \; E_1' \; + \; E_2}$</div>
-                        <div class="item blue"  style="margin-left: 0; margin-top: 3ex; align-self: center; font-size: smaller">$\cfrac{E_2 \; \longrightarrow \; E_2'}{n \; + \; E_2 \; \longrightarrow \; n \; + \; E_2'}$</div>
-                    </div>
-                </div>
-                <div style="grid-area: right">
-                    <div class="item" style="margin-top: -2ex; align-self: center; font-size: smaller">$\cfrac{\cfrac{}{(42 + 19) \; \longrightarrow \; 61}}{(42 + 19) + (13 + 51) \; \longrightarrow \; 61 + (13 + 51)}$</div>
-                    <div class="item" style="margin-top: 2ex; align-self: center; font-size: smaller">$\cfrac{\cfrac{}{\htmlClass{magenta}{13 + 51} \; \longrightarrow \; 64}}{\htmlClass{blue}{61 + (13 + 51)} \; \longrightarrow \; 61 + 64}$</div>
-                    <div class="item fragment"  style="margin-top: 2ex; align-self: center; font-size: smaller">$\cfrac{}{\htmlClass{label}{61 + 64} \; \longrightarrow \; 125}$</div>
-                </div>
-            </div>            
-        </section>
-        
-        <section>
-            <h2>Sémantique Opérationnelle</h2>
-            <div style="margin-top: 3em; margin-bottom: 100%; display: grid; grid: 'left right' / 1fr 1fr">
-                <div style="grid-area: left">
-                    <div class="list">
-                        <div class="item blue" style="margin-left: 0; align-self: center; font-size: smaller">$\cfrac{}{n \; + \; m \; \longrightarrow \; p}$</div>
-                        <div class="item" style="margin-left: 0; margin-top: 3ex; align-self: center; font-size: smaller">$\cfrac{E_1 \; \longrightarrow \; E_1'}{E_1 \; + \; E_2 \; \longrightarrow \; E_1' \; + \; E_2}$</div>
-                        <div class="item"  style="margin-left: 0; margin-top: 3ex; align-self: center; font-size: smaller">$\cfrac{E_2 \; \longrightarrow \; E_2'}{n \; + \; E_2 \; \longrightarrow \; n \; + \; E_2'}$</div>
-                    </div>
-                </div>
-                <div style="grid-area: right">
-                    <div class="item" style="margin-top: -2ex; align-self: center; font-size: smaller">$\cfrac{\cfrac{}{(42 + 19) \; \longrightarrow \; 61}}{(42 + 19) + (13 + 51) \; \longrightarrow \; 61 + (13 + 51)}$</div>
-                    <div class="item" style="margin-top: 2ex; align-self: center; font-size: smaller">$\cfrac{\cfrac{}{13 + 51 \; \longrightarrow \; 64}}{61 + (13 + 51) \; \longrightarrow \; 61 + 64}$</div>
-                    <div class="item"  style="margin-top: 2ex; align-self: center; font-size: smaller">$\cfrac{}{\htmlClass{blue}{61 + 64} \; \longrightarrow \; 125}$</div>
-                </div>
-            </div>            
-        </section>
-        
-        <section>
-            <h2>Sémantique Opérationnelle</h2>
-            <div style="margin-top: 3em; margin-bottom: 100%; display: grid; grid: 'left right' / 1fr 1fr">
-                <div style="grid-area: left">
-                    <div class="list">
-                        <div class="item" style="margin-left: 0; align-self: center; font-size: smaller">$\cfrac{}{n \; + \; m \; \longrightarrow \; p}$</div>
-                        <div class="item" style="margin-left: 0; margin-top: 3ex; align-self: center; font-size: smaller">$\cfrac{E_1 \; \longrightarrow \; E_1'}{E_1 \; + \; E_2 \; \longrightarrow \; E_1' \; + \; E_2}$</div>
-                        <div class="item"  style="margin-left: 0; margin-top: 3ex; align-self: center; font-size: smaller">$\cfrac{E_2 \; \longrightarrow \; E_2'}{n \; + \; E_2 \; \longrightarrow \; n \; + \; E_2'}$</div>
-                    </div>
-                </div>
-                <div style="grid-area: right">
-                    <div class="item" style="margin-left: -9ex; margin-top: 3em; font-size: smaller">\[
-                        \begin{align*}
-                         &amp; (42 + 19) + (13 + 51) \\
-                         \longrightarrow &amp; \; 61 + (13 + 51) \\
-                         \longrightarrow &amp; \; 61 + 64 \\
-                         \longrightarrow &amp; \; 125 \\
-                        \end{align*}
-                    \]</div>
-                </div>
-            </div>            
         </section>
         
         <section>
@@ -489,88 +357,6 @@
                 <div class="item fragment" style="margin-left: 8em">Éclatement de donnés sur plusieurs registres</div>
                 <div class="item fragment" style="margin-left: 8em">...</div>
             </div>
-        </section>
-        
-        <section>
-            <h2>Fonctions d'Ordre supérieur</h2>
-            <div class="list" style="margin-top: 3em">
-                <div class="fragment item">Fonctions comme <span class="green">type de première classe</span></div>
-                <div class="fragment item">Affectées à des variables</div>
-                <div class="fragment item">Passées en argument d'autres fonctions</div>
-                <div class="fragment item">Retournées par des fonctions</div>
-            </div>
-            <pre class="fragment" style="font-size: 1.1ex; margin-top: 3ex; margin-bottom: 100%"><code data-no-escape class="C#" style="max-height: 800px">
-                public static Func&lt;int, int&gt; AddCurried(int x) => y => x + y;
-                        
-                var add42 = AddCurried(42)
-                var add19 = AddCurried(19)
-                
-                var resA = add42(13);  // -> 55
-                var resB = add19(13);  // -> 32
-            </code><div class="lang">C#</div></pre>
-        </section>
-        
-        <section>
-            <h2>Fonction d'Ordre supérieur</h2>
-            <div style="margin-top: 3em; display: grid; grid: 'left right' / 0.75fr 1.25fr">
-                <div style="grid-area: left">
-                    <pre style="max-height: 800px; font-size: 1.1ex; margin-bottom: 100%; margin-top: 0"><code class="C#" data-noescape>
-        <span>Main</span>
-        <span class="fragment" data-fragment-index="1">  AddCurried(42)</span>
-        <span class="fragment" data-fragment-index="3">Main</span>
-                    </code><div class="lang">C#</div></pre>
-                </div>
-                <div class="r-stack" style="grid-area: right">
-                    <img class="fragment fade-out" data-fragment-index="1" src="images/fermeture/0.svg" alt="">
-                    <img class="fragment fade-in-then-out" data-fragment-index="1" src="images/fermeture/1.svg" alt="">
-                    <img class="fragment fade-in-then-out" data-fragment-index="2" src="images/fermeture/2.svg" alt="">
-                    <img class="fragment fade-in-then-out" data-fragment-index="3" src="images/fermeture/3.svg" alt="">
-                    <img class="fragment fade-in-then-out" data-fragment-index="4" src="images/fermeture/4.svg" alt="">
-                </div>
-            </div>
-        </section>
-        
-        <section>
-            <h2>Fonction d'Ordre supérieur</h2>
-            <div class="list" style="margin-top: 3em; margin-bottom: 100%">
-                <div class="fragment item">Entité qui mémorise <span class="green">code</span> et <span class="green">environnement</span></div>
-                <div class="fragment item"><span class="yellow">Closure</span>... <span class="fragment">ou <span class="yellow">Fermeture</span> pour les francophiles</span></div>
-                <div class="fragment item" style="margin-top: 2ex">Survive à un dépilement</div>
-                <div class="fragment item">$\Rightarrow$ <span class="green">Tas</span> ou <span class="green">Heap</span> pour...</div>
-            </div>
-        </section>
-        
-        <section>
-            <h2>Fonction d'Ordre supérieur</h2>
-            <div style="margin-top: 3em; display: grid; grid: 'left right' / 0.75fr 1.25fr">
-                <div style="grid-area: left">
-                    <pre style="max-height: 800px; font-size: 1.1ex; margin-bottom: 100%; margin-top: 0"><code class="C#" data-noescape>
-        <span>Main</span>
-        <span>  AddCurried(42)</span>
-        <span class="fragment" data-fragment-index="6">Main</span>
-        <span class="fragment" data-fragment-index="7">  AddCurried(19)</span>
-        <span class="fragment" data-fragment-index="9">Main</span>
-        <span class="fragment" data-fragment-index="10">  LamXY</span>
-        <span class="fragment" data-fragment-index="12">Main</span>
-                    </code><div class="lang">C#</div></pre>
-                </div>
-                <div class="r-stack" style="grid-area: right">
-                    <img class="fragment fade-out" data-fragment-index="5" src="images/fermeture/1.svg" alt="">
-                    <img class="fragment fade-in-then-out" data-fragment-index="5" src="images/fermeture/5.svg" alt="">
-                    <img class="fragment fade-in-then-out" data-fragment-index="6" src="images/fermeture/6.svg" alt="">
-                    <img class="fragment fade-in-then-out" data-fragment-index="7" src="images/fermeture/7.svg" alt="">
-                    <img class="fragment fade-in-then-out" data-fragment-index="8" src="images/fermeture/8.svg" alt="">
-                    <img class="fragment fade-in-then-out" data-fragment-index="9" src="images/fermeture/9.svg" alt="">
-                    <img class="fragment fade-in-then-out" data-fragment-index="10" src="images/fermeture/10.svg" alt="">
-                    <img class="fragment fade-in-then-out" data-fragment-index="11" src="images/fermeture/11.svg" alt="">
-                    <img class="fragment fade-in-then-out" data-fragment-index="12" src="images/fermeture/12.svg" alt="">
-                </div>
-            </div>
-        </section>
-        
-        <section>
-            <h2>Pile non inclue</h2>
-            <img style="margin-bottom: 100%; margin-top: 3ex" src="images/SMLNJ.png" alt="">
         </section>
         
         <section>
