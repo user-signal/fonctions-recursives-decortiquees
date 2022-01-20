@@ -213,6 +213,15 @@
                 <div class="item fragment">Les variables locales (scalaires, tableau, structures...)</div>
                 <div class="item fragment">Les résultats de calculs intermédiaires (par exemple <span class="yellow">x + y</span>)</div>
                 <div class="item fragment">Le point (adresse) de retour</div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Commençons simple...</h2>
+            <div class="list" style="margin-bottom: 100%; margin-top: 3em">
+                <div class="item fragment yellow">Enregistrement d'activation</div>
+                <div class="item fragment">... Ou <span class="yellow">activation frame</span></div>
+                <div class="item fragment">... Ou <span class="yellow">activation record</span></div>
                 <div class="item fragment" style="margin-top: 2ex">Qui a pensé au mot <span class="green">pile</span><span class="fragment">... ou <span class="green">stack</span> pour les anglophiles ?</span></div>
             </div>
         </section>
@@ -271,13 +280,10 @@
         <section>
             <h2>Mise en œuvre</h2>
             <div class="list" style="margin-bottom: 100%; margin-top: 3em">
-                <div class="item fragment">Plusieurs instances ou <span class="yellow">activations</span> d'une même fonction</div>
-                <div class="item fragment">Enregistrement d'activation</div>
-                <div class="item fragment">... Ou <span class="yellow">activation frame</span></div>
-                <div class="item fragment">... Ou <span class="yellow">activation record</span></div>
-                <div class="item fragment" style="margin-top: 2ex">Crée à l'activation de la fonction</div>
-                <div class="item fragment">Plus utile à sa désactivation</div>
-                <div class="item fragment">$\Rightarrow$ <span class="green">Pile</span></div>
+                <div class="item fragment">Plusieurs <span class="yellow">instances</span> d'une même fonction</div>
+                <div class="item fragment" style="margin-top: 2ex"><span class="yellow">Enregistrement</span> crée à l'activation de la fonction</div>
+                <div class="item fragment">Récupérable à sa désactivation</div>
+                <div class="item fragment" style="margin-top: 1ex">$\Rightarrow$ <span class="green">Pile</span></div>
             </div>
         </section>
 
@@ -368,8 +374,8 @@
                 <div class="item fragment yellow">Autant réutiliser l'enregistrement d'activation courant !</div>
                 <div class="item fragment" style="margin-top: 1ex">Économie d'allocation (espace constant)</div>
                 <div class="item fragment">Appel plus rapide (<span class="code">JUMP</span> vs. <span class="code">CALL</span>)</div>
-                <div class="item fragment" style="margin-top: 1ex">Style par continuation</div>
-                <div class="item fragment">Récusivité terminale</div>
+                <div class="item fragment green" style="margin-top: 1ex">Style par continuation</div>
+                <div class="item fragment green">Récursivité terminale</div>
             </div>
         </section>
 
