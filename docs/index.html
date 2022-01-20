@@ -59,9 +59,9 @@
                 <div class="fragment" data-fragment-index="1" style="justify-self: center">$x$</div><div class="fragment" data-fragment-index="1" style="justify-self: start"> Variable</div>
                 <div class="fragment" data-fragment-index="1" style="justify-self: center">$\lambda x.\,M$</div><div class="fragment" data-fragment-index="1" style="justify-self: start"> Abstraction</div>
                 <div class="fragment" data-fragment-index="1" style="justify-self: center; margin-bottom: 2.5em">$M\,N$</div><div class="fragment" data-fragment-index="1" style="margin-bottom: 2.5em; justify-self: start"> Application</div>
+                <div class="fragment" data-fragment-index="2" style="justify-self: center">$\lambda x.\,(f\,x) \rightarrow f$</div><div class="fragment" data-fragment-index="2" style="justify-self: start">$\eta$-reduction</div>
                 <div class="fragment" data-fragment-index="2" style="justify-self: center">$\lambda x.\,M[x] \rightarrow \lambda y.\,M[y]$</div><div class="fragment" data-fragment-index="2" style="justify-self: start">$\alpha$-conversion</div>
                 <div class="fragment" data-fragment-index="2" style="justify-self: center">$(\lambda x.\,M)\:E \rightarrow M[x:=E]$</div><div class="fragment" data-fragment-index="2" style="justify-self: start">$\beta$-reduction</div>
-                <div class="fragment" data-fragment-index="2" style="justify-self: center">$\lambda x.\,(f\,x) \rightarrow f$</div><div class="fragment" data-fragment-index="2" style="justify-self: start">$\eta$-reduction</div>
             </div>
         </section>
 
@@ -71,9 +71,9 @@
                 <div style="justify-self: center">$x$</div><div style="justify-self: start"> Variable</div>
                 <div style="justify-self: center">$\lambda x.\,M$</div><div style="justify-self: start"> Abstraction</div>
                 <div style="justify-self: center; margin-bottom: 2.5em">$M\,N$</div><div style="margin-bottom: 2.5em; justify-self: start"> Application</div>
+                <div style="justify-self: center">$\lambda x.\,(f\,x) \rightarrow f$</div><div style="justify-self: start">$\eta$-reduction</div>
                 <div style="justify-self: center">$\lambda x.\,M[x] \rightarrow \lambda y.\,M[y]$</div><div style="justify-self: start">$\alpha$-conversion</div>
                 <div class="yellow" style="justify-self: center">$(\lambda x.\,M)\:E \rightarrow M[x:=E]$</div><div class="yellow" style="justify-self: start">$\beta$-reduction</div>
-                <div style="justify-self: center">$\lambda x.\,(f\,x) \rightarrow f$</div><div style="justify-self: start">$\eta$-reduction</div>
             </div>
         </section>
 
@@ -102,14 +102,14 @@
             <div class="list" style="margin-top: 5ex; margin-bottom: 100%">
                 <div class="fragment item" data-fragment-index="1">Donner un <span class="yellow">sens</span> aux expressions syntaxiques</div>
                 <div class="fragment item" data-fragment-index="1">d'un langage dans un <span class="yellow">autre</span> langage</div>
-                <div class="fragment item" style="margin-top: 2ex">Plus ou moins <span class="yellow">formelle</span></div>
-                <div class="fragment item">Plus ou moins <span class="yellow">abstraite</span></div>
-                <div class="item" style="margin-top: 2ex"><span class="fragment"><span class="green">Axiomatique</span>, </span><span class="fragment"><span class="green">Dénotationnelle</span>, </span><span class="fragment green">Opérationnelle</span></div>
+                <div class="item fragment green" style="margin-top: 2ex">Axiomatique</div>
+                <div class="item fragment green">Dénotationnelle</div>
+                <div class="item fragment green">Opérationnelle</div>
             </div>
         </section>
         
         <section>
-            <h2>Ordre de réduction</h2>
+            <h2>Stratégies d'Évaluation</h2>
             <div class="list" style="margin-top: 4ex; margin-bottom: 100%">
                 <div class="fragment item" data-fragment-index="1">Si on pose :</div>
                 <div class="fragment item" data-fragment-index="1" style="margin-top: 1ex; margin-left: 10em">$id = \lambda x.\,x$</div>
@@ -123,31 +123,9 @@
         </section>
         
         <section>
-            <h2><span style="text-transform:lowercase">&beta;</span>-réduction complète</h2>
-            <div class="list" style="margin-bottom: 100%; margin-top: 4ex">
-                <div class="fragment item">On prend n'importe quel <span class="yellow">redex</span></div>
-                <div class="fragment item" style="margin-top: 5ex; margin-left: 10em">$id\:(\underline{id\:(\lambda z.\:id\: z)})$</div>
-                <div class="fragment item" style="margin-left: 10em">$id\:(\lambda z.\:\underline{id\: z})$</div>
-                <div class="fragment item" style="margin-left: 10em">$\underline{id\:(\lambda z.\: z)}$</div>
-                <div class="fragment item green" style="margin-left: 10em">$\lambda z.\: z$</div>
-            </div>
-        </section>
-        
-        <section>
-            <h2>Ordre normal</h2>
-            <div class="list" style="margin-bottom: 100%; margin-top: 4ex">
-                <div class="fragment item">On prend <span class="yellow">redex</span> le plus extérieur et le plus à gauche</div>
-                <div class="fragment item" style="margin-top: 5ex; margin-left: 10em">$\underline{id\:(id\:(\lambda z.\:id\: z))}$</div>
-                <div class="fragment item" style="margin-left: 10em">$\underline{id\:(\lambda z.\:id\: z)}$</div>
-                <div class="fragment item" style="margin-left: 10em">$\lambda z.\:\underline{id\: z}$</div>
-                <div class="fragment item green" style="margin-left: 10em">$\lambda z.\: z$</div>
-            </div>
-        </section>
-        
-        <section>
             <h2>Appel par nom</h2>
             <div class="list" style="margin-bottom: 100%; margin-top: 5ex">
-                <div class="fragment item">On prend <span class="yellow">redex</span> le plus extérieur et le plus à gauche</div>
+                <div class="fragment item">On prend <span class="yellow">redex</span> le plus <span class="yellow">extérieur</span> et le plus à gauche</div>
                 <div class="fragment item">et sans descendre dans les abstractions (les $\lambda x.\,E$)</div>
                 <div class="fragment item" style="margin-top: 4ex; margin-left: 10em">$\underline{id\:(id\:(\lambda z.\:id\: z))}$</div>
                 <div class="fragment item" style="margin-left: 10em">$\underline{id\:(\lambda z.\:id\: z)}$</div>
@@ -161,7 +139,7 @@
         <section>
             <h2>Appel par valeur</h2>
             <div class="list" style="margin-bottom: 100%; margin-top: 5ex">
-                <div class="fragment item">On prends le <span class="yellow">redex</span> le plus extérieur dont l'argument est déjà réduit</div>
+                <div class="fragment item">On prends le <span class="yellow">redex</span> le plus <span class="yellow">intérieur</span> et le plus à gauche</div>
                 <div class="fragment item">et sans descendre dans les abstractions (les $\lambda x.\,E$)</div>
                 <div class="fragment item" style="margin-top: 4ex; margin-left: 10em">$id\:(\underline{id\:(\lambda z.\:id\: z)})$</div>
                 <div class="fragment item" style="margin-left: 10em">$\underline{id\:(\lambda z.\:id\: z)}$</div>
@@ -274,8 +252,8 @@
         <section>
             <h2>Récursivité mutuelle</h2>
             <div class="list" style="margin-top: 3em">
-                <div class="item fragment" data-fragment-index="1">Plusieurs fonctions récursives se définissent </div>
-                <div class="item fragment" data-fragment-index="1">les unes part rapport aux autres</div>
+                <div class="item fragment" data-fragment-index="1">Plusieurs fonctions récursives se définissant </div>
+                <div class="item fragment green" data-fragment-index="1">les unes part rapport aux autres</div>
             </div>
             <pre class="fragment" style="font-size: 1.1ex; margin-top: 3ex; margin-bottom: 100%"><code class="F#" style="max-height: 800px">
                         let rec IsEven =
@@ -298,7 +276,7 @@
                 <div class="item fragment">... Ou <span class="yellow">activation frame</span></div>
                 <div class="item fragment">... Ou <span class="yellow">activation record</span></div>
                 <div class="item fragment" style="margin-top: 2ex">Crée à l'activation de la fonction</div>
-                <div class="item fragment">Plus utile<span class="green">$^*$</span> à sa désactivation</div>
+                <div class="item fragment">Plus utile à sa désactivation</div>
                 <div class="item fragment">$\Rightarrow$ <span class="green">Pile</span></div>
             </div>
         </section>
@@ -333,14 +311,15 @@
         <section>
             <h2>Évolution Architecturale</h2>
             <div class="list" style="margin-top: 3em; margin-bottom: 100%">
-                <div class="item fragment">Architectures à accumulateur</div>
-                <div class="item fragment">Architectures à registres généraux</div>
-                <div class="item fragment">Architectures à pile <span class="fragment fade-out">et processeurs langages</span></div>
+                <div class="item fragment">Architectures...</div>
+                <div class="item fragment" style="margin-left: 10em">à accumulateur</div>
+                <div class="item fragment" style="margin-left: 10em">à registres généraux</div>
+                <div class="item fragment" style="margin-left: 10em">à pile <span class="fragment fade-out">et processeurs langages</span></div>
                 <div class="item fragment" style="margin-top: 2ex"><span class="magenta">R</span>educed <span class="magenta">I</span>nstruction <span class="magenta">S</span>et <span class="magenta">C</span>omputer</div>
                 <div class="item fragment">IBM 801 (1975-1980)</div>
                 <div class="item fragment"><span class="blue">David Paterson</span> à Berkeley</div>
-                <div class="item fragment">Dec Alpha, IBM POWER, Motorola 88000... (1980 et après)</div>
-                <div class="item fragment">ARM et RISC-V (aujourd'hui)</div>
+                <div class="item fragment">Dec Alpha, IBM POWER, SPARC... (1980 et après)</div>
+                <div class="item fragment">ARM, M1 et RISC-V (aujourd'hui)</div>
             </div>
         </section>
         
@@ -665,7 +644,6 @@
                 <img class="fragment" style="padding-left: 2em; grid-area: left; justify-self: center" src="images/TPL.jpg" alt="Types and Programming Languages">
                 <div class="list" style="grid-area: right">
                     <div  class="item fragment">The ZINC Experiment<a href="https://xavierleroy.org/publi/ZINC.pdf"> [PDF]</a></div>
-                    <div class="item fragment">Standard ML of New Jersey<a href="https://www.cs.princeton.edu/~appel/papers/smlnj.pdf"> [PDF]</a></div>
                     <div class="item fragment" style="margin-top: 2ex">Wikipedia<a href="https://www.wikipedia.org/"> [Web]</a></div>
                 </div>
             </div>
