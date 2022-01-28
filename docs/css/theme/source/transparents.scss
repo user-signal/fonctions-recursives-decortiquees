@@ -125,3 +125,15 @@
   border-radius: 2px;
   border: 1px solid $base01;
 }
+
+
+.reveal .slides section .fragment.highlight-current-back {
+  opacity: 1;
+  visibility: inherit;
+  
+  &.visible {
+    background-color: $base00;
+  }
+}
+
+

@@ -56,18 +56,6 @@
         <section>
             <h2 style="margin-bottom: 1.5em"><span style="text-transform:lowercase">&lambda;</span>-Calcul</h2>
             <div style="margin-bottom: 100%;  display: grid; grid-template-columns: 3fr 2fr">
-                <div class="fragment" data-fragment-index="1" style="justify-self: center">$x$</div><div class="fragment" data-fragment-index="1" style="justify-self: start"> Variable</div>
-                <div class="fragment" data-fragment-index="1" style="justify-self: center">$\lambda x.\,M$</div><div class="fragment" data-fragment-index="1" style="justify-self: start"> Abstraction</div>
-                <div class="fragment" data-fragment-index="1" style="justify-self: center; margin-bottom: 2.5em">$M\,N$</div><div class="fragment" data-fragment-index="1" style="margin-bottom: 2.5em; justify-self: start"> Application</div>
-                <div class="fragment" data-fragment-index="2" style="justify-self: center">$\lambda x.\,(f\,x) \rightarrow f$</div><div class="fragment" data-fragment-index="2" style="justify-self: start">$\eta$-reduction</div>
-                <div class="fragment" data-fragment-index="2" style="justify-self: center">$\lambda x.\,M[x] \rightarrow \lambda y.\,M[y]$</div><div class="fragment" data-fragment-index="2" style="justify-self: start">$\alpha$-conversion</div>
-                <div class="fragment" data-fragment-index="2" style="justify-self: center">$(\lambda x.\,M)\:E \rightarrow M[x:=E]$</div><div class="fragment" data-fragment-index="2" style="justify-self: start">$\beta$-reduction</div>
-            </div>
-        </section>
-
-        <section>
-            <h2 style="margin-bottom: 1.5em"><span style="text-transform:lowercase">&lambda;</span>-Calcul</h2>
-            <div style="margin-bottom: 100%;  display: grid; grid-template-columns: 3fr 2fr">
                 <div style="justify-self: center">$x$</div><div style="justify-self: start"> Variable</div>
                 <div style="justify-self: center">$\lambda x.\,M$</div><div style="justify-self: start"> Abstraction</div>
                 <div style="justify-self: center; margin-bottom: 2.5em">$M\,N$</div><div style="margin-bottom: 2.5em; justify-self: start"> Application</div>
@@ -75,26 +63,67 @@
                 <div style="justify-self: center">$\lambda x.\,M[x] \rightarrow \lambda y.\,M[y]$</div><div style="justify-self: start">$\alpha$-conversion</div>
                 <div class="yellow" style="justify-self: center">$(\lambda x.\,M)\:E \rightarrow M[x:=E]$</div><div class="yellow" style="justify-self: start">$\beta$-reduction</div>
             </div>
+            <div class="fragment" style="position: absolute; top: 3ex">
+                <img style="background-color: rgba(0,0,0,0)" src="images/rejected.png" alt="Rejected">
+            </div>
         </section>
 
         <section>
-            <h2>Curryfication</h2>
-            <h3>(ou Schönfinkelification ?)</h3>
-            <pre class="fragment" style="font-size: 1.1ex; margin-top: 3em"><code class="C#" style="max-height: 800px" data-no-escape>
+            <h2>Stratégies d'Évaluation</h2>
+            <pre class="fragment" style="font-size: 1.1ex; margin-top: 4em"><code class="C#" style="max-height: 800px">
                         public static int Add(int x, int y) => x + y;
-                        
-                        Add(42, 19)      // -> 61
             </code><div class="lang">C#</div></pre>
-            <pre class="fragment" style="font-size: 1.1ex; margin-top: 1em"><code data-no-escape class="C#" style="max-height: 800px">
-                        public static Func&lt;int, int&gt; AddCurried(int x) => y => x + y;
-                                
-                        AddCurried(42)(19) // -> 61
+            <pre class="fragment" style="font-size: 1.1ex; margin-top: 3em; margin-bottom: 100%"><code class="C#" style="max-height: 800px" data-noescape>
+                        Add(Add(19, 42), Add(13, 17))
             </code><div class="lang">C#</div></pre>
-            <pre class="fragment" style="font-size: 1.1ex; margin-top: 1em; margin-bottom: 100%"><code data-no-escape class="C#" style="max-height: 800px">
-                        var addPartial = AddCurried(42);
+        </section>
+        
+        <section>
+            <h2>Stratégies Non Strictes</h2>
+            <pre class="fragment" style="font-size: 1.1ex; margin-top: 4em"><code class="C#" style="max-height: 800px" data-noescape>
+                        <span class="fragment highlight-current-back">Add</span>(Add(19, 42), Add(13, 17))
+        
+                        <span class="fragment"><span class="fragment highlight-current-back">Add</span>(19, 42) + Add(13, 17)</span>
+        
+                        <span class="fragment"><span class="fragment highlight-current-back">19 + 42</span> + Add(13, 17)</span>
                 
-                        addPartial(19)   // -> 61
+                        <span class="fragment">61 + <span class="fragment highlight-current-back">Add</span>(13, 17)</span>
+                
+                        <span class="fragment">61 + <span class="fragment highlight-current-back">13 + 17</span></span>
+                
+                        <span class="fragment"><span class="fragment highlight-current-back">61 + 30</span></span>
+        
+                        <span class="fragment">91</span>
             </code><div class="lang">C#</div></pre>
+            <div class="list" style="margin-top: 3ex; margin-bottom: 100%">
+                <div class="fragment item">
+                    Exemples : Algol60, Miranda, Lazy ML, Clean<span class="fragment">, <span class="green">R</span>, <span class="green">Haskell</span></span>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Stratégies Strictes</h2>
+            <pre class="fragment" style="font-size: 1.1ex; margin-top: 4em"><code class="C#" style="max-height: 800px" data-noescape>
+                        Add(<span class="fragment highlight-current-back">Add(19, 42)</span>, Add(13, 17))
+        
+                        <span class="fragment">Add(<span class="fragment highlight-current-back">19 + 42</span>, Add(13, 17))</span>
+        
+                        <span class="fragment">Add(61, <span class="fragment highlight-current-back">Add(13, 17)</span>)</span>
+
+                        <span class="fragment">Add(61, <span class="fragment highlight-current-back">13 + 17</span>)</span>
+
+                        <span class="fragment"><span class="fragment highlight-current-back">Add(61, 30)</span></span>
+        
+                        <span class="fragment"><span class="fragment highlight-current-back">61 + 30</span></span>
+        
+                        <span class="fragment">91</span>
+            </code><div class="lang">C#</div></pre>
+            <div class="list" style="margin-top: 3ex; margin-bottom: 100%">
+                <div class="fragment item">
+                    Exemples : <span class="fragment green">tous les autres langages !</span>
+                </div>
+            </div>
         </section>
 
         <section>
@@ -106,53 +135,6 @@
                 <div class="item fragment green">Dénotationnelle</div>
                 <div class="item fragment green">Opérationnelle</div>
             </div>
-        </section>
-        
-        <section>
-            <h2>Stratégies d'Évaluation</h2>
-            <div class="list" style="margin-top: 4ex; margin-bottom: 100%">
-                <div class="fragment item" data-fragment-index="1">Si on pose :</div>
-                <div class="fragment item" data-fragment-index="1" style="margin-top: 1ex; margin-left: 10em">$id = \lambda x.\,x$</div>
-                <div class="fragment item" data-fragment-index="2" style="margin-top: 1ex">Soit l'expression :</div>
-                <div class="fragment item" data-fragment-index="2" style="margin-top: 1ex; margin-left: 10em">$id\,(id\,(\lambda z.\,id\, z))$</div>
-                <div class="fragment item" data-fragment-index="3" style="margin-top: 1ex">On a les <span class="magenta">red</span>ucible <span class="magenta">ex</span>pressions :</div>
-                <div class="fragment item" style="margin-top: 1ex; margin-left: 10em">$id\,(id\,(\lambda z.\,\underline{id\, z}))$</div>
-                <div class="fragment item" style="margin-left: 10em">$id\,(\underline{id\,(\lambda z.\,id\, z)})$</div>
-                <div class="fragment item" style="margin-left: 10em">$\underline{id\,(id\,(\lambda z.\,id\, z))}$</div>
-            </div>
-        </section>
-        
-        <section>
-            <h2>Appel par nom</h2>
-            <div class="list" style="margin-bottom: 100%; margin-top: 5ex">
-                <div class="fragment item">On prend <span class="yellow">redex</span> le plus <span class="yellow">extérieur</span> et le plus à gauche</div>
-                <div class="fragment item">et sans descendre dans les abstractions (les $\lambda x.\,E$)</div>
-                <div class="fragment item" style="margin-top: 4ex; margin-left: 10em">$\underline{id\:(id\:(\lambda z.\:id\: z))}$</div>
-                <div class="fragment item" style="margin-left: 10em">$\underline{id\:(\lambda z.\:id\: z)}$</div>
-                <div class="fragment item green" style="margin-left: 10em">$\lambda z.\:id\: z$</div>
-                <div class="fragment item " style="margin-top: 3ex">
-                    Exemples : Algol60, Miranda, Lazy ML, Clean... <span class="fragment green">Haskell</span> 
-                </div>
-            </div>
-        </section>
-        
-        <section>
-            <h2>Appel par valeur</h2>
-            <div class="list" style="margin-bottom: 100%; margin-top: 5ex">
-                <div class="fragment item">On prends le <span class="yellow">redex</span> le plus <span class="yellow">intérieur</span> et le plus à gauche</div>
-                <div class="fragment item">et sans descendre dans les abstractions (les $\lambda x.\,E$)</div>
-                <div class="fragment item" style="margin-top: 4ex; margin-left: 10em">$id\:(\underline{id\:(\lambda z.\:id\: z)})$</div>
-                <div class="fragment item" style="margin-left: 10em">$\underline{id\:(\lambda z.\:id\: z)}$</div>
-                <div class="fragment item green" style="margin-left: 10em">$\lambda z.\:id\: z$</div>
-                <div class="fragment item " style="margin-top: 3ex">
-                    Exemples : <span class="fragment">tous les autres langages !</span>
-                </div>
-            </div>
-        </section>
-        
-        <section>
-            <h2>Equivalence</h2>
-            <img style="margin-top: 3ex; margin-bottom: 100%" src="images/Plotkin.png" alt="Call by name, call by value and the lambda calculus">
         </section>
         
         <section>

@@ -484,3 +484,11 @@ html * {
   border-radius: 2px;
   border: 1px solid #586e75;
 }
+
+.reveal .slides section .fragment.highlight-current-back {
+  opacity: 1;
+  visibility: inherit;
+}
+.reveal .slides section .fragment.highlight-current-back.visible {
+  background-color: #657b83;
+}
