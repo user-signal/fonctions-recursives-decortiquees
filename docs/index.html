@@ -165,18 +165,17 @@
             <h2>Compilation</h2>
             <div class="list" style="margin-bottom: 100%; margin-top: 3em">
                 <div class="fragment item">Sorte de <span class="yellow">sémantique formelle</span> </div>
-                <div class="fragment item">Langage machine :</div>
-                <div class="fragment item" style="margin-top: 1ex; margin-left: 10em"><span class="yellow">Virtuelle</span> (JVM, CLI...)</div>
-                <div class="fragment item" style="margin-left: 10em"><span class="yellow">Concrète</span> (x86, ARM...)</div>
                 <div class="fragment item" style="margin-top: 1ex"><span class="magenta">I</span>nstruction <span class="magenta">S</span>et <span class="magenta">A</span>rchitecture</div>
-                <div class="fragment item" style="margin-top: 1ex; margin-left: 10em"><span class="code">JUMP</span></div>
-                <div class="fragment item" style="margin-left: 10em"><span class="code">CALL</span> / <span class="code">RETURN</span></div>
+                <div class="fragment item" style="margin-top: 1ex"><span class="yellow">Virtuelle</span> (JVM, CLI...)</div>
+                <div class="fragment item" style=""><span class="yellow">Concrète</span> (x86, ARM...)</div>
+                <div class="fragment item green" style="margin-top: 1ex">Fossé sémantique</div>
+
             </div>
         </section>
         
         <section>
             <h2>Commençons simple...</h2>
-            <pre class="fragment" style="font-size: 1.1ex; margin-top: 3em"><code class="F#" style="max-height: 800px">
+            <pre class="fragment" style="font-size: 1.1ex; margin-top: 3em"><code class="ocaml" style="max-height: 800px">
                         let Add x y = x + y
             </code><div class="lang">F#</div></pre>
             <pre class="fragment" style="font-size: 1.1ex; margin-top: 1ex"><code class="C#" style="max-height: 800px">
@@ -218,7 +217,7 @@
                 <div class="item fragment">Un cas de base ou cas d'arrêt</div>
                 <div class="item fragment">Un cas général définit au rang <span class="yellow">$n$</span> en fonction du rang <span class="yellow">$n - 1$</span></div>
             </div>
-            <pre class="fragment" style="font-size: 1.1ex; margin-top: 2ex"><code class="F#" style="max-height: 800px">
+            <pre class="fragment" style="font-size: 1.1ex; margin-top: 2ex"><code class="ocaml" style="max-height: 800px">
                         let rec Fact = function
                             | 0u -> 1u
                             | (n: uint) -> n * Fact(n - 1u)
@@ -238,7 +237,7 @@
                 <div class="item fragment" data-fragment-index="1">Plusieurs fonctions récursives se définissant </div>
                 <div class="item fragment green" data-fragment-index="1">les unes part rapport aux autres</div>
             </div>
-            <pre class="fragment" style="font-size: 1.1ex; margin-top: 3ex; margin-bottom: 100%"><code class="F#" style="max-height: 800px">
+            <pre class="fragment" style="font-size: 1.1ex; margin-top: 3ex; margin-bottom: 100%"><code class="ocaml" style="max-height: 800px">
                         let rec IsEven =
                             function
                             | 0u -> true
@@ -255,7 +254,7 @@
             <h2>Mise en œuvre</h2>
             <div class="list" style="margin-bottom: 100%; margin-top: 3em">
                 <div class="item fragment">Plusieurs <span class="yellow">instances</span> d'une même fonction</div>
-                <div class="item fragment" style="margin-top: 2ex"><span class="yellow">Enregistrement</span> crée à l'activation de la fonction</div>
+                <div class="item fragment" style="margin-top: 2ex"><span class="yellow">Enregistrement</span> créé à l'activation de la fonction</div>
                 <div class="item fragment">Récupérable à sa désactivation</div>
                 <div class="item fragment" style="margin-top: 1ex">$\Rightarrow$ <span class="green">Pile</span></div>
             </div>
@@ -326,7 +325,7 @@
             <div class="list" style="margin-top: 3em">
                 <div class="item fragment" data-fragment-index="1">La <span class="yellow">dernière action</span> d'une fonction est un <span class="yellow">appel de fonction</span></div>
             </div>
-            <pre class="fragment" style="font-size: 1.1ex; margin-top: 2ex"><code class="F#" style="max-height: 800px">
+            <pre class="fragment" style="font-size: 1.1ex; margin-top: 2ex"><code class="ocaml" style="max-height: 800px">
                         let rec FactTailRecursive acc =
                             function
                             | 0u -> acc
@@ -347,7 +346,6 @@
                 <div class="item fragment">Puisqu'il ne restera plus rien à faire au retour de la fonction appelée...</div>
                 <div class="item fragment yellow">Autant réutiliser l'enregistrement d'activation courant !</div>
                 <div class="item fragment" style="margin-top: 1ex">Économie d'allocation (espace constant)</div>
-                <div class="item fragment">Appel plus rapide (<span class="code">JUMP</span> vs. <span class="code">CALL</span>)</div>
                 <div class="item fragment green" style="margin-top: 1ex">Style par continuation</div>
                 <div class="item fragment green">Récursivité terminale</div>
             </div>
