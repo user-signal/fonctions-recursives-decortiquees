@@ -20,6 +20,8 @@
 <div class="reveal">
     <div class="slides">
 
+        <section data-background-image="images/Sponsors.jpeg" data-background-size="contain" data-background-transition="none"></section>
+        
         <section>
             <h2>Les fonctions <span class="green">(récursives)</span> décortiquées</h2>
         </section>
@@ -70,7 +72,7 @@
 
         <section>
             <h2>Stratégies d'Évaluation</h2>
-            <pre class="fragment" style="font-size: 1.1ex; margin-top: 4em"><code class="C#" style="max-height: 800px">
+            <pre class="fragment" style="font-size: 1.1ex; margin-top: 5em"><code class="C#" style="max-height: 800px">
                         public static int Add(int x, int y) => x + y;
             </code><div class="lang">C#</div></pre>
             <pre class="fragment" style="font-size: 1.1ex; margin-top: 3em; margin-bottom: 100%"><code class="C#" style="max-height: 800px" data-noescape>
@@ -80,7 +82,7 @@
 
         <section>
             <h2>Stratégies Strictes</h2>
-            <pre class="fragment" style="font-size: 1.1ex; margin-top: 4em"><code class="C#" style="max-height: 800px" data-noescape>
+            <pre class="fragment" style="font-size: 1.1ex; margin-top: 5em"><code class="C#" style="max-height: 800px" data-noescape>
                         Add(<span class="fragment highlight-current-back">Add(19, 42)</span>, Add(13, 17))
         
                         <span class="fragment">Add(<span class="fragment highlight-current-back">19 + 42</span>, Add(13, 17))</span>
@@ -104,7 +106,7 @@
         
         <section>
             <h2>Stratégies Non Strictes</h2>
-            <pre class="fragment" style="font-size: 1.1ex; margin-top: 4em"><code class="C#" style="max-height: 800px" data-noescape>
+            <pre class="fragment" style="font-size: 1.1ex; margin-top: 5em"><code class="C#" style="max-height: 800px" data-noescape>
                         <span class="fragment highlight-current-back">Add(Add(19, 42), Add(13, 17))</span>
         
                         <span class="fragment"><span class="fragment highlight-current-back">Add(19, 42)</span> + Add(13, 17)</span>
@@ -128,7 +130,7 @@
 
         <section>
             <h2>Sémantique</h2>
-            <div class="list" style="margin-top: 5ex; margin-bottom: 100%">
+            <div class="list" style="margin-top: 3em; margin-bottom: 100%">
                 <div class="fragment item" data-fragment-index="1">Donner un <span class="yellow">sens</span> aux expressions syntaxiques</div>
                 <div class="fragment item" data-fragment-index="1">d'un langage dans un <span class="yellow">autre</span> langage</div>
                 <div class="item fragment green" style="margin-top: 2ex">Axiomatique</div>
@@ -147,7 +149,7 @@
             <img style="margin-top: 3ex; margin-bottom: 100%" src="images/ZincExperiment.png" alt="ZINC paper">
         </section>
         
-        <section data-background-image="images/Interlude.jpg" data-transition="none">
+        <section data-background-image="images/Interlude.jpg" data-background-transition="none">
             <h2 style="margin-bottom: 100%">Interlude</h2>
         </section>
        
@@ -175,7 +177,7 @@
         
         <section>
             <h2>Commençons simple...</h2>
-            <pre class="fragment" style="font-size: 1.1ex; margin-top: 3em"><code class="ocaml" style="max-height: 800px">
+            <pre class="fragment" style="font-size: 1.1ex; margin-top: 5em"><code class="ocaml" style="max-height: 800px">
                         let Add x y = x + y
             </code><div class="lang">F#</div></pre>
             <pre class="fragment" style="font-size: 1.1ex; margin-top: 1ex"><code class="C#" style="max-height: 800px">
@@ -297,8 +299,8 @@
             <div class="list" style="margin-top: 3em; margin-bottom: 100%">
                 <div class="item fragment">Architectures...</div>
                 <div class="item fragment" style="margin-left: 5em">à accumulateur</div>
+                <div class="item fragment" style="margin-left: 5em">à pile <span class="fragment strike">et processeurs langages</span></div>
                 <div class="item fragment" style="margin-left: 5em">à registres généraux</div>
-                <div class="item fragment" style="margin-left: 5em">à pile <span class="fragment fade-out">et processeurs langages</span></div>
                 <div class="item fragment" style="margin-top: 2ex"><span class="magenta">R</span>educed <span class="magenta">I</span>nstruction <span class="magenta">S</span>et <span class="magenta">C</span>omputer</div>
                 <div class="item fragment" style="margin-top: 1ex"><span class="blue">David Paterson</span> à Berkeley</div>
                 <div class="item fragment">Dec Alpha, IBM POWER, SPARC... (1980 et après)</div>
@@ -541,11 +543,10 @@
             <h2>Comment rebondir ?</h2>
             <div class="list" style="margin-top: 3em; margin-bottom: 100%">
                 <div class="item fragment" data-fragment-index="4"  style="margin-top: 2ex">En utilisant un <span class="yellow">trampoline</span></div>
-                <div class="item fragment" data-fragment-index="5" style="margin-top: 2ex">Principe : </div>
-                <div class="item fragment" data-fragment-index="6" style="margin-left: 8em;margin-top: 1ex">Retourner une valeur qui exprime </div>
-                <div class="item fragment" data-fragment-index="6"  style="margin-left: 8em">un « <span class="green">reste à faire</span> » ou un résultat</div>
-                <div class="item fragment" data-fragment-index="7"  style="margin-left: 8em; margin-top: 1ex">Invoquer le « <span class="green">reste à faire</span> » dans une boucle</div>
-                <div class="item fragment" data-fragment-index="7"  style="margin-left: 8em">ou retourner le résultat</div>
+                <div class="item fragment" data-fragment-index="6" style="margin-top: 3ex">Retourner une valeur qui exprime </div>
+                <div class="item fragment" data-fragment-index="6"  style="">un « <span class="green">reste à faire</span> » <span class="yellow">ou</span> un résultat</div>
+                <div class="item fragment" data-fragment-index="7"  style="margin-top: 1ex">Invoquer le « <span class="green">reste à faire</span> » dans une boucle</div>
+                <div class="item fragment" data-fragment-index="7"  style=""><span class="yellow">ou</span> retourner le résultat</div>
             </div>
         </section>
         
@@ -632,7 +633,8 @@
                 </div>
             </div>
             <h1 style="margin-top: 1.5em ; ">Merci</h1>
-            <div style="display: flex; justify-content: right; margin-top: 3ex; margin-bottom: 100%">
+            <div style="display: flex; justify-content: right; margin-right: 1ex; margin-top: 3ex; margin-bottom: 100%">
+                <img src="images/Roti.png" alt="">
             </div>
         </section>
 
