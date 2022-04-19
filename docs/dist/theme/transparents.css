@@ -403,6 +403,10 @@ html * {
   color: #fdf6e3;
 }
 
+.reveal .highlight {
+  background-color: #657b83;
+}
+
 .reveal .slides section img {
   margin: 15px 0;
   border: none;
