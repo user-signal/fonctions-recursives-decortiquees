@@ -39,7 +39,7 @@
         </section>
 
         <section>
-            <h2>Programmation Structutrée</h2>
+            <h2>Programmation Structurée</h2>
             <img src="images/GotoHarmful.png" alt="Goto Considered Harmful">    
         </section>
         
@@ -78,61 +78,71 @@
         </section>
 
         <section>
-            <h2>Stratégies Strictes</h2>
-            <pre class="fragment" style="font-size: 1.1ex; margin-top: 5em"><code class="C#" style="max-height: 800px" data-noescape>
-                        Add(<span class="fragment highlight-current-back">Add(19, 42)</span>, Add(13, 17))
-        
-                        <span class="fragment">Add(<span class="fragment highlight-current-back">19 + 42</span>, Add(13, 17))</span>
-        
-                        <span class="fragment">Add(61, <span class="fragment highlight-current-back">Add(13, 17)</span>)</span>
+            <h2>Stratégies d'Évaluation</h2>
+            <div style="margin-top: 1em; display: grid; grid: 'left right' / 1fr 1fr">
+                <div style="grid-area: left">
+                   <pre style="font-size: 1.1ex; margin-top: 0"><code  class="C#" data-noescape>
+              
+                
+                
+            Add(<span class="fragment highlight-current-back">Add(19, 42)</span>, Add(13, 17))
 
-                        <span class="fragment">Add(61, <span class="fragment highlight-current-back">13 + 17</span>)</span>
+            <span class="fragment">Add(<span class="fragment highlight-current-back">19 + 42</span>, Add(13, 17))</span>
 
-                        <span class="fragment"><span class="fragment highlight-current-back">Add(61, 30)</span></span>
-        
-                        <span class="fragment"><span class="fragment highlight-current-back">61 + 30</span></span>
-        
-                        <span class="fragment">91</span>
-            </code><div class="lang">C#</div></pre>
-            <div class="list" style="margin-top: 3ex; margin-bottom: 100%">
-                <div class="fragment item">
-                    Exemples : <span class="fragment green">presque tous les langages !</span>
+            <span class="fragment">Add(61, <span class="fragment highlight-current-back">Add(13, 17)</span>)</span>
+
+            <span class="fragment">Add(61, <span class="fragment highlight-current-back">13 + 17</span>)</span>
+
+            <span class="fragment"><span class="fragment highlight-current-back">Add(61, 30)</span></span>
+
+            <span class="fragment"><span class="fragment highlight-current-back">61 + 30</span></span>
+
+            <span class="fragment">91</span>
+                
+                    </code><div class="lang">Stricte</div></pre>
+                </div>
+                <div style="margin-top: 2ex; margin-bottom: 100%">
+                    <div class="fragment">
+                        <span class="green">Presque tous les langages !</span>
+                    </div>
+                </div>
+    
+                <div style="grid-area: right">
+                    <pre style="font-size: 1.1ex; margin-top: 0"><code  class="C#" style="max-height: 800px" data-noescape>
+                    
+                
+                
+            <span class="fragment highlight-current-back">Add(Add(19, 42), Add(13, 17))</span>
+
+            <span class="fragment"><span class="fragment highlight-current-back">Add(19, 42)</span> + Add(13, 17)</span>
+
+            <span class="fragment"><span class="fragment highlight-current-back">19 + 42</span> + Add(13, 17)</span>
+    
+            <span class="fragment">61 + <span class="fragment highlight-current-back">Add(13, 17)</span></span>
+    
+            <span class="fragment">61 + <span class="fragment highlight-current-back">13 + 17</span></span>
+    
+            <span class="fragment"><span class="fragment highlight-current-back">61 + 30</span></span>
+
+            <span class="fragment">91</span>
+                
+                    </code><div class="lang">Non Stricte</div></pre>
+                </div>
+                <div style="margin-top: 2ex; margin-bottom: 100%">
+                    <div class="fragment">
+                        Algol60, Miranda, Lazy ML, Clean<span class="fragment">, <div><span class="green">R</span>, <span class="green">Haskell</span></div></span>
+                    </div>
                 </div>
             </div>
         </section>
         
-        <section>
-            <h2>Stratégies Non Strictes</h2>
-            <pre class="fragment" style="font-size: 1.1ex; margin-top: 5em"><code class="C#" style="max-height: 800px" data-noescape>
-                        <span class="fragment highlight-current-back">Add(Add(19, 42), Add(13, 17))</span>
-        
-                        <span class="fragment"><span class="fragment highlight-current-back">Add(19, 42)</span> + Add(13, 17)</span>
-        
-                        <span class="fragment"><span class="fragment highlight-current-back">19 + 42</span> + Add(13, 17)</span>
-                
-                        <span class="fragment">61 + <span class="fragment highlight-current-back">Add(13, 17)</span></span>
-                
-                        <span class="fragment">61 + <span class="fragment highlight-current-back">13 + 17</span></span>
-                
-                        <span class="fragment"><span class="fragment highlight-current-back">61 + 30</span></span>
-        
-                        <span class="fragment">91</span>
-            </code><div class="lang">C#</div></pre>
-            <div class="list" style="margin-top: 3ex; margin-bottom: 100%">
-                <div class="fragment item">
-                    Exemples : Algol60, Miranda, Lazy ML, Clean<span class="fragment">, <span class="green">R</span>, <span class="green">Haskell</span></span>
-                </div>
-            </div>
-        </section>
-
         <section>
             <h2>Sémantique</h2>
             <div class="list" style="margin-top: 3em; margin-bottom: 100%">
                 <div class="fragment item" data-fragment-index="1">Donner un <span class="yellow">sens</span> aux expressions syntaxiques</div>
                 <div class="fragment item" data-fragment-index="1">d'un langage dans un <span class="yellow">autre</span> langage</div>
-                <div class="item fragment green" style="margin-top: 2ex"><a href=""></a>Axiomatique</div>
-                <div class="item fragment green">Dénotationnelle</div>
-                <div class="item fragment green">Opérationnelle</div>
+                <div class="item fragment" style="margin-top: 2ex">Informelle : Manuel de programmation</div>
+                <div class="item fragment" style="margin-top: 2ex">Formelle : <span class="green">Axiomatique</span>, <span class="green">Dénotationnelle</span>, <span class="green">Opérationnelle</span></div>
             </div>
         </section>
         
@@ -299,41 +309,51 @@
         </section>
         
         <section>
-            <h2>Évolution Architecturale</h2>
+            <h2>Évolution Des Processeurs</h2>
             <div class="list" style="margin-top: 3em; margin-bottom: 100%">
                 <div class="item fragment">Architectures...</div>
                 <div class="item fragment" style="margin-left: 5em">à accumulateur</div>
                 <div class="item fragment" style="margin-left: 5em">à pile <span class="fragment strike">et processeurs langages</span></div>
                 <div class="item fragment" style="margin-left: 5em">à registres généraux</div>
                 <div class="item fragment" style="margin-top: 2ex"><span class="magenta">R</span>educed <span class="magenta">I</span>nstruction <span class="magenta">S</span>et <span class="magenta">C</span>omputer</div>
-                <div class="item fragment" style="margin-top: 1ex"><span class="blue">David Patterson</span> à Berkeley</div>
+                <div class="item fragment" style="margin-top: 1ex"><span class="blue">John Cocke</span> [IBM], <span class="blue">David Patterson</span> [Berkeley]</div>
             </div>
         </section>
         
         <section>
-            <h2>Évolution Architecturale</h2>
-            <img style="border: #073642 solid 2px; margin-bottom: 100%" height="720" src="images/David-Patterson.jpg" alt="David Patterson">
+            <h2>Évolution Des Processeurs</h2>
+            <div style="; margin-bottom: 100%; margin-top: 1em; display: grid; grid: 'left right' / 1fr 1fr">
+                <div style="grid-area: left">
+                    <img height="720" src="images/JohnCocke.jpg" alt="David Patterson">
+                </div>
+                <div style="grid-area: right">
+                    <img style="border: #073642 solid 2px" height="720" src="images/David-Patterson.jpg" alt="David Patterson">
+                </div>
+            </div>
+
         </section>
         
         <section>
-            <h2>Évolution Architecturale</h2>
+            <h2>Évolution Des Processeurs</h2>
             <div class="list" style="margin-top: 3em; margin-bottom: 100%">
                 <div class="item">Architectures...</div>
                 <div class="item" style="margin-left: 5em">à accumulateur</div>
-                <div class="item" style="margin-left: 5em">à pile <span class="fragment strike">et processeurs langages</span></div>
+                <div class="item" style="margin-left: 5em">à pile <span style="text-decoration: line-through">et processeurs langages</span></div>
                 <div class="item" style="margin-left: 5em">à registres généraux</div>
                 <div class="item" style="margin-top: 2ex"><span class="magenta">R</span>educed <span class="magenta">I</span>nstruction <span class="magenta">S</span>et <span class="magenta">C</span>omputer</div>
-                <div class="item" style="margin-top: 1ex"><span class="blue">David Patterson</span> à Berkeley</div>
-                <div class="item">Dec Alpha, IBM POWER, SPARC... (1980 et après)</div>
+                <div class="item" style="margin-top: 1ex"><span class="blue">John Cocke</span> [IBM], <span class="blue">David Patterson</span> [Berkeley]</div>
+                <div class="item" style="margin-top: 1ex">Dec Alpha, IBM POWER, SPARC... (1980 et après)</div>
                 <div class="item fragment">ARM, M1 et RISC-V (aujourd'hui)</div>
             </div>
         </section>
         
         <section>
-            <h2>Évolution Architecturale</h2>
+            <h2>Évolution Des Processeurs</h2>
             <div class="list" style="margin-top: 3em; margin-bottom: 100%">
                 <div class="item fragment">Moins d'instructions plus élémentaires</div>
                 <div class="item fragment">Plus de registres généraux</div>
+                <div class="item fragment" style="margin-top: 2ex"></span><span class="code">CALL</span> / <span class="code">RET</span> (x86)</div>
+                <div class="item fragment"><span class="code">BL</span>  + registre 14 (ARM)</div>
                 <div class="item fragment" style="margin-top: 2ex">Plus de responsabilité au compilateur</div>
                 <div class="item fragment">Mais plus d'optimisations possibles</div>
                 <div class="item fragment" style="margin-top: 2ex; ">Exemple : <span class="green">Fonctions feuilles</span></div>
